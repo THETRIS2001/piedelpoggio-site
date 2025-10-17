@@ -11,7 +11,7 @@ published: true
 
 # Festa di San Giovanni Battista - Patrono di Piedelpoggio
 
-La festa del nostro patrono San Giovanni Battista <mcreference link="https://it.wikipedia.org/wiki/Piedelpoggio" index="1">1</mcreference> è l'evento più importante dell'anno per la comunità di Piedelpoggio.
+La festa del nostro patrono San Giovanni Battista <mcreference link="https://it.wikipedia.org/wiki/Piedelpoggio" index="1">1</mcreference> è l'evento più importante dell'anno per la Comunità di Piedelpoggio.
 
 ## Programma della giornata
 
