@@ -1720,7 +1720,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                 <div id="streetview-piedelpoggio" class="streetview-container">
                   <div class="aspect-video bg-gray-100 rounded-xl overflow-hidden shadow-lg">
                     <iframe 
-                      src="https://www.google.com/maps/embed/v1/streetview?key=AIzaSyAWbUT1j1h0jzU1UtQlVi6CKxKHKL8iojk&location=42.55763045198627,12.994387463240372&heading=210&pitch=10&fov=75"
+                      src={`https://www.google.com/maps/embed/v1/streetview?key=${import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY}&location=42.55763045198627,12.994387463240372&heading=210&pitch=10&fov=75`}
                       class="w-full h-full border-0"
                       allowfullscreen
                       loading="lazy"
@@ -1734,7 +1734,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                 <div id="streetview-leonessa" class="streetview-container hidden">
                   <div class="aspect-video bg-gray-100 rounded-xl overflow-hidden shadow-lg">
                     <iframe 
-                      src="https://www.google.com/maps/embed/v1/streetview?key=AIzaSyAWbUT1j1h0jzU1UtQlVi6CKxKHKL8iojk&location=42.56568405177071,12.962557001072682&heading=210&pitch=10&fov=75"
+                      src={`https://www.google.com/maps/embed/v1/streetview?key=${import.meta.env.PUBLIC_GOOGLE_MAPS_API_KEY}&location=42.56568405177071,12.962557001072682&heading=210&pitch=10&fov=75`}
                       class="w-full h-full border-0"
                       allowfullscreen
                       loading="lazy"
