@@ -1,0 +1,316 @@
+---
+import DefaultLayout from '../../layouts/DefaultLayout.astro';
+---
+
+<DefaultLayout 
+  title="Video - Piedelpoggio" 
+  description="Guarda i video e scopri le bellezze del territorio di Piedelpoggio"
+>
+  <main class="min-h-screen bg-gradient-to-br from-primary-50/30 via-white to-secondary-50/20">
+    <!-- Hero Section -->
+    <section class="relative min-h-[40vh] flex items-center justify-center overflow-hidden pt-16">
+      <!-- Background with gradient -->
+      <div class="absolute inset-0 bg-gradient-to-b from-purple-200/80 via-purple-100/60 to-transparent"></div>
+      
+      <!-- Decorative elements -->
+      <div class="absolute top-10 left-10 w-32 h-32 rounded-full blur-3xl animate-float" style="background: radial-gradient(circle, rgba(88, 28, 135, 0.25) 0%, rgba(88, 28, 135, 0.08) 70%, transparent 100%);"></div>
+      <div class="absolute bottom-10 right-10 w-40 h-40 rounded-full blur-3xl animate-float" style="animation-delay: -3s; background: radial-gradient(circle, rgba(126, 58, 148, 0.2) 0%, rgba(126, 58, 148, 0.06) 70%, transparent 100%);"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl opacity-40" style="background: radial-gradient(circle, rgba(219, 39, 119, 0.12) 0%, rgba(219, 39, 119, 0.04) 60%, transparent 100%);"></div>
+      
+      <div class="relative z-10 container mx-auto px-4 text-center">
+        <div class="animate-fade-in">
+          <div class="flex items-center justify-center mb-8">
+            <div class="w-20 h-20 bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center shadow-xl mr-6">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              <span class="bg-gradient-to-r from-purple-900 via-purple-700 to-pink-600 bg-clip-text text-transparent">
+                VIDEO
+              </span>
+            </h1>
+          </div>
+          <div class="w-32 h-1.5 bg-gradient-to-r from-purple-500 via-purple-600 to-pink-500 rounded-full mx-auto mb-8"></div>
+          <p class="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-medium">
+            Scopri le bellezze del nostro territorio
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto space-y-12">
+        
+        <!-- Riprese Aeree - Box con ombra -->
+        <div class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-100/50 overflow-hidden hover:shadow-2xl transition-all duration-300">
+          <div class="p-8">
+            <div class="flex items-center space-x-4 mb-8">
+              <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <h2 class="text-3xl font-bold text-gray-900">Riprese di Piedelpoggio</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <!-- Video 1 -->
+              <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+                <div class="aspect-video bg-black rounded-t-2xl overflow-hidden">
+                  <video 
+                    controls 
+                    class="w-full h-full object-cover"
+                    preload="metadata"
+                  >
+                    <source src="/videos/ripresa-aerea-2.mp4#t=0.5" type="video/mp4">
+                    Il tuo browser non supporta il tag video.
+                  </video>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-gray-900 mb-2">Ripresa Aerea</h3>
+                  <p class="text-gray-600 leading-relaxed">
+                    Seconda prospettiva aerea che cattura ulteriori dettagli del borgo 
+                    e delle montagne che lo circondano.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Video 2 -->
+              <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+                <div class="aspect-video bg-black rounded-t-2xl overflow-hidden">
+                  <video 
+                    controls 
+                    class="w-full h-full object-cover"
+                    preload="metadata"
+                  >
+                    <source src="/videos/ripresa-aerea-1.mp4#t=0.5" type="video/mp4">
+                    Il tuo browser non supporta il tag video.
+                  </video>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-gray-900 mb-2">Ripresa Aerea dintorni innevati</h3>
+                  <p class="text-gray-600 leading-relaxed">
+                    Vista panoramica dall'alto di Piedelpoggio e del territorio circostante, 
+                    mostrando la bellezza del paesaggio appenninico innevato.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Video 3 - Presepe -->
+              <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+                <div class="aspect-video bg-black rounded-t-2xl overflow-hidden">
+                  <video 
+                    controls 
+                    class="w-full h-full object-cover"
+                    preload="metadata"
+                  >
+                    <source src="/videos/presepe-piedelpoggio.mp4#t=0.5" type="video/mp4">
+                    Il tuo browser non supporta il tag video.
+                  </video>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-gray-900 mb-2">Presepe di Piedelpoggio</h3>
+                  <p class="text-gray-600 leading-relaxed">
+                    Il tradizionale presepe di Piedelpoggio, una delle manifestazioni più sentite 
+                    della comunità durante il periodo natalizio.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Video 4 - Deposizione Corona -->
+              <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+                <div class="aspect-video bg-black rounded-t-2xl overflow-hidden">
+                  <video 
+                    controls 
+                    class="w-full h-full object-cover"
+                    preload="metadata"
+                  >
+                    <source src="/videos/deposizione-corona-piedelpoggio.mp4#t=0.5" type="video/mp4">
+                    Il tuo browser non supporta il tag video.
+                  </video>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-gray-900 mb-2">Deposizione Corona</h3>
+                  <p class="text-gray-600 leading-relaxed">
+                    Cerimonia di deposizione della corona, momento solenne che testimonia 
+                    le tradizioni e la memoria storica della comunità di Piedelpoggio.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Riprese Zone Limitrofe - Box con ombra -->
+        <div class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-100/50 overflow-hidden hover:shadow-2xl transition-all duration-300">
+          <div class="p-8">
+            <div class="flex items-center space-x-4 mb-8">
+              <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <h2 class="text-3xl font-bold text-gray-900">Riprese Zone Limitrofe</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+             <!-- Video 1: In volo sopra la Crocetta -->
+             <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+               <div class="aspect-video bg-black rounded-t-2xl overflow-hidden">
+                 <video 
+                   controls 
+                   class="w-full h-full object-cover"
+                   preload="metadata"
+                 >
+                   <source src="/videos/Zone%20limitrofe/In%20volo%20sopra%20la%20Crocetta.mp4#t=0.5" type="video/mp4">
+                   Il tuo browser non supporta il tag video.
+                 </video>
+               </div>
+               <div class="p-6">
+                 <h3 class="text-xl font-bold text-gray-900 mb-2">In volo sopra la Crocetta</h3>
+               </div>
+             </div>
+
+             <!-- Video 2: Monte Tilia -->
+             <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+               <div class="aspect-video bg-black rounded-t-2xl overflow-hidden">
+                 <video 
+                   controls 
+                   class="w-full h-full object-cover"
+                   preload="metadata"
+                 >
+                   <source src="/videos/Zone%20limitrofe/Monte%20Tilia.mp4#t=0.5" type="video/mp4">
+                   Il tuo browser non supporta il tag video.
+                 </video>
+               </div>
+               <div class="p-6">
+                 <h3 class="text-xl font-bold text-gray-900 mb-2">Monte Tilia</h3>
+               </div>
+             </div>
+
+             <!-- Video 3: Leonessa e la torre Angioina -->
+             <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+               <div class="aspect-video bg-black rounded-t-2xl overflow-hidden">
+                 <video 
+                   controls 
+                   class="w-full h-full object-cover"
+                   preload="metadata"
+                 >
+                   <source src="/videos/Zone%20limitrofe/Leonessa%20e%20la%20torre%20Angioina.mp4#t=0.5" type="video/mp4">
+                   Il tuo browser non supporta il tag video.
+                 </video>
+               </div>
+               <div class="p-6">
+                 <h3 class="text-xl font-bold text-gray-900 mb-2">Leonessa e la torre Angioina</h3>
+               </div>
+             </div>
+
+             <!-- Video 4: Leonessa -->
+             <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+               <div class="aspect-video bg-black rounded-t-2xl overflow-hidden">
+                 <video 
+                   controls 
+                   class="w-full h-full object-cover"
+                   preload="metadata"
+                 >
+                   <source src="/videos/Zone%20limitrofe/Leonessa.mp4#t=0.5" type="video/mp4">
+                   Il tuo browser non supporta il tag video.
+                 </video>
+               </div>
+               <div class="p-6">
+                 <h3 class="text-xl font-bold text-gray-900 mb-2">Leonessa</h3>
+               </div>
+             </div>
+
+             <!-- Video 5: Leonessa 1 -->
+             <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+               <div class="aspect-video bg-black rounded-t-2xl overflow-hidden">
+                 <video 
+                   controls 
+                   class="w-full h-full object-cover"
+                   preload="metadata"
+                 >
+                   <source src="/videos/Zone%20limitrofe/Leonessa%201.mp4#t=0.5" type="video/mp4">
+                   Il tuo browser non supporta il tag video.
+                 </video>
+               </div>
+               <div class="p-6">
+                 <h3 class="text-xl font-bold text-gray-900 mb-2">Leonessa 1</h3>
+               </div>
+             </div>
+
+             <!-- Video 6: Leonessa 2 -->
+             <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+               <div class="aspect-video bg-black rounded-t-2xl overflow-hidden">
+                 <video 
+                   controls 
+                   class="w-full h-full object-cover"
+                   preload="metadata"
+                 >
+                   <source src="/videos/Zone%20limitrofe/Leonessa%202.mp4#t=0.5" type="video/mp4">
+                   Il tuo browser non supporta il tag video.
+                 </video>
+               </div>
+               <div class="p-6">
+                 <h3 class="text-xl font-bold text-gray-900 mb-2">Leonessa 2</h3>
+               </div>
+             </div>
+
+             <!-- Video 7: Leonessa 3 -->
+             <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+               <div class="aspect-video bg-black rounded-t-2xl overflow-hidden">
+                 <video 
+                   controls 
+                   class="w-full h-full object-cover"
+                   preload="metadata"
+                 >
+                   <source src="/videos/Zone%20limitrofe/Leonessa%203.mp4#t=0.5" type="video/mp4">
+                   Il tuo browser non supporta il tag video.
+                 </video>
+               </div>
+               <div class="p-6">
+                 <h3 class="text-xl font-bold text-gray-900 mb-2">Leonessa 3</h3>
+               </div>
+             </div>
+
+             <!-- Video 8: Leonessa e Dintorni innevati-->
+             <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+               <div class="aspect-video bg-black rounded-t-2xl overflow-hidden">
+                 <video 
+                   controls 
+                   class="w-full h-full object-cover"
+                   preload="metadata"
+                 >
+                   <source src="/videos/Zone%20limitrofe/Leonessa%20e%20Dintorni.mp4#t=0.5" type="video/mp4">
+                   Il tuo browser non supporta il tag video.
+                 </video>
+               </div>
+               <div class="p-6">
+                 <h3 class="text-xl font-bold text-gray-900 mb-2">Leonessa e Dintorni innevati</h3>
+               </div>
+             </div>
+
+             <!-- Video 9: Paesaggio Leonessa -->
+             <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+               <div class="aspect-video bg-black rounded-t-2xl overflow-hidden">
+                 <video 
+                   controls 
+                   class="w-full h-full object-cover"
+                   preload="metadata"
+                 >
+                   <source src="/videos/Zone%20limitrofe/Paesaggio%20Leonessa.mp4#t=0.5" type="video/mp4">
+                   Il tuo browser non supporta il tag video.
+                 </video>
+               </div>
+               <div class="p-6">
+                 <h3 class="text-xl font-bold text-gray-900 mb-2">Paesaggio Leonessa</h3>
+               </div>
+             </div>
+           </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</DefaultLayout>

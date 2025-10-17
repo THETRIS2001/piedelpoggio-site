@@ -1,0 +1,43 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+---
+
+<DefaultLayout
+  title="Pagina non trovata - Piedelpoggio"
+  description="La pagina che stai cercando non è stata trovata."
+>
+  <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-50 to-secondary-50">
+    <div class="text-center px-4">
+      <div class="mb-8">
+        <h1 class="text-9xl font-bold text-primary-600 mb-4">404</h1>
+        <h2 class="text-3xl font-semibold text-gray-800 mb-4">
+          Pagina non trovata
+        </h2>
+        <p class="text-lg text-gray-600 mb-8 max-w-md mx-auto">
+          La pagina che stai cercando non esiste o è stata spostata.
+        </p>
+      </div>
+      
+      <div class="space-y-4">
+        <a 
+          href="/" 
+          class="inline-block bg-primary-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors duration-300"
+        >
+          Torna alla Home
+        </a>
+        
+        <div class="flex flex-wrap justify-center gap-4 mt-6">
+          <a href="/notizie" class="text-primary-600 hover:text-primary-800 underline">
+            Notizie
+          </a>
+          <a href="/eventi" class="text-primary-600 hover:text-primary-800 underline">
+            Eventi
+          </a>
+          <a href="/info/contatti" class="text-primary-600 hover:text-primary-800 underline">
+            Contatti
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</DefaultLayout>

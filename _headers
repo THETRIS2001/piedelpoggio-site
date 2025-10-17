@@ -1,0 +1,24 @@
+# Cache per file statici
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/videos/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/documents/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache per assets generati da Astro
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache per favicon
+/favicon.*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Headers di sicurezza
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()

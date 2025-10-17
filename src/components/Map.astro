@@ -1,0 +1,113 @@
+---
+interface Props {
+  lat: number;
+  lon: number;
+  zoom?: number;
+  height?: string;
+  markers?: Array<{
+    lat: number;
+    lon: number;
+    title: string;
+    description?: string;
+    category?: string;
+  }>;
+  className?: string;
+}
+
+const { 
+  lat, 
+  lon, 
+  zoom = 15, 
+  height = "400px", 
+  markers = [], 
+  className = "" 
+} = Astro.props;
+
+// Genera un ID unico per questa mappa
+const mapId = `map-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<div class={`map-container ${className}`}>
+  <div id={mapId} style={`height: ${height}; width: 100%;`} class="rounded-lg shadow-md"></div>
+</div>
+
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<script define:vars={{ mapId, lat, lon, zoom, markers }}>
+  // Carica Leaflet in modo asincrono
+  if (typeof window !== 'undefined') {
+    // Funzione per inizializzare la mappa
+    function initMap() {
+      if (typeof L === 'undefined') {
+        // Se Leaflet non è ancora caricato, riprova dopo un po'
+        setTimeout(initMap, 100);
+        return;
+      }
+
+      // Crea la mappa
+      const map = L.map(mapId).setView([lat, lon], zoom);
+
+      // Aggiungi il layer delle tile di OpenStreetMap
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      // Aggiungi il marker principale
+      const mainMarker = L.marker([lat, lon]).addTo(map);
+      
+      // Se ci sono markers aggiuntivi, aggiungili
+      if (markers && markers.length > 0) {
+        markers.forEach(marker => {
+          const markerIcon = L.marker([marker.lat, marker.lon]).addTo(map);
+          
+          if (marker.title || marker.description) {
+            let popupContent = '';
+            if (marker.title) {
+              popupContent += `<strong>${marker.title}</strong>`;
+            }
+            if (marker.description) {
+              popupContent += `<br>${marker.description}`;
+            }
+            if (marker.category) {
+              popupContent += `<br><small class="text-gray-500">${marker.category}</small>`;
+            }
+            markerIcon.bindPopup(popupContent);
+          }
+        });
+
+        // Se ci sono più markers, adatta la vista per mostrarli tutti
+        if (markers.length > 0) {
+          const group = new L.featureGroup([mainMarker, ...markers.map(m => L.marker([m.lat, m.lon]))]);
+          map.fitBounds(group.getBounds().pad(0.1));
+        }
+      }
+    }
+
+    // Carica Leaflet se non è già presente
+    if (typeof L === 'undefined') {
+      const script = document.createElement('script');
+      script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+      script.onload = initMap;
+      document.head.appendChild(script);
+    } else {
+      initMap();
+    }
+  }
+</script>
+
+<style>
+  .map-container {
+    position: relative;
+  }
+  
+  /* Stili per i popup di Leaflet */
+  :global(.leaflet-popup-content-wrapper) {
+    border-radius: 8px;
+  }
+  
+  :global(.leaflet-popup-content) {
+    margin: 12px 16px;
+    line-height: 1.4;
+  }
+</style>

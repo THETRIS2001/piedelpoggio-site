@@ -1,0 +1,518 @@
+---
+import DefaultLayout from '../../layouts/DefaultLayout.astro';
+
+// Coordinate di Piedelpoggio (42°33'21.6"N 12°59'38.8"E)
+const PIEDELPOGGIO_LAT = 42.5560;
+const PIEDELPOGGIO_LNG = 12.9941;
+
+// Funzione per calcolare la distanza in linea d'aria tra due punti (formula di Haversine)
+function calculateDistance(lat1: number, lng1: number, lat2: number, lng2: number): number {
+  const R = 6371; // Raggio della Terra in km
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLng = (lng2 - lng1) * Math.PI / 180;
+  const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+    Math.sin(dLng/2) * Math.sin(dLng/2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  return R * c;
+}
+
+// Dati centralizzati delle webcam
+const webcamData = [
+  {
+    id: 'leonessa-sud',
+    title: 'Leonessa › Sud',
+    description: 'Vista panoramica verso sud del territorio di Leonessa e Piedelpoggio.',
+    coordinates: '42.557, 12.995',
+    lat: 42.557,
+    lng: 12.995,
+    url: 'https://webcams.windy.com/webcams/public/embed/player/1695219662/day?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ3ZWJjYW1faWQiOjE2OTUyMTk2NjIsInVzZXJfdHlwZSI6MSwiYXZhaWxhYmxlX3NpemVzIjoidGVhc2VyYmcsaWNvbix0aHVtYm5haWwscHJldmlldyxub3JtYWwsZnVsbCxwYW5vcmFtYSIsImlhdCI6MTc2MDExMzE3MiwiZXhwIjoxNzYwMTk5NTcyfQ.ZzooJtWNUi1jeh4zq53_YskaR9I4jJm4xLYhjx2sOxI&autoPlay=1#',
+    isPiedelpoggio: true,
+    section: 'piedelpoggio'
+  },
+  {
+    id: 'leonessa-nord',
+    title: 'Leonessa › Nord: Piedelpoggio',
+    description: 'Vista diretta su Piedelpoggio e Colle Forcella a 1188m di altitudine.',
+    coordinates: '42.556, 12.994',
+    lat: 42.556,
+    lng: 12.994,
+    url: 'https://webcams.windy.com/webcams/public/embed/player/1734173462/day?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ3ZWJjYW1faWQiOjE3MzQxNzM0NjIsInVzZXJfdHlwZSI6MSwiYXZhaWxhYmxlX3NpemVzIjoidGVhc2VyYmcsaWNvbix0aHVtYm5haWwscHJldmlldyxub3JtYWwsZnVsbCxwYW5vcmFtYSIsImlhdCI6MTc2MDExMzE3MiwiZXhwIjoxNzYwMTk5NTcyfQ.Rm7-sarDwKBrzFjLuPMXXaDPU6_hOXSWCeUtsY3XvbU&autoPlay=1#',
+    isPiedelpoggio: true,
+    section: 'piedelpoggio'
+  },
+  {
+    id: 'leonessa-sud-alt',
+    title: 'Leonessa › Sud (Vista Alternativa)',
+    description: 'Prospettiva alternativa del territorio verso sud con vista sui monti.',
+    coordinates: '42.576, 13.003',
+    lat: 42.576,
+    lng: 13.003,
+    url: 'https://webcams.windy.com/webcams/public/embed/player/1631219415/day?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ3ZWJjYW1faWQiOjE2MzEyMTk0MTUsInVzZXJfdHlwZSI6MSwiYXZhaWxhYmxlX3NpemVzIjoidGVhc2VyYmcsaWNvbix0aHVtYm5haWwscHJldmlldyxub3JtYWwsZnVsbCxwYW5vcmFtYSIsImlhdCI6MTc2MDExMzE3MiwiZXhwIjoxNzYwMTk5NTcyfQ.o1JoI7I6Rvs8a9AiSLZXtbOHedrYCs3brN4_tHsJVXQ&autoPlay=1#',
+    isPiedelpoggio: false,
+    section: 'limitrofe',
+    distanceFromPiedelpoggio: calculateDistance(PIEDELPOGGIO_LAT, PIEDELPOGGIO_LNG, 42.576, 13.003)
+  },
+  {
+    id: 'fontenova',
+    title: 'Leonessa › Sud: Località Fontenova',
+    description: 'Vista panoramica dalla località Fontenova verso il territorio circostante.',
+    coordinates: '42.496, 12.999',
+    lat: 42.496,
+    lng: 12.999,
+    url: 'https://webcams.windy.com/webcams/public/embed/player/1624377379/day?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ3ZWJjYW1faWQiOjE2MjQzNzczNzksInVzZXJfdHlwZSI6MSwiYXZhaWxhYmxlX3NpemVzIjoidGVhc2VyYmcsaWNvbix0aHVtYm5haWwscHJldmlldyxub3JtYWwsZnVsbCxwYW5vcmFtYSIsImlhdCI6MTc2MDExMzE3MiwiZXhwIjoxNzYwMTk5NTcyfQ.koBpUDnFGJsc9Wuy0eUEWSbGwcIyR4m2KMppJMlYJjs&autoPlay=1#',
+    isPiedelpoggio: false,
+    section: 'limitrofe',
+    distanceFromPiedelpoggio: calculateDistance(PIEDELPOGGIO_LAT, PIEDELPOGGIO_LNG, 42.496, 12.999)
+  },
+  {
+    id: 'micigliano',
+    title: 'Micigliano: Rifugio Massimo Rinaldi - Monte Terminillo',
+    description: 'Vista dal rifugio Massimo Rinaldi sul Monte Terminillo verso le zone limitrofe.',
+    coordinates: '42.467, 12.990',
+    lat: 42.467,
+    lng: 12.990,
+    url: 'https://webcams.windy.com/webcams/public/embed/player/1695978780/day?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ3ZWJjYW1faWQiOjE2OTU5Nzg3ODAsInVzZXJfdHlwZSI6MSwiYXZhaWxhYmxlX3NpemVzIjoidGVhc2VyYmcsaWNvbix0aHVtYm5haWwscHJldmlldyxub3JtYWwsZnVsbCxwYW5vcmFtYSIsImlhdCI6MTc2MDExMzE3MiwiZXhwIjoxNzYwMTk5NTcyfQ.FeyYbvSLi2fc6K0FLhTcWsql8OPl4vvigzbGiDHinMY&autoPlay=1#',
+    isPiedelpoggio: false,
+    section: 'limitrofe',
+    distanceFromPiedelpoggio: calculateDistance(PIEDELPOGGIO_LAT, PIEDELPOGGIO_LNG, 42.467, 12.990)
+  },
+  {
+    id: 'poggio-bustone',
+    title: 'Poggio Bustone › West: QRZCB.IO',
+    description: 'Vista occidentale da Poggio Bustone verso le zone limitrofe di Piedelpoggio.',
+    coordinates: '42.496, 12.883',
+    lat: 42.496,
+    lng: 12.883,
+    url: 'https://webcams.windy.com/webcams/public/embed/player/1712518521/day?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ3ZWJjYW1faWQiOjE3MTI1MTg1MjEsInVzZXJfdHlwZSI6MSwiYXZhaWxhYmxlX3NpemVzIjoidGVhc2VyYmcsaWNvbix0aHVtYm5haWwscHJldmlldyxub3JtYWwsZnVsbCxwYW5vcmFtYSIsImlhdCI6MTc2MDExMzE3MiwiZXhwIjoxNzYwMTk5NTcyfQ.umvMsuu5oG3muj4syUMuwy7fuo8gwvfovAUL2wUhsgE&autoPlay=1#',
+    isPiedelpoggio: false,
+    section: 'limitrofe',
+    distanceFromPiedelpoggio: calculateDistance(PIEDELPOGGIO_LAT, PIEDELPOGGIO_LNG, 42.496, 12.883)
+  },
+  {
+    id: 'poggio-bustone-se',
+    title: 'Poggio Bustone › South-East: Rieti',
+    description: 'Vista panoramica verso sud-est da Poggio Bustone con panorama su Rieti.',
+    coordinates: '42.481, 12.852',
+    lat: 42.481,
+    lng: 12.852,
+    url: 'https://webcams.windy.com/webcams/public/embed/player/1591003621/day?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ3ZWJjYW1faWQiOjE1OTEwMDM2MjEsInVzZXJfdHlwZSI6MSwiYXZhaWxhYmxlX3NpemVzIjoidGVhc2VyYmcsaWNvbix0aHVtYm5haWwscHJldmlldyxub3JtYWwsZnVsbCxwYW5vcmFtYSIsImlhdCI6MTc2MDExNDQ2MSwiZXhwIjoxNzYwMjAwODYxfQ.jmUqstxl34IvEVz6MTdl4Fer5GTBmCMYzFAl89YGRwM&autoPlay=1#',
+    isPiedelpoggio: false,
+    section: 'limitrofe',
+    distanceFromPiedelpoggio: calculateDistance(PIEDELPOGGIO_LAT, PIEDELPOGGIO_LNG, 42.481, 12.852)
+  },
+  {
+    id: 'rieti-west',
+    title: 'Rieti › West: Rieti Sotterranea',
+    description: 'Vista occidentale dalla città di Rieti con panorama verso le zone montane.',
+    coordinates: '42.403, 12.863',
+    lat: 42.403,
+    lng: 12.863,
+    url: 'https://webcams.windy.com/webcams/public/embed/player/1746001967/day?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ3ZWJjYW1faWQiOjE3NDYwMDE5NjcsInVzZXJfdHlwZSI6MSwiYXZhaWxhYmxlX3NpemVzIjoidGVhc2VyYmcsaWNvbix0aHVtYm5haWwscHJldmlldyxub3JtYWwsZnVsbCxwYW5vcmFtYSIsImlhdCI6MTc2MDExNDQ2MSwiZXhwIjoxNzYwMjAwODYxfQ.gPa9QoFS2UNBDxUlfDtf-owjShXMFrQylN95Jt5knII&autoPlay=1#',
+    isPiedelpoggio: false,
+    section: 'limitrofe',
+    distanceFromPiedelpoggio: calculateDistance(PIEDELPOGGIO_LAT, PIEDELPOGGIO_LNG, 42.403, 12.863)
+  },
+  {
+    id: 'turismometeo-webcam',
+    title: 'Monte di Cambio (2081 m) visto da Albaneto',
+    description: 'Vista panoramica del Monte di Cambio dalla località Albaneto, con monitoraggio meteorologico della rete Turismometeo.',
+    coordinates: '42.542, 13.043',
+    lat: 42.54196379618668,
+    lng: 13.043409997614393,
+    url: 'https://www.turismometeo.it/webcam/monte-di-cambio-2081-m-visto-da-albaneto-di-leonessa-ri',
+    isPiedelpoggio: false,
+    section: 'limitrofe',
+    distanceFromPiedelpoggio: calculateDistance(PIEDELPOGGIO_LAT, PIEDELPOGGIO_LNG, 42.54196379618668, 13.043409997614393)
+  }
+];
+
+// Filtra webcam per sezione e ordina per distanza
+const piedelpoggioCams = webcamData.filter(cam => cam.section === 'piedelpoggio').sort((a, b) => a.distanceFromPiedelpoggio - b.distanceFromPiedelpoggio);
+const limitrofeCams = webcamData.filter(cam => cam.section === 'limitrofe').sort((a, b) => a.distanceFromPiedelpoggio - b.distanceFromPiedelpoggio);
+---
+
+<DefaultLayout 
+  title="Webcam Live - Piedelpoggio" 
+  description="Guarda le webcam live di Piedelpoggio e scopri il territorio in tempo reale"
+>
+  <main class="min-h-screen bg-gradient-to-br from-primary-50/30 via-white to-secondary-50/20">
+    <!-- Hero Section -->
+    <section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-16">
+      <!-- Background with gradient -->
+      <div class="absolute inset-0 bg-gradient-to-b from-orange-100/60 via-orange-50/40 to-transparent"></div>
+      
+      <!-- Decorative elements -->
+      <div class="absolute top-10 left-10 w-32 h-32 bg-orange-200/30 rounded-full blur-2xl animate-float"></div>
+      <div class="absolute bottom-10 right-10 w-40 h-40 bg-red-200/30 rounded-full blur-2xl animate-float" style="animation-delay: -3s;"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-orange-100/20 to-red-100/20 rounded-full blur-3xl"></div>
+      
+      <div class="relative z-10 container mx-auto px-4 text-center">
+        <div class="animate-fade-in">
+          <!-- Icona e Titolo centrati -->
+          <div class="flex items-center justify-center mb-8">
+            <div class="w-20 h-20 bg-gradient-to-br from-orange-600 to-red-600 rounded-2xl flex items-center justify-center shadow-xl mr-6">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              <span class="bg-gradient-to-r from-orange-900 via-orange-700 to-red-600 bg-clip-text text-transparent">
+                WEBCAM LIVE
+              </span>
+            </h1>
+          </div>
+          <div class="w-32 h-1.5 bg-gradient-to-r from-orange-500 via-orange-600 to-red-500 rounded-full mx-auto mb-8"></div>
+          
+          <!-- Descrizione centrata sotto -->
+          <p class="text-xl md:text-2xl text-gray-700 font-medium max-w-2xl mx-auto leading-relaxed">
+            Scopri il territorio di Piedelpoggio in tempo reale attraverso le nostre webcam
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Webcam Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto space-y-12">
+        
+        <!-- Webcam di Piedelpoggio - Box con ombra -->
+        <div class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-100/50 overflow-hidden hover:shadow-2xl transition-all duration-300">
+          <div class="p-8">
+            <div class="flex items-center space-x-4 mb-8">
+              <div class="w-12 h-12 bg-gradient-to-r from-orange-600 to-red-600 rounded-xl flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <h2 class="text-3xl font-bold text-gray-900">Webcam di Piedelpoggio</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {piedelpoggioCams.map((webcam) => (
+                <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+                  <div class="aspect-video bg-black rounded-t-2xl overflow-hidden">
+                    <iframe 
+                      src={webcam.url}
+                      class="w-full h-full"
+                      frameborder="0"
+                      allowfullscreen
+                      title={`Webcam ${webcam.title}`}
+                    ></iframe>
+                  </div>
+                  <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">{webcam.title}</h3>
+                    <p class="text-gray-600 leading-relaxed mb-3">
+                      {webcam.description}
+                    </p>
+                    <div class="flex items-center">
+                      <span class="text-sm text-gray-500">Coordinate: {webcam.coordinates}</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Webcam Zone Limitrofe - Box con ombra -->
+        <div class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-100/50 overflow-hidden hover:shadow-2xl transition-all duration-300">
+          <div class="p-8">
+            <div class="flex items-center space-x-4 mb-8">
+              <div class="w-12 h-12 bg-gradient-to-r from-orange-600 to-red-600 rounded-xl flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <h2 class="text-3xl font-bold text-gray-900">Webcam Zone Limitrofe</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {limitrofeCams.map((webcam) => (
+                <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+                  <div class="aspect-video bg-black rounded-t-2xl overflow-hidden">
+                    <iframe 
+                      src={webcam.url}
+                      class={`w-full h-full ${webcam.title === 'Monte di Cambio (2081 m) visto da Albaneto' ? 'monte-cambio-iframe' : ''}`}
+                      frameborder="0"
+                      allowfullscreen
+                      title={`Webcam ${webcam.title}`}
+                    ></iframe>
+                  </div>
+                  <div class="p-6">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">{webcam.title}</h3>
+                    <p class="text-gray-600 leading-relaxed mb-3">
+                      {webcam.description}
+                    </p>
+                    <div class="flex items-center justify-between">
+                      <span class="text-sm text-gray-500">Coordinate: {webcam.coordinates}</span>
+                      <div class="flex items-center space-x-1 bg-primary-50 px-3 py-1 rounded-full">
+                        <svg class="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        <span class="text-sm font-medium text-primary-700">
+                          {webcam.distanceFromPiedelpoggio.toFixed(1)} km
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Mappa Interattiva - Box con ombra -->
+        <div class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-100/50 overflow-hidden hover:shadow-2xl transition-all duration-300">
+          <div class="p-6 border-b border-gray-200/50">
+            <div class="flex items-center space-x-4">
+              <div class="w-10 h-10 bg-gradient-to-r from-green-600 to-emerald-600 rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-gray-900">Mappa delle Webcam</h3>
+            </div>
+            <p class="text-gray-600 mt-2">Clicca sui marker per aprire la webcam corrispondente</p>
+          </div>
+          <div class="h-96" id="webcam-map"></div>
+        </div>
+      </div>
+    </section>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Dati webcam serializzati per JavaScript -->
+  <script type="application/json" id="webcam-data" set:html={JSON.stringify(webcamData)}></script>
+
+  <script>
+    // Funzione per aprire webcam a schermo intero
+    function openWebcam(url) {
+      window.open(url, '_blank', 'width=1200,height=800,scrollbars=yes,resizable=yes');
+    }
+
+    // Inizializza la mappa quando la pagina è caricata
+    document.addEventListener('DOMContentLoaded', function() {
+      // Verifica se Leaflet è disponibile
+      if (typeof L !== 'undefined') {
+        initWebcamMap();
+      } else {
+        // Carica Leaflet dinamicamente
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+        document.head.appendChild(link);
+
+        const script = document.createElement('script');
+        script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+        script.onload = initWebcamMap;
+        document.head.appendChild(script);
+      }
+
+      // Inizializza Street View
+      // initStreetView(); // Disabilitato perché ora usiamo iframe embed
+    });
+
+    function initWebcamMap() {
+      // Ottieni i dati webcam dall'array Astro serializzato
+      const webcamData = JSON.parse(document.getElementById('webcam-data').textContent);
+
+      // Coordinate centro mappa (media delle webcam)
+      const centerLat = (42.557 + 42.556 + 42.576) / 3;
+      const centerLng = (12.995 + 12.994 + 13.003) / 3;
+
+      // Inizializza la mappa
+      const map = L.map('webcam-map').setView([centerLat, centerLng], 13);
+
+      // Aggiungi tile layer
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+      }).addTo(map);
+
+      // Aggiungi marker per ogni webcam usando i dati centralizzati
+      webcamData.forEach((webcam, index) => {
+        // Crea marker personalizzato per Piedelpoggio (rosso) o standard (blu) per le altre
+        let marker;
+        if (webcam.isPiedelpoggio) {
+          // Marker rosso per Piedelpoggio
+          const redIcon = L.divIcon({
+            className: 'custom-marker-red',
+            html: '<div style="background-color: #dc2626; width: 25px; height: 25px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>',
+            iconSize: [25, 25],
+            iconAnchor: [12.5, 12.5]
+          });
+          marker = L.marker([webcam.lat, webcam.lng], { icon: redIcon }).addTo(map);
+        } else {
+          // Marker standard (blu) per le altre webcam
+          marker = L.marker([webcam.lat, webcam.lng]).addTo(map);
+        }
+        
+        const popupContent = `
+          <div class="p-2">
+            <h4 class="font-bold text-gray-900 mb-1">${webcam.title}</h4>
+            <p class="text-gray-600 text-sm mb-2">${webcam.description}</p>
+            <button 
+              onclick="openWebcam('${webcam.url}')"
+              class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm font-medium transition-colors"
+            >
+              Apri Webcam
+            </button>
+          </div>
+        `;
+        
+        marker.bindPopup(popupContent);
+        
+        // Apri popup al click
+        marker.on('click', function() {
+          this.openPopup();
+        });
+      });
+    }
+
+    function initStreetView() {
+      // Carica Google Maps API se non è già caricato
+      if (window.google && window.google.maps) {
+        createStreetView();
+        return;
+      }
+
+      const script = document.createElement('script');
+      script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dO_BcqCGAOtice&libraries=geometry';
+      script.async = true;
+      script.defer = true;
+      script.onload = createStreetView;
+      script.onerror = () => {
+        const container = document.getElementById('street-view-container');
+        if (container) {
+          container.innerHTML = `
+            <div class="flex items-center justify-center h-full">
+              <div class="text-center p-8">
+                <svg class="w-16 h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"/>
+                </svg>
+                <h3 class="text-lg font-semibold text-gray-700 mb-2">Errore nel caricamento</h3>
+                <p class="text-gray-500">Impossibile caricare Google Maps</p>
+              </div>
+            </div>
+          `;
+        }
+      };
+      document.head.appendChild(script);
+    }
+
+    function createStreetView() {
+      const container = document.getElementById('street-view-container');
+      if (!container) return;
+
+      const lat = 42.557; // Coordinate di Piedelpoggio
+      const lng = 12.995;
+
+      try {
+        const streetViewService = new google.maps.StreetViewService();
+        
+        // Verifica se Street View è disponibile nella posizione
+        streetViewService.getPanorama({
+          location: { lat, lng },
+          radius: 1000, // Raggio di ricerca in metri
+          source: google.maps.StreetViewSource.OUTDOOR
+        }, (data, status) => {
+          if (status === google.maps.StreetViewStatus.OK && data) {
+            // Street View disponibile, inizializza il panorama
+            const panorama = new google.maps.StreetViewPanorama(container, {
+              position: data.location?.latLng,
+              pov: {
+                heading: 0,
+                pitch: 0
+              },
+              zoom: 1,
+              addressControl: true,
+              linksControl: true,
+              panControl: true,
+              enableCloseButton: false,
+              fullscreenControl: true,
+              motionTracking: false,
+              motionTrackingControl: false
+            });
+          } else {
+            // Street View non disponibile, mostra messaggio
+            container.innerHTML = `
+              <div class="flex items-center justify-center h-full">
+                <div class="text-center p-8">
+                  <svg class="w-16 h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.29-1.009-5.824-2.562M15 6.306a7.962 7.962 0 00-6 0m6 0V5a2 2 0 00-2-2H9a2 2 0 00-2 2v1.306m6 0V7a2 2 0 012 2v4M9 6.306V7a2 2 0 00-2-2H5a2 2 0 00-2 2v4.294a7.962 7.962 0 002.176 5.468"/>
+                  </svg>
+                  <h3 class="text-lg font-semibold text-gray-700 mb-2">Street View non disponibile</h3>
+                  <p class="text-gray-500">Street View non è disponibile in questa posizione</p>
+                </div>
+              </div>
+            `;
+          }
+        });
+      } catch (err) {
+        container.innerHTML = `
+          <div class="flex items-center justify-center h-full">
+            <div class="text-center p-8">
+              <svg class="w-16 h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"/>
+              </svg>
+              <h3 class="text-lg font-semibold text-gray-700 mb-2">Errore</h3>
+              <p class="text-gray-500">Errore nell'inizializzazione di Street View</p>
+            </div>
+          </div>
+        `;
+        console.error('Street View error:', err);
+      }
+    }
+
+    // Rendi la funzione globale
+    window.openWebcam = openWebcam;
+
+    // CSS per nascondere l'header della webcam Monte di Cambio
+    document.addEventListener('DOMContentLoaded', function() {
+      const style = document.createElement('style');
+      style.textContent = `
+        .monte-cambio-iframe {
+          margin-top: -84% !important;
+          height: 300% !important;
+          overflow: hidden !important;
+        }
+        .monte-cambio-iframe::-webkit-scrollbar {
+          display: none !important;
+        }
+        .monte-cambio-iframe {
+          -ms-overflow-style: none !important;
+          scrollbar-width: none !important;
+        }
+        .aspect-video:has(.monte-cambio-iframe) {
+          overflow: hidden !important;
+        }
+      `;
+      document.head.appendChild(style);
+
+      // Disabilita solo lo scroll nell'iframe mantenendo i click
+      setTimeout(() => {
+        const iframe = document.querySelector('.monte-cambio-iframe');
+        if (iframe) {
+          iframe.style.overflow = 'hidden';
+          iframe.scrolling = 'no';
+          iframe.setAttribute('scrolling', 'no');
+          
+          iframe.addEventListener('load', function() {
+            try {
+              this.contentWindow.document.body.style.overflow = 'hidden';
+              // Disabilita solo le funzioni di scroll, non i click
+              this.contentWindow.scrollTo = function() {};
+              this.contentWindow.scroll = function() {};
+            } catch (e) {
+              // Restrizioni CORS
+            }
+          });
+        }
+      }, 100);
+    });
+  </script>
+</DefaultLayout>

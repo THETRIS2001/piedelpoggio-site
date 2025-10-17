@@ -1,0 +1,5 @@
+# Redirect per pagine non trovate
+/* /404.html 404
+
+# Redirect per compatibilità (se necessario in futuro)
+# /old-page /new-page 301

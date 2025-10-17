@@ -1,0 +1,43 @@
+---
+import { getCollection } from 'astro:content';
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('pages', ({ data }) => data.published);
+  return pages.map((item) => ({
+    params: { slug: item.slug },
+    props: { item },
+  }));
+}
+
+const { item } = Astro.props;
+const { Content } = await item.render();
+---
+
+<DefaultLayout 
+  title={`${item.data.title} - Piedelpoggio`} 
+  description={`${item.data.title} - Informazioni su Piedelpoggio, borgo medievale nel cuore del Lazio`}
+>
+  <article class="container mx-auto px-4 py-8">
+    <!-- Breadcrumb -->
+    <nav class="mb-8">
+      <ol class="flex items-center space-x-2 text-sm text-gray-500">
+        <li><a href="/" class="hover:text-primary-600">Home</a></li>
+        <li>/</li>
+        <li class="text-gray-900">{item.data.title}</li>
+      </ol>
+    </nav>
+
+    <!-- Header della pagina -->
+    <header class="mb-8">
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">
+        {item.data.title}
+      </h1>
+    </header>
+
+    <!-- Contenuto della pagina -->
+    <div class="prose prose-lg max-w-none">
+      <Content />
+    </div>
+  </article>
+</DefaultLayout>

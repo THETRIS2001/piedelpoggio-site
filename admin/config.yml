@@ -1,0 +1,97 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+locale: 'it'
+
+collections:
+  - name: "news"
+    label: "Notizie"
+    folder: "src/content/news"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Riassunto", name: "summary", widget: "text" }
+      - { label: "Pubblicato", name: "published", widget: "boolean", default: true }
+      - { label: "Contenuto", name: "body", widget: "markdown" }
+
+  - name: "events"
+    label: "Eventi"
+    folder: "src/content/events"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Data inizio", name: "startsAt", widget: "datetime" }
+      - { label: "Data fine", name: "endsAt", widget: "datetime" }
+      - label: "Luogo"
+        name: "place"
+        widget: "object"
+        fields:
+          - { label: "Nome", name: "name", widget: "string" }
+          - { label: "Latitudine", name: "lat", widget: "number", value_type: "float" }
+          - { label: "Longitudine", name: "lon", widget: "number", value_type: "float" }
+      - { label: "Pubblicato", name: "published", widget: "boolean", default: true }
+      - { label: "Contenuto", name: "body", widget: "markdown" }
+
+  - name: "poi"
+    label: "Luoghi di Interesse"
+    folder: "src/content/poi"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Categoria", name: "category", widget: "select", options: ["chiesa", "monumento", "natura", "strada", "piazza", "altro"] }
+      - label: "Coordinate"
+        name: "coords"
+        widget: "object"
+        fields:
+          - { label: "Latitudine", name: "lat", widget: "number", value_type: "float" }
+          - { label: "Longitudine", name: "lon", widget: "number", value_type: "float" }
+      - { label: "Pubblicato", name: "published", widget: "boolean", default: true }
+      - { label: "Contenuto", name: "body", widget: "markdown" }
+
+  - name: "businesses"
+    label: "Esercizi Commerciali"
+    folder: "src/content/businesses"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nome", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Categoria", name: "category", widget: "select", options: ["ristorante", "agriturismo", "negozio", "servizio", "altro"] }
+      - label: "Coordinate"
+        name: "coords"
+        widget: "object"
+        fields:
+          - { label: "Latitudine", name: "lat", widget: "number", value_type: "float" }
+          - { label: "Longitudine", name: "lon", widget: "number", value_type: "float" }
+      - label: "Contatti"
+        name: "contact"
+        widget: "object"
+        required: false
+        fields:
+          - { label: "Telefono", name: "phone", widget: "string", required: false }
+          - { label: "Email", name: "email", widget: "string", required: false }
+          - { label: "Sito web", name: "website", widget: "string", required: false }
+      - { label: "Pubblicato", name: "published", widget: "boolean", default: true }
+      - { label: "Contenuto", name: "body", widget: "markdown" }
+
+  - name: "pages"
+    label: "Pagine Statiche"
+    folder: "src/content/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Pubblicato", name: "published", widget: "boolean", default: true }
+      - { label: "Contenuto", name: "body", widget: "markdown" }
