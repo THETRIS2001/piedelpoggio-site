@@ -85,7 +85,7 @@ const dipintiItems = [
 >
   <main class="min-h-screen bg-gradient-to-br from-primary-50/30 via-white to-secondary-50/20">
     <!-- Hero Section -->
-    <section class="relative min-h-[30vh] flex items-center justify-center overflow-hidden pt-16">
+    <section class="relative min-h-[40vh] flex items-center justify-center overflow-hidden pt-16">
       <!-- Background with gradient starting from yellow at top -->
       <div class="absolute inset-0 bg-gradient-to-b from-primary-100 via-primary-50 to-transparent"></div>
       
@@ -120,7 +120,7 @@ const dipintiItems = [
       <div class="max-w-6xl mx-auto">
         <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden collapsible-content">
           <!-- Header cliccabile per Poesie -->
-          <div class="bg-white p-6 cursor-pointer hover:bg-gray-50 transition-all duration-300 collapsible-header border-b border-gray-200" onclick="toggleSection('poesie')">
+          <div class="bg-white p-6 cursor-pointer hover:bg-gray-50 transition-all duration-300 collapsible-header" onclick="toggleSection('poesie')">
             <div class="flex items-center justify-between">
               <div class="flex items-center">
                 <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
@@ -139,14 +139,14 @@ const dipintiItems = [
           </div>
 
           <!-- Contenuto collassabile per Poesie -->
-          <div class="p-6 pb-8 collapsible-body" id="poesie-content" style="display: none;">
+          <div class="p-6 mb-6 collapsible-body" id="poesie-content" style="display: none;">
 
-          <div class="space-y-8">
+          <div class="space-y-6">
             <!-- La Pastoral Siringa -->
             <div class="max-w-6xl mx-auto mb-16">
               <div class="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-xl p-8">
                 <h3 class="text-3xl font-bold text-gray-900 mb-6 text-center">La Pastoral Siringa</h3>
-                <p class="text-lg text-gray-600 mb-8 text-center italic">di Angelo Felice Maccheroni (1803-1888)</p>
+                <p class="text-lg text-gray-600 mb-6 text-center italic">di Angelo Felice Maccheroni (1803-1888)</p>
                 
                 <div class="grid lg:grid-cols-2 gap-8 items-start">
                   <!-- PDF Preview a sinistra -->
@@ -240,7 +240,7 @@ const dipintiItems = [
 
             <!-- Mo' Revengo -->
             <div class="max-w-2xl mx-auto">
-              <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-8">
+              <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-8 mb-16">
               <h3 class="text-2xl font-bold text-gray-900 mb-4">Mo' Revengo</h3>
               <p class="text-sm text-gray-600 mb-6 italic">di Alberto Rauco</p>
               
@@ -312,7 +312,7 @@ const dipintiItems = [
             </div>
 
             <!-- Sezione Antonio Pietrolucci -->
-            <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-6 mb-6">
+            <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-6 mt-12">
               <h3 class="text-2xl font-bold text-gray-900 mb-2">Poesie di Antonio Pietrolucci</h3>
               <p class="text-gray-700">
                 Antonio Pietrolucci è stato un poeta locale che ha dedicato la sua vita 
@@ -750,7 +750,7 @@ const dipintiItems = [
               </div>
 
               <!-- Poesia 9 -->
-              <div class="bg-gradient-to-br from-rose-50 to-pink-50 rounded-xl p-6">
+              <div class="bg-gradient-to-br from-rose-50 to-pink-50 rounded-xl p-6 mb-6">
                 <h4 class="text-xl font-bold text-gray-900 mb-3">Il Sette Aprile 1944</h4>
                 <p class="text-xs text-gray-600 mb-3 italic">(Perchè i giovani sappiano e gli anziani non dimentichino)</p>
                 
@@ -940,7 +940,7 @@ const dipintiItems = [
       <div class="max-w-6xl mx-auto">
         <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden collapsible-content">
           <!-- Header cliccabile per Tradizioni -->
-          <div class="bg-white p-6 cursor-pointer hover:bg-gray-50 transition-all duration-300 collapsible-header border-b border-gray-200" onclick="toggleSection('tradizioni')">
+          <div class="bg-white p-6 cursor-pointer hover:bg-gray-50 transition-all duration-300 collapsible-header" onclick="toggleSection('tradizioni')">
             <div class="flex items-center justify-between">
               <div class="flex items-center">
                 <div class="w-12 h-12 bg-gradient-to-r from-amber-500 to-orange-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
@@ -959,7 +959,7 @@ const dipintiItems = [
           </div>
 
           <!-- Contenuto collassabile per Tradizioni -->
-          <div class="p-6 pb-8 collapsible-body" id="tradizioni-content" style="display: none;">
+          <div class="p-6 pb-6 collapsible-body" id="tradizioni-content" style="display: none;">
 
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <!-- Tradizione 1 -->
@@ -1083,7 +1083,7 @@ const dipintiItems = [
       <div class="max-w-6xl mx-auto">
         <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden collapsible-content">
           <!-- Header cliccabile per Testimonianze -->
-          <div class="bg-white p-6 cursor-pointer hover:bg-gray-50 transition-all duration-300 collapsible-header border-b border-gray-200" onclick="toggleSection('testimonianze')">
+          <div class="bg-white p-6 cursor-pointer hover:bg-gray-50 transition-all duration-300 collapsible-header" onclick="toggleSection('testimonianze')">
             <div class="flex items-center justify-between">
               <div class="flex items-center">
                 <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
@@ -1102,9 +1102,9 @@ const dipintiItems = [
           </div>
 
           <!-- Contenuto collassabile per Testimonianze -->
-          <div class="p-6 pb-8 collapsible-body" id="testimonianze-content" style="display: none;">
+          <div class="p-6 mb-6 collapsible-body" id="testimonianze-content" style="display: none;">
 
-          <div class="space-y-8">
+          <div class="space-y-6">
             <!-- Testimonianza 1 -->
             <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8">
               <div class="flex items-start space-x-4">
@@ -1346,7 +1346,7 @@ const dipintiItems = [
       <div class="max-w-6xl mx-auto">
         <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden collapsible-content">
           <!-- Header cliccabile per Canzoni -->
-          <div class="bg-white p-6 cursor-pointer hover:bg-gray-50 transition-all duration-300 collapsible-header border-b border-gray-200" onclick="toggleSection('canzoni')">
+          <div class="bg-white p-6 cursor-pointer hover:bg-gray-50 transition-all duration-300 collapsible-header ace-y-6"" onclick="toggleSection('canzoni')">
             <div class="flex items-center justify-between">
               <div class="flex items-center">
                 <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
@@ -1365,9 +1365,9 @@ const dipintiItems = [
           </div>
 
           <!-- Contenuto collassabile per Canzoni -->
-          <div class="p-6 pb-8 collapsible-body" id="canzoni-content" style="display: none;">
+          <div class="p-6 mb-6 collapsible-body" id="canzoni-content" style="display: none;">
 
-          <div class="space-y-8">
+          <div class="space-y-6">
             <!-- Canzone 1: NU SIMU VINUTI -->
             <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-8">
               <div class="flex items-start space-x-4">
@@ -1696,16 +1696,20 @@ const dipintiItems = [
     </section>
 
     <!-- Sezione Arte - Dipinti di Fiorella Mincinesi -->
-    <section id="arte" class="py-8 px-4 sm:px-6 lg:px-8">
+    <section id="arte" class="pt-8 pb-16 px-4 sm:px-6 lg:px-8">
       <div class="max-w-6xl mx-auto">
         <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden collapsible-content">
           <!-- Header cliccabile per Arte -->
-          <div class="bg-white p-6 cursor-pointer hover:bg-gray-50 transition-all duration-300 collapsible-header border-b border-gray-200" onclick="toggleSection('arte')">
+          <div class="bg-white p-6 cursor-pointer hover:bg-gray-50 transition-all duration-300 collapsible-header ace-y-6"" onclick="toggleSection('arte')">
             <div class="flex items-center justify-between">
               <div class="flex items-center">
                 <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-rose-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
-                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"/>
+                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M15 8h.01" />
+                    <path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z" />
+                    <path d="M3.5 15.5l4.5 -4.5c.928 -.893 2.072 -.893 3 0l5 5" />
+                    <path d="M14 14l1 -1c.928 -.893 2.072 -.893 3 0l2.5 2.5" />
                   </svg>
                 </div>
                 <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Arte</h2>
@@ -1719,9 +1723,9 @@ const dipintiItems = [
           </div>
 
           <!-- Contenuto collassabile per Arte -->
-          <div class="p-6 pb-8 collapsible-body" id="arte-content" style="display: none;">
+          <div class="p-6 pb-6 collapsible-body" id="arte-content" style="display: none;">
 
-          <div class="mb-8">
+          <div class="mb-6">
             <div class="bg-gradient-to-r from-pink-50 to-rose-50 rounded-xl p-8 mb-6">
               <h3 class="text-2xl font-bold text-gray-900 mb-4">I Dipinti di Fiorella Mincinesi</h3>
               <p class="text-gray-700 leading-relaxed mb-4">
