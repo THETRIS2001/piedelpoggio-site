@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://piedelpoggio-site.pages.dev/sitemap.xml
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /_astro/
+
+# Allow important pages
+Allow: /
+Allow: /notizie/
+Allow: /eventi/
+Allow: /info/
+Allow: /video/
+Allow: /webcam/
+Allow: /suggerisci-idea/
