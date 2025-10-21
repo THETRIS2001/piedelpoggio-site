@@ -1,0 +1,114 @@
+{
+  "bookings": [
+    {
+      "id": "sample1",
+      "date": "2025-01-21",
+      "start": "09:00",
+      "end": "11:00",
+      "title": "Allenamento calcio",
+      "customerName": "Società Sportiva Piedelpoggio",
+      "customerPhone": "0746123456",
+      "customerEmail": "info@piedelpoggio.it",
+      "createdAt": "2025-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "sample2",
+      "date": "2025-01-21",
+      "start": "15:30",
+      "end": "17:00",
+      "title": "Scuola calcio",
+      "customerName": "Società Sportiva Piedelpoggio",
+      "customerPhone": "0746123456",
+      "customerEmail": "info@piedelpoggio.it",
+      "createdAt": "2025-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "sample3",
+      "date": "2025-01-22",
+      "start": "18:00",
+      "end": "20:00",
+      "title": "Partita amichevole",
+      "customerName": "ASD Leonessa",
+      "customerPhone": "0746654321",
+      "customerEmail": "asd.leonessa@email.it",
+      "createdAt": "2025-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "sample4",
+      "date": "2025-01-23",
+      "start": "07:00",
+      "end": "08:30",
+      "title": "Manutenzione campo",
+      "customerName": "Comune di Leonessa",
+      "customerPhone": "0746987654",
+      "customerEmail": "tecnico@comune.leonessa.ri.it",
+      "createdAt": "2025-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "sample5",
+      "date": "2025-01-23",
+      "start": "10:00",
+      "end": "12:00",
+      "title": "Allenamento volley",
+      "customerName": "Pallavolo Leonessa",
+      "customerPhone": "0746456789",
+      "customerEmail": "volley.leonessa@gmail.com",
+      "createdAt": "2025-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "sample6",
+      "date": "2025-01-24",
+      "start": "16:00",
+      "end": "19:30",
+      "title": "Torneo giovanile",
+      "customerName": "Federazione Calcio Rieti",
+      "customerPhone": "0746111222",
+      "customerEmail": "tornei@figc-rieti.it",
+      "createdAt": "2025-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "sample7",
+      "date": "2025-01-25",
+      "start": "08:00",
+      "end": "10:00",
+      "title": "Preparazione gara",
+      "customerName": "Società Sportiva Piedelpoggio",
+      "customerPhone": "0746123456",
+      "customerEmail": "info@piedelpoggio.it",
+      "createdAt": "2025-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "sample8",
+      "date": "2025-01-25",
+      "start": "14:00",
+      "end": "16:00",
+      "title": "Allenamento",
+      "customerName": "ASD Leonessa",
+      "customerPhone": "0746654321",
+      "customerEmail": "asd.leonessa@email.it",
+      "createdAt": "2025-01-15T10:00:00.000Z"
+    },
+    {
+      "id": "mh0exbt3c9aziypjeuw",
+      "date": "2025-10-21",
+      "start": "20:00",
+      "end": "21:30",
+      "title": "",
+      "customerName": "Marco Risa",
+      "customerPhone": "3775353406",
+      "customerEmail": "clamafloro@gmail.com",
+      "createdAt": "2025-10-21T10:19:39.399Z"
+    },
+    {
+      "id": "mh0eyogrv6swpawwwba",
+      "date": "2025-10-21",
+      "start": "18:00",
+      "end": "20:00",
+      "title": "",
+      "customerName": "Claudia Risa",
+      "customerPhone": "3775353406",
+      "customerEmail": "clamafloro@gmail.com",
+      "createdAt": "2025-10-21T10:20:42.459Z"
+    }
+  ]
+}

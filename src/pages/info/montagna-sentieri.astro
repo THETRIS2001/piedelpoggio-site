@@ -42,7 +42,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
       <div class="max-w-6xl mx-auto">
         <!-- Sentieri da Piedelpoggio -->
         <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden mb-16 collapsible-content">
-          <div class="bg-white p-6 cursor-pointer hover:bg-gray-50 transition-all duration-300 collapsible-header border-b border-gray-200" onclick="toggleContent(this)">
+          <div class="bg-white p-6 cursor-pointer hover:bg-gray-50 transition-all duration-300 collapsible-header" onclick="toggleContent(this)">
             <div class="flex items-center justify-between">
               <div class="flex items-center">
                 <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
@@ -687,7 +687,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
 
         <!-- Rete Sentieristica -->
         <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden mb-16 collapsible-content">
-          <div class="bg-white p-6 cursor-pointer hover:bg-gray-50 transition-all duration-300 collapsible-header border-b border-gray-200" onclick="toggleContent(this)">
+          <div class="bg-white p-6 cursor-pointer hover:bg-gray-50 transition-all duration-300 collapsible-header" onclick="toggleContent(this)">
             <div class="flex items-center justify-between">
               <div class="flex items-center">
                 <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
@@ -1705,7 +1705,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
             <!-- Street View Locations -->
             <div class="mb-8">
               <!-- Tab Navigation -->
-              <div class="flex gap-2 mb-6 border-b border-gray-200">
+              <div class="flex gap-2 mb-6">
                 <button onclick="showStreetView('piedelpoggio')" id="tab-sv-piedelpoggio" class="px-4 py-2 font-medium text-red-600 border-b-2 border-red-600 bg-red-50 rounded-t-lg">
                   Piedelpoggio
                 </button>
@@ -1778,7 +1778,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
             <!-- Mappe Tecniche -->
             <div class="mb-8">
               <!-- Tab Navigation -->
-              <div class="flex flex-wrap border-b border-gray-200 mb-6 gap-1">
+              <div class="flex flex-wrap mb-6 gap-1">
                 <button id="tab-opentopomap" onclick="showMap('opentopomap')" class="px-3 py-2 text-sm font-medium text-orange-600 border-b-2 border-orange-600 bg-orange-50 rounded-t-lg">
                   OpenTopoMap
                 </button>
@@ -2158,6 +2158,8 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
           default:
             activeTab.className = 'px-3 py-2 text-sm font-medium text-gray-600 border-b-2 border-gray-600 bg-gray-50 rounded-t-lg';
         }
+        // Rimuovi il focus dal pulsante
+        activeTab.blur();
       }
     }
 
@@ -2185,6 +2187,8 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
       const activeTab = document.getElementById('tab-sv-' + location);
       if (activeTab) {
         activeTab.className = 'px-4 py-2 font-medium text-red-600 border-b-2 border-red-600 bg-red-50 rounded-t-lg';
+        // Rimuovi il focus dal pulsante
+        activeTab.blur();
       }
     }
   </script>

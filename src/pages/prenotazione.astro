@@ -1,0 +1,51 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro';
+import BookingCalendar from '../components/BookingCalendar.tsx';
+---
+
+<DefaultLayout title="Prenotazione - Piedelpoggio" description="Prenotazione Campo Sportivo: calendario disponibilità e fasce orarie.">
+  <main class="min-h-screen bg-white">
+    <!-- Hero Section -->
+    <section class="relative min-h-[40vh] flex items-center justify-center overflow-hidden pt-16">
+      <!-- Background with gradient -->
+      <div class="absolute inset-0 bg-gradient-to-b from-green-100/60 via-green-50/40 to-transparent"></div>
+      
+      <!-- Decorative elements -->
+      <div class="absolute top-10 left-10 w-32 h-32 bg-green-200/30 rounded-full blur-2xl animate-float"></div>
+      <div class="absolute bottom-10 right-10 w-40 h-40 bg-green-200/30 rounded-full blur-2xl animate-float" style="animation-delay: -3s;"></div>
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-green-100/20 to-green-100/20 rounded-full blur-3xl"></div>
+      
+      <div class="relative z-10 container mx-auto px-4 text-center">
+        <div class="animate-fade-in">
+          <div class="flex items-center justify-center mb-8">
+            <div class="w-20 h-20 rounded-2xl flex items-center justify-center shadow-xl mr-6" style="background: linear-gradient(135deg, #10B981, #059669);">
+              <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              <span style="background: linear-gradient(135deg, #10B981, #059669, #10B981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                PRENOTAZIONE CAMPO
+              </span>
+            </h1>
+          </div>
+          <div class="w-32 h-1.5 rounded-full mx-auto mb-8" style="background: linear-gradient(90deg, #10B981, #059669, #10B981);"></div>
+          <p class="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-medium">
+            Seleziona un giorno e una fascia oraria per prenotare il campo sportivo
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main content: booking calendar -->
+    <section class="pt-16 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto">
+        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
+          <div class="p-8 md:p-12">
+            <BookingCalendar client:load />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</DefaultLayout>

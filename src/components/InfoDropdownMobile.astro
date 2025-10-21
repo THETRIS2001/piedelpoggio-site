@@ -22,7 +22,7 @@
   </button>
 
   <!-- Collapsible Menu -->
-  <div class="mobile-info-menu max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
+  <div class="mobile-info-menu max-h-0 overflow-hidden transition-all duration-300 ease-in-out mobile-scroll-container">
     <div class="pl-8 pr-4 pb-2 space-y-1">
       <!-- Storia e Testimonianze -->
       <div class="py-2">
@@ -97,6 +97,13 @@
             </svg>
             <span>Webcam Live</span>
           </a>
+          <a href="/province" class="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-all duration-300 text-sm">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            <span>Province Vicine</span>
+          </a>
 
           <a href="/info/montagna-sentieri" class="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-all duration-300 text-sm">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -116,6 +123,40 @@
   </div>
 </div>
 
+<style>
+  /* Stili personalizzati per il menu mobile scrollabile */
+  .mobile-scroll-container {
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(59, 130, 246, 0.5) rgba(243, 244, 246, 0.3);
+  }
+
+  .mobile-scroll-container::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .mobile-scroll-container::-webkit-scrollbar-track {
+    background: rgba(243, 244, 246, 0.3);
+    border-radius: 3px;
+  }
+
+  .mobile-scroll-container::-webkit-scrollbar-thumb {
+    background: rgba(59, 130, 246, 0.5);
+    border-radius: 3px;
+  }
+
+  .mobile-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(59, 130, 246, 0.7);
+  }
+
+  /* Assicura che il menu sia scrollabile quando aperto */
+  .mobile-info-menu.open {
+    max-height: 60vh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+</style>
+
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const trigger = document.querySelector('.mobile-info-trigger');
@@ -131,11 +172,23 @@
       trigger.setAttribute('aria-expanded', isOpen.toString());
       
       if (isOpen) {
-        menu.style.maxHeight = menu.scrollHeight + 'px';
+        // Calcola l'altezza massima disponibile (60% della viewport)
+        const maxHeight = Math.min(menu.scrollHeight, window.innerHeight * 0.6);
+        menu.style.maxHeight = maxHeight + 'px';
+        menu.classList.add('open');
         arrow.style.transform = 'rotate(180deg)';
+        
+        // Forza il reflow per assicurare che lo scroll funzioni
+        setTimeout(() => {
+          menu.style.overflowY = 'auto';
+          menu.style.overflowX = 'hidden';
+        }, 50);
       } else {
         menu.style.maxHeight = '0px';
+        menu.classList.remove('open');
         arrow.style.transform = 'rotate(0deg)';
+        menu.style.overflowY = 'hidden';
+        menu.style.overflowX = 'hidden';
       }
     };
 
@@ -146,6 +199,20 @@
       toggleDropdown();
     });
 
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (isOpen && !trigger.contains(e.target) && !menu.contains(e.target)) {
+        toggleDropdown();
+      }
+    });
+
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && isOpen) {
+        toggleDropdown();
+      }
+    });
+
     // Close dropdown when clicking on menu items
     const menuLinks = menu.querySelectorAll('a');
     menuLinks.forEach(link => {
@@ -154,6 +221,43 @@
           toggleDropdown();
         }
       });
+    });
+
+    // Migliora l'accessibilità per la navigazione da tastiera
+    trigger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleDropdown();
+      }
+    });
+
+    // Gestisce il focus per l'accessibilità
+    menu.addEventListener('keydown', (e) => {
+      const focusableElements = menu.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])');
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (e.key === 'Tab') {
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement.focus();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement.focus();
+          }
+        }
+      }
+    });
+
+    // Gestisce il ridimensionamento della finestra
+    window.addEventListener('resize', () => {
+      if (isOpen) {
+        const maxHeight = Math.min(menu.scrollHeight, window.innerHeight * 0.6);
+        menu.style.maxHeight = maxHeight + 'px';
+      }
     });
   });
 </script>
