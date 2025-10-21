@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import { formatDate, removeSecondsFromTime } from '../utils/date';
 
 type Booking = {
   id: string;
@@ -6,16 +7,15 @@ type Booking = {
   start: string; // HH:mm
   end: string;   // HH:mm
   title?: string;
-  customerName: string;
-  customerPhone: string;
-  customerEmail?: string;
-  createdAt: string;
+  customer_name: string;
+  customer_phone: string;
+  customer_email?: string;
+  created_at: string;
 };
 
 type BookingFormData = {
   customerName: string;
   customerPhone: string;
-  customerEmail: string;
   title: string;
 };
 
@@ -29,6 +29,7 @@ function toDateKey(d: Date) {
 }
 
 function minutesFromTime(t: string) {
+  if (!t) return 0; // Handle empty string
   const [hh, mm] = t.split(':').map(Number);
   return hh * 60 + mm;
 }
@@ -39,7 +40,7 @@ function rangesOverlap(aStart: number, aEnd: number, bStart: number, bEnd: numbe
 
 const WORK_START = 7 * 60; // 07:00
 const WORK_END = 24 * 60;  // 24:00 (mezzanotte)
-const STEP = 30; // 30 minuti
+const STEP = 60; // 60 minuti (solo ore intere)
 
 const generateSlots = () => {
   const slots: string[] = [];
@@ -84,15 +85,17 @@ const BookingCalendar: React.FC = () => {
   const [visibleYear, setVisibleYear] = useState(now.getFullYear());
   const [selectedDate, setSelectedDate] = useState<string>(toDateKey(now));
   const [bookings, setBookings] = useState<Booking[]>([]);
-  const [startTime, setStartTime] = useState<string>('09:00');
-  const [endTime, setEndTime] = useState<string>('11:00');
+  const [startTime, setStartTime] = useState<string>('');
+  const [endTime, setEndTime] = useState<string>('');
   const [showBookingForm, setShowBookingForm] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+  const [showCancelDialog, setShowCancelDialog] = useState<{ bookingId: string; booking: Booking } | null>(null);
+  const [cancelPhone, setCancelPhone] = useState('');
+  const [cancelError, setCancelError] = useState<string>('');
   const [formData, setFormData] = useState<BookingFormData>({
     customerName: '',
     customerPhone: '',
-    customerEmail: '',
     title: ''
   });
 
@@ -161,6 +164,9 @@ const BookingCalendar: React.FC = () => {
   };
 
   const canBookSlot = () => {
+    // Check if both times are selected
+    if (!startTime || !endTime) return false;
+    
     const selectedDateObj = new Date(selectedDate);
     const today = new Date();
     today.setHours(0, 0, 0, 0);
@@ -184,6 +190,13 @@ const BookingCalendar: React.FC = () => {
       return;
     }
 
+    // Validazione numero di telefono (formato italiano)
+    const phoneRegex = /^(\+39\s?)?((3[0-9]{2}|32[0-9]|33[0-9]|34[0-9]|36[0-9]|37[0-9]|38[0-9]|39[0-9])\s?\d{6,7}|0[1-9]\d{1,3}\s?\d{6,8})$/;
+    if (!phoneRegex.test(formData.customerPhone.trim())) {
+      showMessage('error', 'Inserisci un numero di telefono valido (es: 3331234567 o 0612345678)');
+      return;
+    }
+
     setIsLoading(true);
     try {
       const response = await fetch('/api/bookings', {
@@ -198,7 +211,6 @@ const BookingCalendar: React.FC = () => {
           title: formData.title.trim(),
           customerName: formData.customerName.trim(),
           customerPhone: formData.customerPhone.trim(),
-          customerEmail: formData.customerEmail.trim(),
         }),
       });
 
@@ -207,7 +219,7 @@ const BookingCalendar: React.FC = () => {
       if (response.ok) {
         showMessage('success', 'Prenotazione creata con successo!');
         setShowBookingForm(false);
-        setFormData({ customerName: '', customerPhone: '', customerEmail: '', title: '' });
+        setFormData({ customerName: '', customerPhone: '', title: '' });
         await loadBookings(); // Ricarica le prenotazioni
       } else {
         showMessage('error', result.error || 'Errore nella creazione della prenotazione');
@@ -220,11 +232,42 @@ const BookingCalendar: React.FC = () => {
   };
 
   const handleCancelBooking = async (bookingId: string) => {
-    if (!confirm('Sei sicuro di voler cancellare questa prenotazione?')) return;
+    const booking = bookings.find(b => b.id === bookingId);
+    if (!booking) return;
+    
+    setShowCancelDialog({ bookingId, booking });
+    setCancelPhone('');
+    setCancelError('');
+  };
+
+  const confirmCancelBooking = async () => {
+    if (!showCancelDialog) return;
+
+    // Reset error
+    setCancelError('');
+
+    // Validazione campo vuoto
+    if (!cancelPhone.trim()) {
+      setCancelError('Inserisci il numero di telefono');
+      return;
+    }
+
+    // Validazione formato numero di telefono
+    const phoneRegex = /^(\+39\s?)?((3[0-9]{2}|32[0-9]|33[0-9]|34[0-9]|36[0-9]|37[0-9]|38[0-9]|39[0-9])\s?\d{6,7}|0[1-9]\d{1,3}\s?\d{6,8})$/;
+    if (!phoneRegex.test(cancelPhone.trim())) {
+      setCancelError('Formato numero di telefono non valido (es: 3331234567 o 0612345678)');
+      return;
+    }
+
+    // Verifica che il telefono corrisponda a quello della prenotazione
+    if (cancelPhone.trim() !== showCancelDialog.booking.customer_phone) {
+      setCancelError('NUMERO SBAGLIATO: Il telefono inserito non corrisponde a quello della prenotazione');
+      return;
+    }
 
     setIsLoading(true);
     try {
-      const response = await fetch(`/api/bookings?id=${bookingId}`, {
+      const response = await fetch(`/api/bookings?id=${showCancelDialog.bookingId}`, {
         method: 'DELETE',
       });
 
@@ -232,12 +275,15 @@ const BookingCalendar: React.FC = () => {
 
       if (response.ok) {
         showMessage('success', 'Prenotazione cancellata con successo!');
+        setShowCancelDialog(null);
+        setCancelPhone('');
+        setCancelError('');
         await loadBookings(); // Ricarica le prenotazioni
       } else {
-        showMessage('error', result.error || 'Errore nella cancellazione della prenotazione');
+        setCancelError(result.error || 'Errore nella cancellazione della prenotazione');
       }
     } catch (error) {
-      showMessage('error', 'Errore di connessione');
+      setCancelError('Errore di connessione');
     } finally {
       setIsLoading(false);
     }
@@ -262,7 +308,7 @@ const BookingCalendar: React.FC = () => {
 
   // Assicurare che fine sia sempre dopo inizio
   useEffect(() => {
-    if (minutesFromTime(endTime) <= minutesFromTime(startTime)) {
+    if (startTime && endTime && minutesFromTime(endTime) <= minutesFromTime(startTime)) {
       const next = minutesFromTime(startTime) + STEP;
       const hh = String(Math.floor(next / 60)).padStart(2, '0');
       const mm = String(next % 60).padStart(2, '0');
@@ -317,40 +363,50 @@ const BookingCalendar: React.FC = () => {
                   className={`h-24 w-full rounded-xl border transition-all duration-200 text-left p-2 focus:outline-none ${
                     isPastDay 
                       ? 'border-gray-300 bg-gray-100 cursor-not-allowed opacity-60' 
-                      : isSelected 
-                        ? 'border-primary-300 bg-primary-50 focus:ring-2 focus:ring-primary-500' 
-                        : 'border-gray-200 bg-white hover:bg-gray-50 focus:ring-2 focus:ring-primary-500'
+                      : count > 0
+                        ? isSelected
+                          ? 'border-red-300 bg-red-100 focus:ring-2 focus:ring-red-500'
+                          : 'border-red-200 bg-red-50 hover:bg-red-100 focus:ring-2 focus:ring-red-500'
+                        : isSelected 
+                          ? 'border-primary-300 bg-primary-50 focus:ring-2 focus:ring-primary-500' 
+                          : 'border-gray-200 bg-white hover:bg-gray-50 focus:ring-2 focus:ring-primary-500'
                   } ${isToday && !isPastDay ? 'shadow-inner' : ''}`}
                 >
-                  <div className="flex items-center justify-between">
-                    <span className={`text-sm font-semibold ${isPastDay ? 'text-gray-400' : 'text-gray-800'}`}>
-                      {day.getDate()}
-                    </span>
-                    {count > 0 && (
-                      <span className={`text-[11px] px-2 py-0.5 rounded-full border ${
-                        isPastDay 
-                          ? 'bg-gray-200 text-gray-500 border-gray-300' 
-                          : 'bg-rose-100 text-rose-700 border-rose-200'
-                      }`}>
-                        {count} occupato
+                  <div className="flex flex-col h-full">
+                    <div className="flex items-start justify-between mb-1">
+                      <span className={`text-sm font-semibold ${isPastDay ? 'text-gray-400' : 'text-gray-800'}`}>
+                        {day.getDate()}
                       </span>
-                    )}
-                  </div>
-                  <div className="mt-2 space-y-1">
-                    {(bookingsByDate.get(key) || []).slice(0,2).map((b, idx) => (
-                      <div key={idx} className={`text-[11px] px-2 py-1 rounded-md ${
-                        isPastDay 
-                          ? 'bg-gray-200 text-gray-500' 
-                          : 'bg-gray-100 text-gray-700'
-                      }`}>
-                        {b.start}–{b.end} {b.title ? `· ${b.title}` : ''}
-                      </div>
-                    ))}
-                    {(count > 2) && (
-                      <div className={`text-[11px] ${isPastDay ? 'text-gray-400' : 'text-gray-500'}`}>
-                        + {count - 2}
-                      </div>
-                    )}
+                      {count > 0 && (
+                        <span className={`text-[10px] px-1.5 py-0.5 rounded-full border font-medium ${
+                          isPastDay 
+                            ? 'bg-gray-200 text-gray-500 border-gray-300' 
+                            : 'bg-red-200 text-red-800 border-red-300'
+                        }`}>
+                          {count}
+                        </span>
+                      )}
+                    </div>
+                    <div className="flex-1 space-y-0.5">
+                      {(bookingsByDate.get(key) || []).slice(0,1).map((b, idx) => (
+                        <div key={idx} className={`text-[10px] px-1.5 py-0.5 rounded ${
+                          isPastDay 
+                            ? 'bg-gray-200 text-gray-500' 
+                            : 'bg-red-200 text-red-800'
+                        } truncate`}>
+                          {removeSecondsFromTime(b.start)}–{removeSecondsFromTime(b.end)}
+                        </div>
+                      ))}
+                      {(count > 1) && (
+                        <div className={`text-[10px] px-1.5 py-0.5 rounded ${
+                          isPastDay 
+                            ? 'bg-gray-200 text-gray-500' 
+                            : 'bg-red-200 text-red-800'
+                        }`}>
+                          +{count - 1} altr{count > 2 ? 'e' : 'o'}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </button>
                );
@@ -373,15 +429,17 @@ const BookingCalendar: React.FC = () => {
                 <div>
                   <label htmlFor="start" className="text-xs text-gray-600">Ora inizio</label>
                   <select id="start" value={startTime} onChange={(e) => setStartTime(e.target.value)} className="mt-1 w-full px-3 py-2 bg-white rounded-lg border border-gray-200 text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                    <option value="">Seleziona ora inizio</option>
                     {slots.map(s => <option key={s} value={s}>{s}</option>)}
                   </select>
                 </div>
                 <div>
                   <label htmlFor="end" className="text-xs text-gray-600">Ora fine</label>
                   <select id="end" value={endTime} onChange={(e) => setEndTime(e.target.value)} className="mt-1 w-full px-3 py-2 bg-white rounded-lg border border-gray-200 text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                    <option value="">Seleziona ora fine</option>
                     {slots.map((s, i) => {
                       // mostriamo solo slot dopo start
-                      if (minutesFromTime(s) <= minutesFromTime(startTime)) return null;
+                      if (!startTime || minutesFromTime(s) <= minutesFromTime(startTime)) return null;
                       return <option key={s} value={s}>{s}</option>;
                     })}
                   </select>
@@ -400,7 +458,7 @@ const BookingCalendar: React.FC = () => {
                   </button>
                 ) : (
                   <div className="w-full px-4 py-2 bg-gray-200 text-gray-600 rounded-lg text-center">
-                    Slot non disponibile
+                    {!startTime || !endTime ? 'Seleziona orario di inizio e fine' : 'Slot non disponibile'}
                   </div>
                 )}
               </div>
@@ -443,8 +501,8 @@ const BookingCalendar: React.FC = () => {
                 {occupiedForDate.map((b, i) => (
                   <li key={i} className="px-3 py-2 bg-white rounded-lg border border-gray-200 text-sm text-gray-800 flex items-center justify-between">
                     <div>
-                      <div className="font-medium">{b.start}–{b.end} {b.title ? `· ${b.title}` : ''}</div>
-                      <div className="text-xs text-gray-600">{b.customerName}</div>
+                      <div className="font-medium">{removeSecondsFromTime(b.start)}–{removeSecondsFromTime(b.end)} {b.title ? `· ${b.title}` : ''}</div>
+                      <div className="text-xs text-gray-600">{b.customer_name}</div>
                     </div>
                     <div className="flex items-center gap-2">
                       <span className="text-xs px-2 py-0.5 rounded-md bg-rose-100 text-rose-700 border border-rose-200">occupato</span>
@@ -491,16 +549,6 @@ const BookingCalendar: React.FC = () => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                <input
-                  type="email"
-                  value={formData.customerEmail}
-                  onChange={(e) => setFormData({ ...formData, customerEmail: e.target.value })}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                  placeholder="La tua email (opzionale)"
-                />
-              </div>
-              <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Descrizione</label>
                 <input
                   type="text"
@@ -514,7 +562,7 @@ const BookingCalendar: React.FC = () => {
                 <div className="text-sm text-gray-600">
                   <strong>Riepilogo:</strong><br />
                   Data: {selectedDate}<br />
-                  Orario: {startTime} - {endTime}
+                  Orario: {removeSecondsFromTime(startTime)} - {removeSecondsFromTime(endTime)}
                 </div>
               </div>
             </div>
@@ -531,6 +579,68 @@ const BookingCalendar: React.FC = () => {
                 className="flex-1 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isLoading ? 'Prenotando...' : 'Conferma prenotazione'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Dialog di cancellazione con autenticazione telefono */}
+      {showCancelDialog && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 w-full max-w-md mx-4">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              Conferma cancellazione
+            </h3>
+            <div className="mb-4">
+              <p className="text-sm text-gray-600 mb-2">
+                Stai per cancellare la prenotazione di <strong>{showCancelDialog.booking.customer_name}</strong>
+              </p>
+              <p className="text-sm text-gray-600 mb-4">
+                Data: {showCancelDialog.booking.date}<br />
+                Orario: {removeSecondsFromTime(showCancelDialog.booking.start)} - {removeSecondsFromTime(showCancelDialog.booking.end)}
+              </p>
+              <p className="text-sm text-gray-700 mb-2">
+                Per confermare la cancellazione, inserisci il numero di telefono utilizzato per la prenotazione:
+              </p>
+              <input
+                type="tel"
+                value={cancelPhone}
+                onChange={(e) => {
+                  setCancelPhone(e.target.value);
+                  setCancelError(''); // Clear error when user types
+                }}
+                className={`w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 ${
+                  cancelError 
+                    ? 'border-red-300 focus:ring-red-500' 
+                    : 'border-gray-300 focus:ring-red-500'
+                }`}
+                placeholder="Numero di telefono"
+                autoFocus
+              />
+              {cancelError && (
+                <div className="mt-2 p-2 bg-red-50 border border-red-200 rounded text-sm text-red-700">
+                  {cancelError}
+                </div>
+              )}
+            </div>
+            <div className="flex gap-3">
+              <button
+                onClick={() => {
+                  setShowCancelDialog(null);
+                  setCancelPhone('');
+                  setCancelError('');
+                }}
+                className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500"
+              >
+                Annulla
+              </button>
+              <button
+                onClick={confirmCancelBooking}
+                disabled={isLoading || !cancelPhone.trim()}
+                className="flex-1 px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isLoading ? 'Cancellando...' : 'Conferma cancellazione'}
               </button>
             </div>
           </div>

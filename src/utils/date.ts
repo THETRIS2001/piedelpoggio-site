@@ -45,6 +45,18 @@ export function formatTime(date: Date, locale: string = 'it-IT'): string {
   }).format(date);
 }
 
+export function removeSecondsFromTime(timeString: string): string {
+  // Rimuove i secondi da una stringa di tempo nel formato HH:MM:SS
+  // Restituisce HH:MM
+  if (timeString && timeString.includes(':')) {
+    const parts = timeString.split(':');
+    if (parts.length >= 2) {
+      return `${parts[0]}:${parts[1]}`;
+    }
+  }
+  return timeString;
+}
+
 export function sortByDate<T extends { date?: Date; startsAt?: Date }>(
   items: T[],
   order: 'asc' | 'desc' = 'desc'
