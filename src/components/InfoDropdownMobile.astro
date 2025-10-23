@@ -21,26 +21,26 @@
     </svg>
   </button>
 
-  <!-- Collapsible Menu -->
-  <div class="mobile-info-menu max-h-0 overflow-hidden transition-all duration-300 ease-in-out mobile-scroll-container">
-    <div class="pl-8 pr-4 pb-2 space-y-1">
+  <!-- Dropdown Menu -->
+  <div class="mobile-dropdown-container" style="display: none;">
+    <div class="mobile-dropdown-content">
       <!-- Storia e Testimonianze -->
-      <div class="py-2">
-        <h4 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Storia e Testimonianze</h4>
-        <div class="space-y-1">
-          <a href="/info/storia" class="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-all duration-300 text-sm">
+      <div class="menu-section">
+        <h4 class="section-title">Storia e Testimonianze</h4>
+        <div class="menu-links">
+          <a href="/info/storia" class="menu-link">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
             </svg>
             <span>La Storia</span>
           </a>
-          <a href="/info/terremoto-1703" class="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-all duration-300 text-sm">
+          <a href="/info/terremoto-1703" class="menu-link">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
             </svg>
             <span>Terremoto 1703</span>
           </a>
-          <a href="/info/poesie-canzoni" class="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-all duration-300 text-sm">
+          <a href="/info/poesie-canzoni" class="menu-link">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
             </svg>
@@ -50,29 +50,29 @@
       </div>
 
       <!-- Documenti Ufficiali -->
-      <div class="py-2">
-        <h4 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Documenti Ufficiali</h4>
-        <div class="space-y-1">
-          <a href="/info/statuto" class="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-all duration-300 text-sm">
+      <div class="menu-section">
+        <h4 class="section-title">Documenti Ufficiali</h4>
+        <div class="menu-links">
+          <a href="/info/statuto" class="menu-link">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
             </svg>
             <span>Statuto</span>
           </a>
-          <a href="/info/bilancio" class="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-all duration-300 text-sm">
+          <a href="/info/bilancio" class="menu-link">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
             </svg>
             <span>Bilancio</span>
           </a>
-          <a href="/info/universita-agraria" class="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-all duration-300 text-sm">
+          <a href="/info/universita-agraria" class="menu-link">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
             </svg>
             <span>Università Agraria</span>
           </a>
-          <a href="/info/parrocchia" class="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-all duration-300 text-sm">
+          <a href="/info/parrocchia" class="menu-link">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
             </svg>
@@ -82,36 +82,35 @@
       </div>
 
       <!-- Multimedia e Territorio -->
-      <div class="py-2">
-        <h4 class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Multimedia e Territorio</h4>
-        <div class="space-y-1">
-          <a href="/info/video" class="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-all duration-300 text-sm">
+      <div class="menu-section">
+        <h4 class="section-title">Multimedia e Territorio</h4>
+        <div class="menu-links">
+          <a href="/info/video" class="menu-link">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
             </svg>
             <span>Video</span>
           </a>
-          <a href="/info/webcam" class="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-all duration-300 text-sm">
+          <a href="/info/webcam" class="menu-link">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
             </svg>
             <span>Webcam Live</span>
           </a>
-          <a href="/province" class="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-all duration-300 text-sm">
+          <a href="/province" class="menu-link">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
             </svg>
             <span>Province Vicine</span>
           </a>
-
-          <a href="/info/montagna-sentieri" class="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-all duration-300 text-sm">
+          <a href="/info/montagna-sentieri" class="menu-link">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
             </svg>
             <span>Montagna, Sentieri e Informazioni</span>
           </a>
-          <a href="/info/tutela-ambiente" class="flex items-center space-x-2 px-3 py-2 rounded-lg text-gray-600 hover:text-primary-600 hover:bg-primary-50 transition-all duration-300 text-sm">
+          <a href="/info/tutela-ambiente" class="menu-link">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
@@ -124,139 +123,123 @@
 </div>
 
 <style>
-  /* Stili personalizzati per il menu mobile scrollabile */
-  .mobile-scroll-container {
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(59, 130, 246, 0.5) rgba(243, 244, 246, 0.3);
+  .mobile-dropdown-container {
+    position: relative;
+    margin-top: 8px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(229, 231, 235, 0.8);
+    height: 400px;
+    overflow: hidden;
   }
 
-  .mobile-scroll-container::-webkit-scrollbar {
+  .mobile-dropdown-content {
+    height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding: 16px 16px 16px 16px;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+
+  .menu-section {
+    margin-bottom: 24px;
+  }
+
+  .menu-section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0px;
+  }
+
+  .section-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #9CA3AF;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+    padding-left: 12px;
+  }
+
+  .menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .menu-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    color: #4B5563;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+
+  .menu-link:hover {
+    background-color: #EFF6FF;
+    color: #2563EB;
+  }
+
+  .menu-link svg {
+    flex-shrink: 0;
+  }
+
+  /* Scrollbar personalizzata */
+  .mobile-dropdown-content::-webkit-scrollbar {
     width: 6px;
   }
 
-  .mobile-scroll-container::-webkit-scrollbar-track {
-    background: rgba(243, 244, 246, 0.3);
+  .mobile-dropdown-content::-webkit-scrollbar-track {
+    background: #F3F4F6;
     border-radius: 3px;
   }
 
-  .mobile-scroll-container::-webkit-scrollbar-thumb {
-    background: rgba(59, 130, 246, 0.5);
+  .mobile-dropdown-content::-webkit-scrollbar-thumb {
+    background: #D1D5DB;
     border-radius: 3px;
   }
 
-  .mobile-scroll-container::-webkit-scrollbar-thumb:hover {
-    background: rgba(59, 130, 246, 0.7);
-  }
-
-  /* Assicura che il menu sia scrollabile quando aperto */
-  .mobile-info-menu.open {
-    max-height: 60vh !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
+  .mobile-dropdown-content::-webkit-scrollbar-thumb:hover {
+    background: #9CA3AF;
   }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const trigger = document.querySelector('.mobile-info-trigger');
-    const menu = document.querySelector('.mobile-info-menu');
+    const button = document.querySelector('.mobile-info-trigger');
+    const dropdown = document.querySelector('.mobile-dropdown-container');
     const arrow = document.querySelector('.mobile-info-arrow');
     let isOpen = false;
 
-    if (!trigger || !menu || !arrow) return;
+    if (!button || !dropdown || !arrow) return;
 
-    // Toggle dropdown
-    const toggleDropdown = () => {
+    button.addEventListener('click', (e) => {
+      e.preventDefault();
       isOpen = !isOpen;
-      trigger.setAttribute('aria-expanded', isOpen.toString());
       
       if (isOpen) {
-        // Calcola l'altezza massima disponibile (60% della viewport)
-        const maxHeight = Math.min(menu.scrollHeight, window.innerHeight * 0.6);
-        menu.style.maxHeight = maxHeight + 'px';
-        menu.classList.add('open');
+        dropdown.style.display = 'block';
         arrow.style.transform = 'rotate(180deg)';
-        
-        // Forza il reflow per assicurare che lo scroll funzioni
-        setTimeout(() => {
-          menu.style.overflowY = 'auto';
-          menu.style.overflowX = 'hidden';
-        }, 50);
+        button.setAttribute('aria-expanded', 'true');
       } else {
-        menu.style.maxHeight = '0px';
-        menu.classList.remove('open');
+        dropdown.style.display = 'none';
         arrow.style.transform = 'rotate(0deg)';
-        menu.style.overflowY = 'hidden';
-        menu.style.overflowX = 'hidden';
+        button.setAttribute('aria-expanded', 'false');
       }
-    };
-
-    // Click on trigger
-    trigger.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      toggleDropdown();
     });
 
-    // Close on outside click
+    // Chiudi quando si clicca fuori
     document.addEventListener('click', (e) => {
-      if (isOpen && !trigger.contains(e.target) && !menu.contains(e.target)) {
-        toggleDropdown();
-      }
-    });
-
-    // Close on escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && isOpen) {
-        toggleDropdown();
-      }
-    });
-
-    // Close dropdown when clicking on menu items
-    const menuLinks = menu.querySelectorAll('a');
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        if (isOpen) {
-          toggleDropdown();
-        }
-      });
-    });
-
-    // Migliora l'accessibilità per la navigazione da tastiera
-    trigger.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggleDropdown();
-      }
-    });
-
-    // Gestisce il focus per l'accessibilità
-    menu.addEventListener('keydown', (e) => {
-      const focusableElements = menu.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])');
-      const firstElement = focusableElements[0];
-      const lastElement = focusableElements[focusableElements.length - 1];
-
-      if (e.key === 'Tab') {
-        if (e.shiftKey) {
-          if (document.activeElement === firstElement) {
-            e.preventDefault();
-            lastElement.focus();
-          }
-        } else {
-          if (document.activeElement === lastElement) {
-            e.preventDefault();
-            firstElement.focus();
-          }
-        }
-      }
-    });
-
-    // Gestisce il ridimensionamento della finestra
-    window.addEventListener('resize', () => {
-      if (isOpen) {
-        const maxHeight = Math.min(menu.scrollHeight, window.innerHeight * 0.6);
-        menu.style.maxHeight = maxHeight + 'px';
+      if (isOpen && !button.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.style.display = 'none';
+        arrow.style.transform = 'rotate(0deg)';
+        button.setAttribute('aria-expanded', 'false');
+        isOpen = false;
       }
     });
   });
