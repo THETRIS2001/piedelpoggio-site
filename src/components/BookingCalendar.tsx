@@ -31,6 +31,10 @@ function toDateKey(d: Date) {
 function minutesFromTime(t: string) {
   if (!t) return 0; // Handle empty string
   const [hh, mm] = t.split(':').map(Number);
+  // Gestisce mezzanotte (00:00) come fine giornata (1440 minuti)
+  if (hh === 0 && mm === 0) {
+    return 24 * 60; // 1440 minuti = mezzanotte del giorno successivo
+  }
   return hh * 60 + mm;
 }
 
@@ -44,10 +48,15 @@ const STEP = 60; // 60 minuti (solo ore intere)
 
 const generateSlots = () => {
   const slots: string[] = [];
-  for (let m = WORK_START; m < WORK_END; m += STEP) {
+  for (let m = WORK_START; m <= WORK_END; m += STEP) {
     const hh = String(Math.floor(m / 60)).padStart(2, '0');
     const mm = String(m % 60).padStart(2, '0');
-    slots.push(`${hh}:${mm}`);
+    // Gestisce mezzanotte come 00:00 invece di 24:00
+    if (m === WORK_END) {
+      slots.push('00:00');
+    } else {
+      slots.push(`${hh}:${mm}`);
+    }
   }
   return slots;
 };
@@ -430,7 +439,11 @@ const BookingCalendar: React.FC = () => {
                   <label htmlFor="start" className="text-xs text-gray-600">Ora inizio</label>
                   <select id="start" value={startTime} onChange={(e) => setStartTime(e.target.value)} className="mt-1 w-full px-3 py-2 bg-white rounded-lg border border-gray-200 text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-500">
                     <option value="">Seleziona ora inizio</option>
-                    {slots.map(s => <option key={s} value={s}>{s}</option>)}
+                    {slots.map(s => {
+                      // Non mostrare 00:00 come orario di inizio (solo come fine)
+                      if (s === '00:00') return null;
+                      return <option key={s} value={s}>{s}</option>;
+                    })}
                   </select>
                 </div>
                 <div>
@@ -555,7 +568,7 @@ const BookingCalendar: React.FC = () => {
                   value={formData.title}
                   onChange={(e) => setFormData({ ...formData, title: e.target.value })}
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                  placeholder="Es: Allenamento calcio (opzionale)"
+                  placeholder="Es: Cena brace (opzionale)"
                 />
               </div>
               <div className="bg-gray-50 p-3 rounded-lg">

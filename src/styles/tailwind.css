@@ -152,10 +152,212 @@ body {
   -ms-overflow-style: none;
 }
 
-/* Responsive Typography */
+/* Enhanced Mobile-First Responsive Design */
+
+/* Automatic Container Responsiveness */
+.container-custom {
+  @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.container-tight {
+  @apply w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.container-narrow {
+  @apply w-full max-w-2xl mx-auto px-4 sm:px-6;
+}
+
+/* Automatic Grid Responsiveness */
+.grid-responsive {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8;
+}
+
+.grid-responsive-2 {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6;
+}
+
+.grid-responsive-4 {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6;
+}
+
+/* Automatic Spacing Responsiveness */
+.space-responsive {
+  @apply space-y-4 sm:space-y-6 lg:space-y-8;
+}
+
+.padding-responsive {
+  @apply p-4 sm:p-6 lg:p-8;
+}
+
+.margin-responsive {
+  @apply m-4 sm:m-6 lg:m-8;
+}
+
+/* Enhanced Typography for Mobile */
+.text-responsive-xs {
+  @apply text-xs sm:text-sm;
+}
+
+.text-responsive-sm {
+  @apply text-sm sm:text-base;
+}
+
+.text-responsive-base {
+  @apply text-base sm:text-lg;
+}
+
+.text-responsive-lg {
+  @apply text-lg sm:text-xl lg:text-2xl;
+}
+
+.text-responsive-xl {
+  @apply text-xl sm:text-2xl lg:text-3xl;
+}
+
+.text-responsive-2xl {
+  @apply text-2xl sm:text-3xl lg:text-4xl;
+}
+
+.text-responsive-3xl {
+  @apply text-3xl sm:text-4xl lg:text-5xl;
+}
+
+/* Mobile-Optimized Button Styles */
+.btn-mobile {
+  @apply min-h-[44px] px-4 py-3 text-base font-medium rounded-lg transition-all duration-200;
+}
+
+.btn-mobile-large {
+  @apply min-h-[48px] px-6 py-4 text-lg font-semibold rounded-xl;
+}
+
+/* Touch-Friendly Interactive Elements */
+.touch-target {
+  @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
+}
+
+/* Mobile-First Image Responsiveness */
+.img-responsive {
+  @apply w-full h-auto max-w-full;
+}
+
+.img-responsive-square {
+  @apply w-full aspect-square object-cover;
+}
+
+.img-responsive-video {
+  @apply w-full aspect-video object-cover;
+}
+
+/* Mobile Navigation Improvements */
+.nav-mobile-friendly {
+  @apply flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4;
+}
+
+/* Mobile Form Improvements */
+.form-mobile {
+  @apply w-full space-y-4;
+}
+
+.input-mobile {
+  @apply w-full min-h-[44px] px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500;
+}
+
+.select-mobile {
+  @apply w-full min-h-[44px] px-4 py-3 text-base border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 bg-white;
+}
+
+/* Mobile Card Improvements */
+.card-mobile {
+  @apply bg-white rounded-lg shadow-soft p-4 sm:p-6 border border-gray-100;
+}
+
+/* Mobile Table Responsiveness */
+.table-mobile {
+  @apply w-full overflow-x-auto;
+}
+
+.table-mobile table {
+  @apply min-w-full;
+}
+
+/* Mobile Modal/Dialog Improvements */
+.modal-mobile {
+  @apply fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4;
+}
+
+.modal-content-mobile {
+  @apply w-full max-w-lg bg-white rounded-t-2xl sm:rounded-2xl shadow-xl transform transition-all;
+}
+
+/* Mobile Scroll Improvements */
+.scroll-mobile {
+  @apply overflow-x-auto scrollbar-hide;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mobile-Specific Responsive Typography */
 @media (max-width: 640px) {
   body {
-    font-size: 14px;
+    font-size: 16px; /* Improved from 14px for better readability */
+    line-height: 1.5;
+  }
+  
+  h1 {
+    @apply text-2xl font-bold leading-tight;
+  }
+  
+  h2 {
+    @apply text-xl font-bold leading-tight;
+  }
+  
+  h3 {
+    @apply text-lg font-semibold leading-tight;
+  }
+  
+  h4 {
+    @apply text-base font-semibold;
+  }
+  
+  /* Automatic spacing adjustments for mobile */
+  .container-custom {
+    @apply px-3;
+  }
+  
+  /* Improve touch targets on mobile */
+  button, a, input, select, textarea {
+    @apply min-h-[44px];
+  }
+  
+  /* Better mobile navigation */
+  nav {
+    @apply sticky top-0 z-50;
+  }
+}
+
+/* Tablet-specific improvements */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container-custom {
+    @apply px-6;
+  }
+}
+
+/* Landscape phone improvements */
+@media (max-width: 896px) and (orientation: landscape) {
+  .modal-mobile {
+    @apply items-start pt-4;
+  }
+  
+  .modal-content-mobile {
+    @apply max-h-[90vh] overflow-y-auto;
   }
 }
 
