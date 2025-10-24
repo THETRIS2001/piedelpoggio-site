@@ -467,7 +467,7 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '' }) => {
   if (loading) {
     console.log('WeatherWidget: Rendering stato loading');
     return (
-      <div className={`bg-gradient-to-r from-blue-50/80 to-sky-50/80 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-soft border border-blue-200/50 ${className}`}>
+      <div className={`w-full ${className}`}>
         <div className="animate-pulse flex items-center gap-6">
           <div className="w-16 h-16 bg-blue-200 rounded-full"></div>
           <div className="flex-1">
@@ -486,7 +486,7 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '' }) => {
   if (error || !weather) {
     console.log('WeatherWidget: Rendering stato errore', { error, weather });
     return (
-      <div className={`bg-gradient-to-r from-red-50/80 to-pink-50/80 backdrop-blur-sm rounded-2xl px-6 py-4 shadow-soft border border-red-200/50 ${className}`}>
+      <div className={`w-full ${className}`}>
         <div className="flex items-center gap-4">
           <div className="text-5xl">🌡️</div>
           <div>
@@ -511,9 +511,7 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '' }) => {
   );
 
   return (
-    <div 
-      className={`bg-gradient-to-r from-blue-50/80 via-white/90 to-sky-50/80 backdrop-blur-sm rounded-2xl px-4 sm:px-6 py-3 sm:py-4 shadow-soft hover:shadow-medium border border-blue-200/50 transition-all duration-300 ${className}`}
-    >
+    <div className={`w-full ${className}`}>
       <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
         {/* Icona meteo principale - MOLTO PIÀ GRANDE */}
         <div className="flex-shrink-0">
@@ -528,11 +526,15 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '' }) => {
 
         {/* Informazioni principali */}
         <div className="flex-1 min-w-0 text-center sm:text-left">
-          <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-2 mb-1">
-            <span className="text-2xl sm:text-3xl font-bold text-gray-800">{currentTemp}°C</span>
-            <div className="flex items-center gap-2">
-              <span className="text-blue-600 font-medium text-xs sm:text-sm">Piedelpoggio</span>
-              <div className="flex items-center gap-1 text-xs">
+          {/* Layout mobile ottimizzato: temperatura al centro, altitudine e stato meteo sotto */}
+          <div className="flex flex-col items-center sm:items-start gap-2 mb-2">
+            {/* Temperatura principale */}
+            <span className="text-3xl sm:text-3xl font-bold text-gray-800">{currentTemp}°C</span>
+            
+            {/* Altitudine e località su mobile - più prominenti */}
+            <div className="flex flex-col sm:flex-row items-center gap-1 sm:gap-2">
+              <span className="text-blue-600 font-medium text-sm">Piedelpoggio</span>
+              <div className="flex items-center gap-1 text-sm">
                 <CountUp 
                   to={927} 
                   separator="," 
@@ -543,13 +545,15 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '' }) => {
                 <span className="text-blue-500 font-medium">m s.l.m.</span>
               </div>
             </div>
-          </div>
-          <div className="text-blue-700 font-medium text-xs sm:text-sm mb-2">
-            {currentDescription}
+            
+            {/* Stato meteo sotto l'altitudine su mobile */}
+            <div className="text-blue-700 font-medium text-sm text-center sm:text-left">
+              {currentDescription}
+            </div>
           </div>
           
-          {/* Dettagli compatti */}
-          <div className="flex items-center justify-center sm:justify-start gap-3 sm:gap-4 text-xs text-gray-600">
+          {/* Dettagli compatti - visibili anche su mobile ma più compatti */}
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-4 text-xs text-gray-600 mt-2">
             <div className="flex items-center gap-1">
               <span className="text-blue-500 font-medium">Umidità:</span>
               <span>{weather.currentConditions.relativeHumidity}%</span>
@@ -616,22 +620,26 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '' }) => {
         </div>
       </div>
 
-      {/* Grafici orari */}
+      {/* Grafici orari - spaziatura migliorata per mobile */}
       {weather && (
-        <div className="mt-4">
-          <HourlyTemperatureChart 
-            data={hourlyData.temperatureData} 
-            currentTime={weather.currentConditions.currentTime} 
-          />
-          <HourlyPrecipitationChart 
-            data={hourlyData.precipitationData} 
-            currentTime={weather.currentConditions.currentTime} 
-          />
+        <div className="mt-6 space-y-6 sm:space-y-4 sm:mt-4">
+          <div className="bg-white/50 rounded-xl p-3 sm:p-2">
+            <HourlyTemperatureChart 
+              data={hourlyData.temperatureData} 
+              currentTime={weather.currentConditions.currentTime} 
+            />
+          </div>
+          <div className="bg-white/50 rounded-xl p-3 sm:p-2">
+            <HourlyPrecipitationChart 
+              data={hourlyData.precipitationData} 
+              currentTime={weather.currentConditions.currentTime} 
+            />
+          </div>
         </div>
       )}
 
       {/* Link ai siti meteo esterni */}
-      <div className="mt-3 flex flex-wrap justify-center gap-2">
+      <div className="mt-5 flex flex-wrap justify-center gap-2">
         <a 
           href="https://www.3bmeteo.com/meteo/leonessa" 
           target="_blank" 
@@ -701,7 +709,7 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '' }) => {
       </div>
 
       {/* Informazioni geografiche */}
-      <div className="mt-4 pt-4 border-t border-blue-200/50">
+      <div className="mt-5 pt-4 border-t border-blue-200/50">
         <div className="bg-gradient-to-r from-blue-50/60 to-indigo-50/60 backdrop-blur-sm rounded-xl p-4 border border-blue-100/50">
           <div className="flex items-center gap-2 mb-3">
             <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -749,7 +757,7 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '' }) => {
       </div>
 
       {/* Sezione Webcam e Territorio */}
-      <div className="mt-4 pt-4 border-t border-gray-200/50">
+      <div className="mt-5 pt-4 border-t border-gray-200/50">
         <div className="flex gap-2">
           <a 
             href="/info/webcam" 

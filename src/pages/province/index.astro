@@ -6,19 +6,19 @@ import Card from '../../components/Card.astro';
 <DefaultLayout title="Province Vicine - Piedelpoggio" description="Eventi e organizzazioni delle province vicine a Piedelpoggio, per scoprire le opportunità del territorio circostante.">
   <main class="min-h-screen bg-gradient-to-br from-primary-50/30 via-white to-secondary-50/20">
     <!-- Hero Section -->
-    <section class="relative min-h-[40vh] flex items-center justify-center overflow-hidden pt-16">
+    <section class="hero-section">
       <!-- Background with gradient -->
       <div class="absolute inset-0 bg-gradient-to-b from-pink-100/60 via-pink-50/40 to-transparent"></div>
       
       <!-- Decorative elements -->
-      <div class="absolute top-10 left-10 w-32 h-32 rounded-full blur-3xl animate-float" style="background: radial-gradient(circle, rgba(222, 49, 99, 0.15) 0%, rgba(222, 49, 99, 0.05) 70%, transparent 100%);"></div>
-      <div class="absolute bottom-10 right-10 w-40 h-40 rounded-full blur-3xl animate-float" style="animation-delay: -3s; background: radial-gradient(circle, rgba(240, 90, 138, 0.1) 0%, rgba(240, 90, 138, 0.03) 70%, transparent 100%);"></div>
+      
+      
       <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl opacity-30" style="background: radial-gradient(circle, rgba(255, 123, 163, 0.08) 0%, rgba(255, 123, 163, 0.02) 60%, transparent 100%);"></div>
       
       <div class="relative z-10 container mx-auto px-4 text-center">
         <div class="animate-fade-in">
           <div class="flex items-center justify-center mb-8">
-            <div class="w-20 h-20 rounded-2xl flex items-center justify-center shadow-xl mr-6" style="background: linear-gradient(135deg, #DE3163, #f05a8a);">
+            <div class="hidden md:flex w-20 h-20 rounded-2xl items-center justify-center shadow-xl mr-6" style="background: linear-gradient(135deg, #DE3163, #f05a8a);">
               <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>

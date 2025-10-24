@@ -77,13 +77,15 @@ const TextType: React.FC<TextTypeProps> = ({
         WebkitTextFillColor: 'transparent',
         backgroundClip: 'text',
         display: 'inline-block',
-        lineHeight: '1.2'
+        lineHeight: '1.2',
+        minHeight: '1.2em'
       } : {
         display: 'inline-block',
-        lineHeight: '1.2'
+        lineHeight: '1.2',
+        minHeight: '1.2em'
       }}
     >
-      {formatText(displayText)}
+      {displayText ? formatText(displayText) : '\u00A0'}
       {showCursor && (
         <span 
           className="animate-blink" 

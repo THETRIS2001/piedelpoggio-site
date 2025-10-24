@@ -15,7 +15,7 @@ interface HourlyPrecipitationChartProps {
 const HourlyPrecipitationChart: React.FC<HourlyPrecipitationChartProps> = ({ data, currentTime }) => {
   if (!data || data.length === 0) {
     return (
-      <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 mb-4">
+      <div className="bg-white/10 backdrop-blur-sm rounded-lg mb-4">
         <h3 className="text-black text-sm font-medium mb-4">Precipitazioni Orarie</h3>
         <div className="text-white/70 text-xs">Dati non disponibili</div>
       </div>
@@ -34,7 +34,7 @@ const HourlyPrecipitationChart: React.FC<HourlyPrecipitationChartProps> = ({ dat
   });
 
   return (
-    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 mb-4">
+    <div className="bg-white/10 backdrop-blur-sm rounded-lg mb-4">
       <h3 className="text-black text-sm font-medium mb-6">Precipitazioni Orarie</h3>
       
       <div className="relative w-full h-20 mb-4">
@@ -45,17 +45,17 @@ const HourlyPrecipitationChart: React.FC<HourlyPrecipitationChartProps> = ({ dat
             const isCurrentHour = index === currentIndex;
             
             return (
-              <div key={index} className="relative flex flex-col items-center justify-end" style={{ width: `${100 / data.length}%`, height: '100%' }}>
-                {/* Probabilità sopra la barra - mostra solo se quantity > 0 */}
+              <div key={index} className="relative flex flex-col items-center justify-end flex-shrink-0" style={{ width: `${100 / data.length}%`, height: '100%' }}>
+                {/* Probabilità sopra la barra - mostra solo se quantity > 0 e ogni 3 ore per evitare sovrapposizioni */}
                 {point.quantity > 0 && (
-                  <div className="text-xs text-gray-600 mb-1 font-medium absolute" style={{ bottom: `${barHeight + 8}px`, left: '50%', transform: 'translateX(-50%)' }}>
+                  <div className={`text-xs text-gray-600 mb-1 font-medium absolute ${index % 3 !== 0 ? 'hidden sm:block' : ''}`} style={{ bottom: `${barHeight + 8}px`, left: '50%', transform: 'translateX(-50%)', fontSize: '10px' }}>
                     {Math.round(point.probability)}%
                   </div>
                 )}
                 
-                {/* Barra quantità */}
+                {/* Barra quantità - più stretta per evitare sovrapposizioni */}
                 <div 
-                  className="w-4 bg-cyan-300/60 rounded-t"
+                  className="w-2 sm:w-3 bg-cyan-300/60 rounded-t flex-shrink-0"
                   style={{ 
                     height: `${barHeight}px`,
                     transition: 'all 0.3s ease'
@@ -74,13 +74,14 @@ const HourlyPrecipitationChart: React.FC<HourlyPrecipitationChartProps> = ({ dat
       <div className="flex justify-between text-xs text-gray-600 px-2">
         {data.map((d, index) => (
           <div key={index} className="text-center" style={{ width: `${100 / data.length}%` }}>
-            {index % 3 === 0 ? (
-              <span className="font-medium">
-                {new Date(d.time).getHours().toString().padStart(2, '0')}:00
+            <span className={`font-medium ${index % 3 !== 0 ? 'hidden sm:inline' : ''}`}>
+              <span className="sm:hidden">
+                {new Date(d.time).getHours().toString().padStart(2, '0')}
               </span>
-            ) : (
-              <span className="opacity-50">·</span>
-            )}
+              <span className="hidden sm:inline">
+                {new Date(d.time).getHours().toString().padStart(2, '0')}
+              </span>
+            </span>
           </div>
         ))}
       </div>

@@ -140,20 +140,19 @@ const limitrofeCams = webcamData.filter(cam => cam.section === 'limitrofe').sort
 >
   <main class="min-h-screen bg-gradient-to-br from-primary-50/30 via-white to-secondary-50/20">
     <!-- Hero Section -->
-    <section class="relative min-h-[40vh] flex items-center justify-center overflow-hidden pt-16">
+    <section class="hero-section">
       <!-- Background with gradient -->
       <div class="absolute inset-0 bg-gradient-to-b from-orange-100/60 via-orange-50/40 to-transparent"></div>
       
       <!-- Decorative elements -->
-      <div class="absolute top-10 left-10 w-32 h-32 bg-orange-200/30 rounded-full blur-2xl animate-float"></div>
-      <div class="absolute bottom-10 right-10 w-40 h-40 bg-red-200/30 rounded-full blur-2xl animate-float" style="animation-delay: -3s;"></div>
-      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-orange-100/20 to-red-100/20 rounded-full blur-3xl"></div>
+      
+      
       
       <div class="relative z-10 container mx-auto px-4 text-center">
         <div class="animate-fade-in">
           <!-- Icona e Titolo centrati -->
           <div class="flex items-center justify-center mb-8">
-            <div class="w-20 h-20 bg-gradient-to-br from-orange-600 to-red-600 rounded-2xl flex items-center justify-center shadow-xl mr-6">
+            <div class="hidden md:flex w-20 h-20 bg-gradient-to-br from-orange-600 to-red-600 rounded-2xl items-center justify-center shadow-xl mr-6">
               <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
               </svg>

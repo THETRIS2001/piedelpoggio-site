@@ -2,10 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Hero Section Standard Class */
+@layer components {
+  .hero-section {
+    @apply relative min-h-[25vh] flex items-center justify-center overflow-hidden pt-16;
+  }
+}
+
 /* Custom Animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInTitle {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes slideUp {
@@ -38,6 +50,23 @@
   50% { transform: translateY(-5px); }
 }
 
+/* Carousel Indicators - Force perfect circles on all devices */
+.indicator,
+.events-indicator {
+  width: 12px !important;
+  height: 12px !important;
+  min-width: 12px !important;
+  min-height: 12px !important;
+  max-width: 12px !important;
+  max-height: 12px !important;
+  border-radius: 50% !important;
+  flex-shrink: 0 !important;
+  flex-grow: 0 !important;
+  aspect-ratio: 1 / 1 !important;
+  display: inline-block !important;
+  box-sizing: border-box !important;
+}
+
 @keyframes blink {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0; }
@@ -45,6 +74,7 @@
 
 /* Animation Classes */
 .animate-fade-in { animation: fadeIn 0.8s ease-out; }
+.animate-fade-in-title { animation: fadeInTitle 0.8s ease-out; }
 .animate-slide-up { animation: slideUp 0.6s ease-out; }
 .animate-scale-in { animation: scaleIn 0.5s ease-out; }
 .animate-float { animation: float 6s ease-in-out infinite; }

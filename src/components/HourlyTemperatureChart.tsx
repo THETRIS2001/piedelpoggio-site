@@ -14,7 +14,7 @@ interface HourlyTemperatureChartProps {
 const HourlyTemperatureChart: React.FC<HourlyTemperatureChartProps> = ({ data, currentTime }) => {
   if (!data || data.length === 0) {
     return (
-      <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 mb-4">
+      <div className="bg-white/10 backdrop-blur-sm rounded-lg mb-4">
         <h3 className="text-black text-sm font-medium mb-4">Temperatura Oraria</h3>
         <div className="text-white/70 text-xs">Dati non disponibili</div>
       </div>
@@ -35,7 +35,7 @@ const HourlyTemperatureChart: React.FC<HourlyTemperatureChartProps> = ({ data, c
   });
 
   return (
-    <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 mb-4">
+    <div className="bg-white/10 backdrop-blur-sm rounded-lg mb-4">
       <h3 className="text-black text-sm font-medium mb-6">Temperatura Oraria</h3>
       
       <div className="relative w-full h-20 mb-4">
@@ -73,9 +73,11 @@ const HourlyTemperatureChart: React.FC<HourlyTemperatureChartProps> = ({ data, c
                   // Disegna la linea
                   ctx.beginPath();
                   data.forEach((point, index) => {
-                    const x = ((index + 0.5) / data.length) * rect.width;
+                    // Calcolo identico a quello dei pallini
+                    const containerWidth = rect.width - 16; // Sottraggo il padding px-2 (8px * 2)
+                    const x = 8 + ((index + 0.5) / data.length) * containerWidth; // Aggiungo il padding iniziale
                     const height = ((point.temperature - minTemp) / tempRange) * 60;
-                    const y = rect.height - height - 6; // Posizione del centro del pallino
+                    const y = rect.height - height;
                     
                     if (index === 0) {
                       ctx.moveTo(x, y);
@@ -93,19 +95,30 @@ const HourlyTemperatureChart: React.FC<HourlyTemperatureChartProps> = ({ data, c
           
           {data.map((point, index) => {
             const height = ((point.temperature - minTemp) / tempRange) * 60; // 60px max height
+            const mobileOffset = height - 4; // Mobile: sottraggo 4px (metà di 8px)
+            const desktopOffset = height - 6; // Desktop: sottraggo 6px (metà di 12px)
             
             return (
               <div key={index} className="relative flex flex-col items-center" style={{ width: `${100 / data.length}%`, zIndex: 2 }}>
-                {/* Temperatura sopra il punto */}
-                <div className="text-xs text-gray-600 mb-1 font-medium">
+                {/* Temperatura sopra il punto - mostra solo ogni 3 ore per corrispondenza con etichette */}
+                <div className={`text-xs sm:text-xs text-gray-600 mb-1 font-medium ${index % 3 !== 0 ? 'hidden sm:block' : ''}`} style={{ fontSize: '10px' }}>
                   {Math.round(point.temperature)}°
                 </div>
                 
-                {/* Punto del grafico */}
+                {/* Punto del grafico mobile */}
                 <div 
-                  className="w-3 h-3 rounded-full border-2 border-white bg-blue-400 shadow-sm"
+                  className="w-2 h-2 rounded-full border-2 border-white bg-blue-400 shadow-sm flex-shrink-0 sm:hidden"
                   style={{ 
-                    marginBottom: `${height}px`,
+                    marginBottom: `${mobileOffset}px`,
+                    transition: 'all 0.3s ease'
+                  }}
+                />
+                
+                {/* Punto del grafico desktop */}
+                <div 
+                  className="hidden sm:block w-3 h-3 rounded-full border-2 border-white bg-blue-400 shadow-sm flex-shrink-0"
+                  style={{ 
+                    marginBottom: `${desktopOffset}px`,
                     transition: 'all 0.3s ease'
                   }}
                 />
@@ -122,13 +135,14 @@ const HourlyTemperatureChart: React.FC<HourlyTemperatureChartProps> = ({ data, c
       <div className="flex justify-between text-xs text-gray-600 px-2">
         {data.map((d, index) => (
           <div key={index} className="text-center" style={{ width: `${100 / data.length}%` }}>
-            {index % 3 === 0 ? (
-              <span className="font-medium">
-                {new Date(d.time).getHours().toString().padStart(2, '0')}:00
+            <span className={`font-medium ${index % 3 !== 0 ? 'hidden sm:inline' : ''}`}>
+              <span className="sm:hidden">
+                {new Date(d.time).getHours().toString().padStart(2, '0')}
               </span>
-            ) : (
-              <span className="opacity-50">·</span>
-            )}
+              <span className="hidden sm:inline">
+                {new Date(d.time).getHours().toString().padStart(2, '0')}
+              </span>
+            </span>
           </div>
         ))}
       </div>
