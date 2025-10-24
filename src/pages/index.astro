@@ -439,7 +439,7 @@ const masonryItems = selectedPhotos.map((photo, index) => ({
       const isMobile = window.innerWidth < 768;
       const cards = document.querySelectorAll('.news-card-container article.group');
       
-      if (isMobile) {
+      if (isMobile && cards.length > 0) {
         // Rimuovi l'effetto hover da tutte le card
         cards.forEach(card => {
           card.classList.remove('mobile-hover-active');
@@ -449,6 +449,7 @@ const masonryItems = selectedPhotos.map((photo, index) => ({
         const centralCardIndex = currentIndex;
         if (cards[centralCardIndex]) {
           cards[centralCardIndex].classList.add('mobile-hover-active');
+          console.log(`Mobile hover applicato alla card news ${centralCardIndex}`);
         }
       } else {
         // Su desktop rimuovi tutte le classi mobile-hover-active
@@ -622,6 +623,11 @@ const masonryItems = selectedPhotos.map((photo, index) => ({
       
       // Ricalcola le altezze dopo il resize
       setTimeout(equalizeCardHeights, 100);
+      
+      // Aggiorna l'effetto hover mobile quando si ridimensiona
+      setTimeout(() => {
+        updateMobileHoverEffect();
+      }, 100);
     });
     
     // Inizializza il carosello
@@ -694,7 +700,7 @@ const masonryItems = selectedPhotos.map((photo, index) => ({
       const isMobile = window.innerWidth < 768;
       const cards = document.querySelectorAll('.events-card-container article.group');
       
-      if (isMobile) {
+      if (isMobile && cards.length > 0) {
         // Rimuovi l'effetto hover da tutte le card eventi
         cards.forEach(card => {
           card.classList.remove('mobile-hover-active');
@@ -704,6 +710,7 @@ const masonryItems = selectedPhotos.map((photo, index) => ({
         const centralCardIndex = eventsCurrentIndex;
         if (cards[centralCardIndex]) {
           cards[centralCardIndex].classList.add('mobile-hover-active');
+          console.log(`Mobile hover applicato alla card eventi ${centralCardIndex}`);
         }
       } else {
         // Su desktop rimuovi tutte le classi mobile-hover-active
@@ -877,6 +884,11 @@ const masonryItems = selectedPhotos.map((photo, index) => ({
       
       // Ricalcola le altezze dopo il resize
       setTimeout(equalizeEventsCardHeights, 100);
+      
+      // Aggiorna l'effetto hover mobile quando si ridimensiona
+      setTimeout(() => {
+        updateEventsMobileHoverEffect();
+      }, 100);
     });
     
     // Inizializza il carosello eventi

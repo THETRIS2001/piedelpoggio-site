@@ -397,6 +397,10 @@ body {
     touch-action: manipulation;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
+    -webkit-user-scalable: no;
+    -webkit-touch-callout: none;
+    zoom: 1;
+    -ms-zoom: 1;
   }
   
   body {
@@ -407,11 +411,21 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    -webkit-user-scalable: no;
+    zoom: 1;
+    -ms-zoom: 1;
   }
   
   /* Prevent double-tap zoom */
   * {
     touch-action: manipulation;
+    -webkit-user-scalable: no;
+  }
+  
+  /* Prevent zoom on specific elements */
+  img, video, canvas, svg {
+    touch-action: manipulation;
+    -webkit-user-scalable: no;
   }
   
   /* Allow text selection for inputs and content areas */
