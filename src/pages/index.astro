@@ -429,6 +429,33 @@ const masonryItems = selectedPhotos.map((photo, index) => ({
           dot.style.opacity = '0.6';
         }
       });
+      
+      // Applica effetto hover automatico alla card centrale su mobile
+      updateMobileHoverEffect();
+    }
+    
+    // Funzione per gestire l'effetto hover automatico su mobile
+    function updateMobileHoverEffect() {
+      const isMobile = window.innerWidth < 768;
+      const cards = document.querySelectorAll('.news-card-container .group');
+      
+      if (isMobile) {
+        // Rimuovi l'effetto hover da tutte le card
+        cards.forEach(card => {
+          card.classList.remove('mobile-hover-active');
+        });
+        
+        // Applica l'effetto hover alla card centrale (quella attualmente visibile)
+        const centralCardIndex = currentIndex;
+        if (cards[centralCardIndex]) {
+          cards[centralCardIndex].classList.add('mobile-hover-active');
+        }
+      } else {
+        // Su desktop rimuovi tutte le classi mobile-hover-active
+        cards.forEach(card => {
+          card.classList.remove('mobile-hover-active');
+        });
+      }
     }
     
     // Event listeners per i pulsanti
@@ -600,6 +627,9 @@ const masonryItems = selectedPhotos.map((photo, index) => ({
     // Inizializza il carosello
     updateCarousel();
     
+    // Applica l'effetto hover iniziale su mobile
+    updateMobileHoverEffect();
+    
     // Equalizza le altezze dopo il caricamento
     setTimeout(equalizeCardHeights, 200);
   });
@@ -652,6 +682,33 @@ const masonryItems = selectedPhotos.map((photo, index) => ({
           dot.style.opacity = '0.6';
         }
       });
+      
+      // Applica effetto hover automatico alla card centrale su mobile per eventi
+      updateEventsMobileHoverEffect();
+    }
+    
+    // Funzione per gestire l'effetto hover automatico su mobile per eventi
+    function updateEventsMobileHoverEffect() {
+      const isMobile = window.innerWidth < 768;
+      const cards = document.querySelectorAll('.events-card-container .group');
+      
+      if (isMobile) {
+        // Rimuovi l'effetto hover da tutte le card eventi
+        cards.forEach(card => {
+          card.classList.remove('mobile-hover-active');
+        });
+        
+        // Applica l'effetto hover alla card centrale eventi (quella attualmente visibile)
+        const centralCardIndex = eventsCurrentIndex;
+        if (cards[centralCardIndex]) {
+          cards[centralCardIndex].classList.add('mobile-hover-active');
+        }
+      } else {
+        // Su desktop rimuovi tutte le classi mobile-hover-active
+        cards.forEach(card => {
+          card.classList.remove('mobile-hover-active');
+        });
+      }
     }
     
     // Event listeners per i pulsanti eventi
@@ -823,7 +880,54 @@ const masonryItems = selectedPhotos.map((photo, index) => ({
     // Inizializza il carosello eventi
     updateEventsCarousel();
     
+    // Applica l'effetto hover iniziale su mobile per eventi
+    updateEventsMobileHoverEffect();
+    
     // Equalizza le altezze dopo il caricamento
     setTimeout(equalizeEventsCardHeights, 200);
   });
 </script>
+
+<style>
+  /* Mobile hover effect - automatically applied to central card */
+  @media (max-width: 767px) {
+    .mobile-hover-active {
+      transform: translateY(-8px) !important;
+      border-color: rgb(147 197 253 / 0.5) !important;
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1) !important;
+      transition: all 0.3s ease !important;
+    }
+    
+    .mobile-hover-active img {
+      transform: scale(1.05) !important;
+      transition: transform 0.3s ease !important;
+    }
+    
+    .mobile-hover-active .text-gray-600 {
+      color: rgb(55 65 81) !important;
+      transition: color 0.3s ease !important;
+    }
+    
+    .mobile-hover-active time {
+      color: rgb(14 165 233) !important;
+      transition: color 0.3s ease !important;
+    }
+    
+    .mobile-hover-active .border-gray-100\/50 {
+      border-color: rgb(147 197 253 / 0.5) !important;
+      transition: border-color 0.3s ease !important;
+    }
+    
+    /* Ensure the effect is always visible, not just on hover */
+    .mobile-hover-active h3 {
+      color: rgb(17 24 39) !important;
+      transition: color 0.3s ease !important;
+    }
+    
+    .mobile-hover-active .bg-blue-50 {
+      background-color: rgb(239 246 255) !important;
+      color: rgb(29 78 216) !important;
+      transition: all 0.3s ease !important;
+    }
+  }
+</style>
