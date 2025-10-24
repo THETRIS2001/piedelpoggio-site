@@ -14,7 +14,7 @@ const { title, description, image, href, date, category } = Astro.props;
 ---
 
   <!-- Enhanced card with modern design and uniform height -->
-  <article class="group relative bg-white rounded-2xl shadow-soft hover:shadow-xl transition-all duration-500 overflow-hidden border border-gray-100/50 hover:border-primary-200/50 hover:-translate-y-2 backdrop-blur-sm h-full flex flex-col">
+  <article class="group relative bg-white rounded-2xl hover:shadow-xl transition-all duration-500 overflow-hidden border border-gray-200 hover:border-primary-200 hover:-translate-y-2 h-full flex flex-col">
     <!-- Image container with overlay -->
     <div class="relative overflow-hidden rounded-t-2xl flex-shrink-0">
       <img 
@@ -23,8 +23,8 @@ const { title, description, image, href, date, category } = Astro.props;
         class="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-110"
         loading="lazy"
       />
-      <!-- Gradient overlay for better text readability -->
-      <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <!-- Overlay removed completely -->
+      
       
       <!-- Category badge -->
       {category && (
@@ -76,8 +76,6 @@ const { title, description, image, href, date, category } = Astro.props;
     </div>
   </div>
   
-  <!-- Subtle glow effect on hover -->
-  <div class="absolute inset-0 rounded-3xl bg-gradient-to-r from-primary-500/5 to-secondary-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 </article>
 
 <style>

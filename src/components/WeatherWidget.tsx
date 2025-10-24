@@ -512,7 +512,7 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '' }) => {
 
   return (
     <div className={`w-full ${className}`}>
-      <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+      <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6  rounded-xl p-3 sm:p-2 border border-gray-200">
         {/* Icona meteo principale - MOLTO PIÀ GRANDE */}
         <div className="flex-shrink-0">
           <div className="w-16 h-16 sm:w-20 sm:h-20 transform hover:scale-110 transition-transform duration-300 drop-shadow-lg">
@@ -599,7 +599,8 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '' }) => {
             );
             
             return (
-              <div key={index} className="bg-white/70 backdrop-blur-sm rounded-xl p-2 sm:p-2.5 border border-blue-100/60 text-center min-w-[45px] sm:min-w-[55px] hover:bg-white/80 hover:shadow-sm transition-all duration-200">
+              <div key={index} className="bg-white/70 backdrop-blur-sm rounded-xl p-2 sm:p-2.5 border border-gray-200 text-center min-w-[45px] sm:min-w-[55px] hover:bg-white/80 hover:shadow-sm transition-all duration-200
+">
                 <div className="text-[10px] sm:text-xs text-gray-600 font-medium mb-1 capitalize truncate">
                   {dayName}
                 </div>
@@ -623,13 +624,13 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '' }) => {
       {/* Grafici orari - spaziatura migliorata per mobile */}
       {weather && (
         <div className="mt-6 space-y-6 sm:space-y-4 sm:mt-4">
-          <div className="bg-white/50 rounded-xl p-3 sm:p-2">
+          <div className="bg-white/50 rounded-xl p-3 sm:p-2 border border-gray-200">
             <HourlyTemperatureChart 
               data={hourlyData.temperatureData} 
               currentTime={weather.currentConditions.currentTime} 
             />
           </div>
-          <div className="bg-white/50 rounded-xl p-3 sm:p-2">
+          <div className="bg-white/50 rounded-xl p-3 sm:p-2 border border-gray-200">
             <HourlyPrecipitationChart 
               data={hourlyData.precipitationData} 
               currentTime={weather.currentConditions.currentTime} 
@@ -710,7 +711,8 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '' }) => {
 
       {/* Informazioni geografiche */}
       <div className="mt-5 pt-4 border-t border-blue-200/50">
-        <div className="bg-gradient-to-r from-blue-50/60 to-indigo-50/60 backdrop-blur-sm rounded-xl p-4 border border-blue-100/50">
+        <div className="bg-gradient-to-r from-blue-50/60 to-indigo-50/60 backdrop-blur-sm rounded-xl p-4 border border-gray-200
+">
           <div className="flex items-center gap-2 mb-3">
             <svg className="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>

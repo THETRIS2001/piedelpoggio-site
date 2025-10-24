@@ -90,11 +90,11 @@ const masonryItems = selectedPhotos.map((photo, index) => ({
 ---
 
 <DefaultLayout title="Benvenuti a Piedelpoggio" description="Scopri il borgo medievale di Piedelpoggio, frazione di Leonessa nel cuore del Lazio. Storia, tradizioni e natura incontaminata.">
-  <main class="min-h-screen bg-gradient-to-br from-blue-50/30 via-white to-indigo-50/20">
+  <main class="min-h-screen bg-white">
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <!-- Background with gradient -->
-      <div class="absolute inset-0 bg-gradient-to-b from-blue-100/60 via-blue-50/40 to-transparent"></div>
+      <!-- Background removed -->
+      
       
       <!-- Decorative elements -->
     
@@ -121,7 +121,8 @@ const masonryItems = selectedPhotos.map((photo, index) => ({
         <!-- Contenitore con dimensioni fisse per il widget meteo -->
         <div class="mb-12 animate-slide-up" style="animation-delay: 0.6s;">
           <!-- Placeholder che mantiene le dimensioni del widget -->
-          <div class="bg-gradient-to-r from-blue-50/80 via-white/90 to-sky-50/80 backdrop-blur-sm rounded-2xl px-4 sm:px-6 py-3 sm:py-4 shadow-soft border border-blue-200/50 min-h-[800px] sm:min-h-[900px] lg:min-h-[1000px]">
+          <div class="bg-gradient-to-r from-blue-50/80 via-white/90 to-sky-50/80 backdrop-blur-sm rounded-2xl px-4 sm:px-6 py-3 sm:py-4 shadow-soft border border-gray-200 min-h-[800px] sm:min-h-[900px] lg:min-h-[1000px]
+">
             <div class="flex flex-col items-center justify-start min-h-full">
               <WeatherWidget client:load />
             </div>
@@ -136,7 +137,8 @@ const masonryItems = selectedPhotos.map((photo, index) => ({
             <div class="absolute -bottom-8 -right-4 text-6xl text-primary-300/40 font-serif leading-none rotate-180">"</div>
             
             <!-- Quote content -->
-            <blockquote class="relative bg-gradient-to-br from-white/80 to-primary-50/60 backdrop-blur-sm border border-primary-200/30 rounded-3xl p-8 shadow-soft">
+            <blockquote class="relative bg-gradient-to-br from-white/80 to-primary-50/60 backdrop-blur-sm border border-gray-200 rounded-3xl p-8 shadow-soft
+">
               <div class="text-center">
                 <p class="text-lg md:text-xl lg:text-2xl text-gray-800 leading-relaxed font-light italic mb-6">
                   …In questa villa deliziosa e amena<br>
@@ -187,11 +189,11 @@ const masonryItems = selectedPhotos.map((photo, index) => ({
   <!-- Sezione Notizie con Carosello -->
   {allNews.length > 0 && (
     <section class="py-12 relative overflow-hidden">
-      <!-- Decorative background elements -->
-      <div class="absolute inset-0 bg-gradient-to-br from-primary-50/30 via-transparent to-secondary-50/20"></div>
+      <!-- Background removed -->
+      
       
       <div class="container mx-auto px-6 relative z-10">
-        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-0 animate-fade-in gap-4 md:gap-0">
+        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-0 animate-fade-in gap-4 md:gap-0 mt-8">
           <div>
             <div class="flex items-center gap-4 mb-4">
               <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #0ea5e9, #0284c7);">
@@ -219,7 +221,7 @@ const masonryItems = selectedPhotos.map((photo, index) => ({
           {allNews.length > 3 && (
             <button 
               id="prev-btn" 
-              class="hidden md:flex w-12 h-12 rounded-full items-center justify-center text-white shadow-lg transition-all duration-300 hover:scale-110 disabled:opacity-50 z-10 mr-6 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 active:scale-95"
+              class="hidden md:flex w-12 h-12 rounded-full items-center justify-center text-white shadow-lg transition-all duration-300 hover:scale-110 disabled:opacity-50 z-10 mr-6 focus:outline-none"
               style="background: linear-gradient(135deg, #0ea5e9, #0284c7); border-radius: 50% !important;"
               aria-label="Notizia precedente"
             >
@@ -252,8 +254,8 @@ const masonryItems = selectedPhotos.map((photo, index) => ({
           <!-- Pulsante successivo - esterno a destra - nascosto su mobile -->
           {allNews.length > 3 && (
             <button 
-              id="next-btn" 
-              class="hidden md:flex w-12 h-12 rounded-full items-center justify-center text-white shadow-lg transition-all duration-300 hover:scale-110 disabled:opacity-50 z-10 ml-6 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 active:scale-95"
+              id="next-btn"
+              class="hidden md:flex w-12 h-12 rounded-full items-center justify-center text-white shadow-lg transition-all duration-300 hover:scale-110 disabled:opacity-50 z-10 ml-6 focus:outline-none"
               style="background: linear-gradient(135deg, #0ea5e9, #0284c7); border-radius: 50% !important;"
               aria-label="Notizia successiva"
             >
@@ -284,11 +286,11 @@ const masonryItems = selectedPhotos.map((photo, index) => ({
   <!-- Eventi in Programma -->
   {allUpcomingEvents.length > 0 && (
     <section class="pt-0 pb-12 relative overflow-hidden">
-      <!-- Decorative background elements -->
-      <div class="absolute inset-0 bg-gradient-to-br from-primary-50/30 via-transparent to-secondary-50/20"></div>
+      <!-- Background removed -->
+      
       
       <div class="container mx-auto px-6 relative z-10">
-        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-0 animate-fade-in gap-4 md:gap-0">
+        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-0 animate-fade-in gap-4 md:gap-0 mt-8">
           <div>
             <div class="flex items-center gap-4 mb-4">
               <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background: linear-gradient(135deg, #0ea5e9, #0284c7);">
@@ -316,7 +318,7 @@ const masonryItems = selectedPhotos.map((photo, index) => ({
           {allUpcomingEvents.length > 3 && (
             <button 
               id="events-prev-btn" 
-              class="hidden md:flex w-12 h-12 rounded-full items-center justify-center text-white shadow-lg transition-all duration-300 hover:scale-110 disabled:opacity-50 z-10 mr-6 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 active:scale-95"
+              class="hidden md:flex w-12 h-12 rounded-full items-center justify-center text-white shadow-lg transition-all duration-300 hover:scale-110 disabled:opacity-50 z-10 mr-6 focus:outline-none"
               style="background: linear-gradient(135deg, #0ea5e9, #0284c7); border-radius: 50% !important;"
               aria-label="Evento precedente"
             >
@@ -350,7 +352,7 @@ const masonryItems = selectedPhotos.map((photo, index) => ({
           {allUpcomingEvents.length > 3 && (
             <button 
               id="events-next-btn"
-              class="hidden md:flex w-12 h-12 rounded-full items-center justify-center text-white shadow-lg transition-all duration-300 hover:scale-110 disabled:opacity-50 z-10 ml-6 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-opacity-50 active:scale-95"
+              class="hidden md:flex w-12 h-12 rounded-full items-center justify-center text-white shadow-lg transition-all duration-300 hover:scale-110 disabled:opacity-50 z-10 ml-6 focus:outline-none"
               style="background: linear-gradient(135deg, #0ea5e9, #0284c7); border-radius: 50% !important;"
               aria-label="Evento successivo"
             >
