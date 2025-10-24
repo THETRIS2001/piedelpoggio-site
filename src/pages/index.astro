@@ -437,7 +437,7 @@ const masonryItems = selectedPhotos.map((photo, index) => ({
     // Funzione per gestire l'effetto hover automatico su mobile
     function updateMobileHoverEffect() {
       const isMobile = window.innerWidth < 768;
-      const cards = document.querySelectorAll('.news-card-container .group');
+      const cards = document.querySelectorAll('.news-card-container article.group');
       
       if (isMobile) {
         // Rimuovi l'effetto hover da tutte le card
@@ -627,8 +627,10 @@ const masonryItems = selectedPhotos.map((photo, index) => ({
     // Inizializza il carosello
     updateCarousel();
     
-    // Applica l'effetto hover iniziale su mobile
-    updateMobileHoverEffect();
+    // Applica l'effetto hover iniziale su mobile dopo un breve delay
+    setTimeout(() => {
+      updateMobileHoverEffect();
+    }, 100);
     
     // Equalizza le altezze dopo il caricamento
     setTimeout(equalizeCardHeights, 200);
@@ -690,7 +692,7 @@ const masonryItems = selectedPhotos.map((photo, index) => ({
     // Funzione per gestire l'effetto hover automatico su mobile per eventi
     function updateEventsMobileHoverEffect() {
       const isMobile = window.innerWidth < 768;
-      const cards = document.querySelectorAll('.events-card-container .group');
+      const cards = document.querySelectorAll('.events-card-container article.group');
       
       if (isMobile) {
         // Rimuovi l'effetto hover da tutte le card eventi
@@ -880,8 +882,10 @@ const masonryItems = selectedPhotos.map((photo, index) => ({
     // Inizializza il carosello eventi
     updateEventsCarousel();
     
-    // Applica l'effetto hover iniziale su mobile per eventi
-    updateEventsMobileHoverEffect();
+    // Applica l'effetto hover iniziale su mobile per eventi dopo un breve delay
+    setTimeout(() => {
+      updateEventsMobileHoverEffect();
+    }, 100);
     
     // Equalizza le altezze dopo il caricamento
     setTimeout(equalizeEventsCardHeights, 200);
