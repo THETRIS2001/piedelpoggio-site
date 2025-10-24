@@ -36,7 +36,7 @@ const { Content } = await item.render();
     <!-- Header dell'articolo -->
     <header class="mb-8">
       <div class="mb-4">
-        <span class="inline-block bg-primary-100 text-primary-800 px-3 py-1 rounded-full text-sm font-medium">
+        <span class="inline-block bg-primary-100 text-primary-800 px-3 py-1 text-xs md:text-sm font-medium rounded-full text-sm font-medium">
           Notizie
         </span>
       </div>
@@ -49,14 +49,14 @@ const { Content } = await item.render();
         </time>
       </div>
       {item.data.summary && (
-        <p class="text-xl text-gray-700 leading-relaxed">
+        <p class="text-xl text-gray-600 leading-relaxed">
           {item.data.summary}
         </p>
       )}
     </header>
 
     <!-- Contenuto dell'articolo -->
-    <div class="prose prose-lg max-w-none">
+    <div class="prose prose-base sm:prose-lg max-w-none">
       <Content />
     </div>
 

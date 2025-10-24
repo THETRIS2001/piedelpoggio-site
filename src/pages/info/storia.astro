@@ -19,7 +19,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
       <div class="relative z-10 container mx-auto px-4 text-center">
         <div class="animate-fade-in">
           <div class="flex items-center justify-center mb-8">
-            <div class="hidden md:flex w-20 h-20 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl items-center justify-center shadow-xl mr-6">
+            <div class="hidden md:flex w-20 h-20 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl sm:rounded-2xl items-center justify-center shadow-xl mr-6">
               <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
               </svg>
@@ -31,7 +31,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
             </h1>
           </div>
           <div class="w-32 h-1.5 bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-500 rounded-full mx-auto mb-8"></div>
-          <p class="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-medium">
+          <p class="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium">
             Le origini e l'evoluzione del nostro borgo medievale
           </p>
         </div>
@@ -39,14 +39,14 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
     </section>
 
     <!-- Content Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8">
+    <section class="pt-4 pb-16 px-4 sm:px-6 lg:px-8">
       <div class="max-w-4xl mx-auto space-y-16">
         
         <!-- Storia e Vita di una Frazione -->
         <div class="bg-white/80 backdrop-blur-sm rounded-3xl shadow-soft p-8 md:p-12 border border-gray-100">
           <div class="flex items-start space-x-6 mb-8">
             <div class="flex-shrink-0">
-              <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg">
                 <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
@@ -54,15 +54,15 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
               </div>
             </div>
             <div class="flex-1">
-              <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Piedelpoggio: Storia e Vita di una Frazione di Leonessa</h2>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full">Frazione di Leonessa</span>
-                <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full">5,10 km dal capoluogo</span>
-                <span class="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full">Sesto di Poggio</span>
+              <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Piedelpoggio: Storia e Vita di una Frazione di Leonessa</h2>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-3 py-1 text-xs md:text-sm font-medium bg-green-100 text-green-700 text-sm rounded-full">Frazione di Leonessa</span>
+                <span class="px-3 py-1 text-xs md:text-sm font-medium bg-blue-100 text-blue-700 text-sm rounded-full">5,10 km dal capoluogo</span>
+                <span class="px-3 py-1 text-xs md:text-sm font-medium bg-purple-100 text-purple-700 text-sm rounded-full">Sesto di Poggio</span>
               </div>
             </div>
           </div>
-          <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed text-justify">
+          <div class="prose prose-base sm:prose-lg max-w-none text-gray-600 leading-relaxed text-justify">
             <p>
               Piedelpoggio è una caratteristica frazione del comune di Leonessa, situata a circa 5,10 km a sud-est dal capoluogo. Posta ai piedi delle imponenti vette del Monte di Cambio a sud e del Monte Tilia ad est, la sua stessa toponomastica sembra derivare proprio da questa peculiare collocazione pedemontana. Storicamente, Piedelpoggio apparteneva al Sesto di Poggio, un'antica suddivisione amministrativa del territorio di Leonessa che comprendeva anche le frazioni di Albaneto e Villa Immagine, a testimonianza dell'importanza che il borgo rivestiva nell'area.
             </p>
@@ -76,22 +76,22 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
         <div class="bg-white/80 backdrop-blur-sm rounded-3xl shadow-soft p-8 md:p-12 border border-gray-100">
           <div class="flex items-start space-x-6 mb-8">
             <div class="flex-shrink-0">
-              <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg">
                 <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
                 </svg>
               </div>
             </div>
             <div class="flex-1">
-              <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Storia e Architettura del Borgo</h3>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="px-3 py-1 bg-amber-100 text-amber-700 text-sm rounded-full">Anno 1000</span>
-                <span class="px-3 py-1 bg-red-100 text-red-700 text-sm rounded-full">Terremoto 1703</span>
-                <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full">Via A.F. Maccheroni</span>
+              <h3 class="text-2xl sm:text-3xl font-bold text-gray-900">Storia e Architettura del Borgo</h3>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-3 py-1 text-xs md:text-sm font-medium bg-amber-100 text-amber-700 text-sm rounded-full">Anno 1000</span>
+                <span class="px-3 py-1 text-xs md:text-sm font-medium bg-red-100 text-red-700 text-sm rounded-full">Terremoto 1703</span>
+                <span class="px-3 py-1 text-xs md:text-sm font-medium bg-blue-100 text-blue-700 text-sm rounded-full">Via A.F. Maccheroni</span>
               </div>
             </div>
           </div>
-          <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed text-justify">
+          <div class="prose prose-base sm:prose-lg max-w-none text-gray-600 leading-relaxed text-justify">
             <p>
               Le origini di Piedelpoggio sono antiche, con una struttura dell'insediamento che risale probabilmente all'anno 1000. Come molti altri centri dell'altopiano, fu in gran parte ricostruito in seguito al devastante terremoto del 1703. Il risultato è un pittoresco nucleo abitato, raccolto lungo la via principale, ancora lastricata a sampietrini e dedicata ad Angelo Felice Maccheroni, un pastore e poeta nato proprio qui e divenuto celebre per aver cantato la vita dei vargari (i conduttori di greggi).
             </p>
@@ -108,19 +108,19 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
         <div class="bg-white/80 backdrop-blur-sm rounded-3xl shadow-soft p-8 md:p-12 border border-gray-100">
           <div class="flex items-start space-x-6 mb-8">
             <div class="flex-shrink-0">
-              <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg">
                 <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
                 </svg>
               </div>
             </div>
             <div class="flex-1">
-              <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Vita Sociale ed Economica: Tradizione e Cambiamento</h3>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full">Anni '60</span>
-                <span class="px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full">Allevamento</span>
-                <span class="px-3 py-1 bg-yellow-100 text-yellow-700 text-sm rounded-full">La Piega</span>
-                <span class="px-3 py-1 bg-red-100 text-red-700 text-sm rounded-full">Industria BOSI</span>
+              <h3 class="text-2xl sm:text-3xl font-bold text-gray-900">Vita Sociale ed Economica: Tradizione e Cambiamento</h3>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-3 py-1 text-xs md:text-sm font-medium bg-blue-100 text-blue-700 text-sm rounded-full">Anni '60</span>
+                <span class="px-3 py-1 text-xs md:text-sm font-medium bg-green-100 text-green-700 text-sm rounded-full">Allevamento</span>
+                <span class="px-3 py-1 text-xs md:text-sm font-medium bg-yellow-100 text-yellow-700 text-sm rounded-full">La Piega</span>
+                <span class="px-3 py-1 text-xs md:text-sm font-medium bg-red-100 text-red-700 text-sm rounded-full">Industria BOSI</span>
               </div>
             </div>
           </div>
@@ -132,7 +132,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
               Economia Tradizionale
             </h4>
             <div class="grid md:grid-cols-2 gap-6">
-              <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 border border-green-100">
+              <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl sm:rounded-2xl p-6 border border-green-100">
                 <div class="flex items-center mb-4">
                   <div class="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mr-3">
                     <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -141,7 +141,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                   </div>
                   <h5 class="font-bold text-gray-900">Allevamento</h5>
                 </div>
-                <p class="text-sm text-gray-700 mb-3">Economia basata su ovini, caprini e bovini. Ogni famiglia possedeva vacche da lavoro, asini e piccoli ruminanti.</p>
+                <p class="text-sm text-gray-600 mb-3">Economia basata su ovini, caprini e bovini. Ogni famiglia possedeva vacche da lavoro, asini e piccoli ruminanti.</p>
                 <div class="flex flex-wrap gap-1">
                   <span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">Ovini</span>
                   <span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">Caprini</span>
@@ -149,7 +149,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                 </div>
               </div>
               
-              <div class="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-2xl p-6 border border-amber-100">
+              <div class="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-xl sm:rounded-2xl p-6 border border-amber-100">
                 <div class="flex items-center mb-4">
                   <div class="w-10 h-10 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-lg flex items-center justify-center mr-3">
                     <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -158,7 +158,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                   </div>
                   <h5 class="font-bold text-gray-900">Agricoltura Comunitaria</h5>
                 </div>
-                <p class="text-sm text-gray-700 mb-3">Terre collettive, trebbiatura comune, trasporto con asini e "carriola" in legno.</p>
+                <p class="text-sm text-gray-600 mb-3">Terre collettive, trebbiatura comune, trasporto con asini e "carriola" in legno.</p>
                 <div class="flex flex-wrap gap-1">
                   <span class="px-2 py-1 bg-amber-100 text-amber-700 text-xs rounded-full">Terre Collettive</span>
                   <span class="px-2 py-1 bg-amber-100 text-amber-700 text-xs rounded-full">Trebbiatura</span>
@@ -168,7 +168,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
             </div>
           </div>
 
-          <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed text-justify">
+          <div class="prose prose-base sm:prose-lg max-w-none text-gray-600 leading-relaxed text-justify">
             <p>
               Fino agli anni '60, le condizioni di vita a Piedelpoggio erano modeste. Le famiglie vivevano in abitazioni spesso sovraffollate, basse, con piccole finestre e soffitti in legno logoro. I materiali da costruzione erano quelli tipici della zona: pietrame calcareo, malta di calce, legno di cerro o faggio e coppi in argilla.
             </p>
@@ -188,22 +188,22 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
         <div class="bg-white/80 backdrop-blur-sm rounded-3xl shadow-soft p-8 md:p-12 border border-gray-100">
           <div class="flex items-start space-x-6 mb-8">
             <div class="flex-shrink-0">
-              <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg">
                 <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
                 </svg>
               </div>
             </div>
             <div class="flex-1">
-              <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">L'Amministrazione Autonoma: L'Università Agraria</h3>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full">Costituita 1929</span>
-                <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full">Universitas Civium</span>
-                <span class="px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full">Beni Civici</span>
+              <h3 class="text-2xl sm:text-3xl font-bold text-gray-900">L'Amministrazione Autonoma: L'Università Agraria</h3>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-3 py-1 text-xs md:text-sm font-medium bg-purple-100 text-purple-700 text-sm rounded-full">Costituita 1929</span>
+                <span class="px-3 py-1 text-xs md:text-sm font-medium bg-blue-100 text-blue-700 text-sm rounded-full">Universitas Civium</span>
+                <span class="px-3 py-1 text-xs md:text-sm font-medium bg-green-100 text-green-700 text-sm rounded-full">Beni Civici</span>
               </div>
             </div>
           </div>
-          <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed text-justify">
+          <div class="prose prose-base sm:prose-lg max-w-none text-gray-600 leading-relaxed text-justify">
             <p>
               Nonostante lo spopolamento, Piedelpoggio ha sempre mantenuto una forte identità e una notevole autonomia amministrativa grazie all'Università Agraria, costituita nel 1929 insieme a quelle di Santo Vito e Albaneto. Questo ente, il cui nome deriva dal latino <i>universitas civium</i> (la totalità dei cittadini), ha il compito di amministrare i beni di uso civico (come boschi e pascoli) e fa parte della Comunità Montana Montepiano Reatino.
             </p>
@@ -228,11 +228,11 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
               <div class="space-y-8">
                 <!-- 1947 - Acquedotto -->
                 <div class="relative flex items-start">
-                  <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg border-4 border-white z-10">
+                  <div class="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg border-4 border-white z-10">
                     1947
                   </div>
                   <div class="ml-6 flex-1">
-                    <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-6 border border-purple-100 shadow-sm">
+                    <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl sm:rounded-2xl p-6 border border-purple-100 shadow-sm">
                       <div class="flex items-start justify-between mb-3">
                         <h5 class="text-lg font-bold text-gray-900 flex items-center">
                           <svg class="w-5 h-5 text-purple-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -240,9 +240,9 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                           </svg>
                           Costruzione dell'Acquedotto
                         </h5>
-                        <span class="px-3 py-1 bg-purple-100 text-purple-700 text-xs rounded-full font-medium">Infrastrutture</span>
+                        <span class="px-3 py-1 text-xs md:text-sm font-medium bg-purple-100 text-purple-700 text-xs rounded-full font-medium">Infrastrutture</span>
                       </div>
-                      <p class="text-gray-700 text-sm leading-relaxed">
+                      <p class="text-gray-600 text-sm leading-relaxed">
                         Avvio del progetto per la costruzione dell'acquedotto, un'opera di primaria necessità per la quale <strong>tutti gli abitanti contribuirono economicamente</strong>, dimostrando un forte spirito di comunità.
                       </p>
                       <div class="mt-3 flex items-center text-xs text-gray-500">
@@ -257,11 +257,11 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
 
                 <!-- 1948 - Strade -->
                 <div class="relative flex items-start">
-                  <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg border-4 border-white z-10">
+                  <div class="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg border-4 border-white z-10">
                     1948
                   </div>
                   <div class="ml-6 flex-1">
-                    <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6 border border-blue-100 shadow-sm">
+                    <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl sm:rounded-2xl p-6 border border-blue-100 shadow-sm">
                       <div class="flex items-start justify-between mb-3">
                         <h5 class="text-lg font-bold text-gray-900 flex items-center">
                           <svg class="w-5 h-5 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -269,9 +269,9 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                           </svg>
                           Manutenzione Strade Interne
                         </h5>
-                        <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs rounded-full font-medium">Lavoro</span>
+                        <span class="px-3 py-1 text-xs md:text-sm font-medium bg-blue-100 text-blue-700 text-xs rounded-full font-medium">Lavoro</span>
                       </div>
-                      <p class="text-gray-700 text-sm leading-relaxed">
+                      <p class="text-gray-600 text-sm leading-relaxed">
                         Manutenzione delle strade interne del paese, un'occasione per <strong>"lenire la disoccupazione locale"</strong> con il contributo gratuito di molti cittadini.
                       </p>
                       <div class="mt-3 flex items-center text-xs text-gray-500">
@@ -286,11 +286,11 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
 
                 <!-- 1949 - Scuola -->
                 <div class="relative flex items-start">
-                  <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg border-4 border-white z-10">
+                  <div class="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg border-4 border-white z-10">
                     1949
                   </div>
                   <div class="ml-6 flex-1">
-                    <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl p-6 border border-emerald-100 shadow-sm">
+                    <div class="bg-gradient-to-br from-emerald-50 to-teal-50 rounded-xl sm:rounded-2xl p-6 border border-emerald-100 shadow-sm">
                       <div class="flex items-start justify-between mb-3">
                         <h5 class="text-lg font-bold text-gray-900 flex items-center">
                           <svg class="w-5 h-5 text-emerald-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -298,9 +298,9 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                           </svg>
                           Edificio Polifunzionale
                         </h5>
-                        <span class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs rounded-full font-medium">Servizi</span>
+                        <span class="px-3 py-1 text-xs md:text-sm font-medium bg-emerald-100 text-emerald-700 text-xs rounded-full font-medium">Servizi</span>
                       </div>
-                      <p class="text-gray-700 text-sm leading-relaxed">
+                      <p class="text-gray-600 text-sm leading-relaxed">
                         Acquisto di uno stabile per adibirlo a <strong>scuola, ufficio dell'Università Agraria e ufficio postale</strong>, centralizzando i servizi essenziali per la comunità.
                       </p>
                       <div class="mt-3 flex flex-wrap gap-2">
@@ -314,11 +314,11 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
 
                 <!-- Anni '50 - Servizi -->
                 <div class="relative flex items-start">
-                  <div class="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-600 rounded-full flex items-center justify-center text-white font-bold text-xs shadow-lg border-4 border-white z-10">
+                  <div class="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-amber-500 to-orange-600 rounded-full flex items-center justify-center text-white font-bold text-xs shadow-lg border-4 border-white z-10">
                     '50
                   </div>
                   <div class="ml-6 flex-1">
-                    <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 border border-amber-100 shadow-sm">
+                    <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl sm:rounded-2xl p-6 border border-amber-100 shadow-sm">
                       <div class="flex items-start justify-between mb-3">
                         <h5 class="text-lg font-bold text-gray-900 flex items-center">
                           <svg class="w-5 h-5 text-amber-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -326,9 +326,9 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                           </svg>
                           Modernizzazione Servizi
                         </h5>
-                        <span class="px-3 py-1 bg-amber-100 text-amber-700 text-xs rounded-full font-medium">Innovazione</span>
+                        <span class="px-3 py-1 text-xs md:text-sm font-medium bg-amber-100 text-amber-700 text-xs rounded-full font-medium">Innovazione</span>
                       </div>
-                      <p class="text-gray-700 text-sm leading-relaxed mb-4">
+                      <p class="text-gray-600 text-sm leading-relaxed mb-4">
                         Istituzione della ricevitoria postale, installazione di un impianto <strong>"fonotelegrafico"</strong>, riparazione della fontana vecchia (risalente al 1660) e costruzione di un nuovo abbeveratoio.
                       </p>
                       <div class="grid grid-cols-2 gap-3">
@@ -364,7 +364,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
             </div>
           </div>
           
-          <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed text-justify">
+          <div class="prose prose-base sm:prose-lg max-w-none text-gray-600 leading-relaxed text-justify">
             <p>
               Questi interventi dimostrano il forte senso di appartenenza e l'impegno della comunità nel migliorare la qualità della vita, nonostante le crescenti difficoltà.
             </p>
@@ -375,18 +375,18 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
         <div class="bg-white/80 backdrop-blur-sm rounded-3xl shadow-soft p-8 md:p-12 border border-gray-100">
           <div class="flex items-start space-x-6 mb-8">
             <div class="flex-shrink-0">
-              <div class="w-16 h-16 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg">
                 <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                 </svg>
               </div>
             </div>
             <div class="flex-1">
-              <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Sviluppo Recente e Prospettive Future</h3>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="px-3 py-1 bg-teal-100 text-teal-700 text-sm rounded-full">Progetto 1998</span>
-                <span class="px-3 py-1 bg-green-100 text-green-700 text-sm rounded-full">Macchia Grande</span>
-                <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full">Obiettivo 5/b</span>
+              <h3 class="text-2xl sm:text-3xl font-bold text-gray-900">Sviluppo Recente e Prospettive Future</h3>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-3 py-1 text-xs md:text-sm font-medium bg-teal-100 text-teal-700 text-sm rounded-full">Progetto 1998</span>
+                <span class="px-3 py-1 text-xs md:text-sm font-medium bg-green-100 text-green-700 text-sm rounded-full">Macchia Grande</span>
+                <span class="px-3 py-1 text-xs md:text-sm font-medium bg-blue-100 text-blue-700 text-sm rounded-full">Obiettivo 5/b</span>
               </div>
             </div>
           </div>
@@ -404,7 +404,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                 </div>
                 <div class="flex-1 bg-gradient-to-br from-teal-50 to-cyan-50 rounded-xl p-4 border border-teal-100">
                   <h5 class="font-bold text-gray-900 mb-2">Progetto Macchia Grande</h5>
-                  <p class="text-sm text-gray-700">Avvio progetto conversione ad alto fusto con fondi regionali Obiettivo 5/b</p>
+                  <p class="text-sm text-gray-600">Avvio progetto conversione ad alto fusto con fondi regionali Obiettivo 5/b</p>
                 </div>
               </div>
               <div class="flex items-start space-x-4">
@@ -413,7 +413,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                 </div>
                 <div class="flex-1 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-4 border border-green-100">
                   <h5 class="font-bold text-gray-900 mb-2">Aggiudicazione Appalto</h5>
-                  <p class="text-sm text-gray-700">"Il primo gradino di un prosperoso avvenire e di un risveglio della frazione"</p>
+                  <p class="text-sm text-gray-600">"Il primo gradino di un prosperoso avvenire e di un risveglio della frazione"</p>
                 </div>
               </div>
               <div class="flex items-start space-x-4">
@@ -422,13 +422,13 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                 </div>
                 <div class="flex-1 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-4 border border-blue-100">
                   <h5 class="font-bold text-gray-900 mb-2">Attività Correnti</h5>
-                  <p class="text-sm text-gray-700">Manutenzione strade rurali, recinzioni, rimboschimento</p>
+                  <p class="text-sm text-gray-600">Manutenzione strade rurali, recinzioni, rimboschimento</p>
                 </div>
               </div>
             </div>
           </div>
           
-          <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed text-justify">
+          <div class="prose prose-base sm:prose-lg max-w-none text-gray-600 leading-relaxed text-justify">
             <p>
               Anche in tempi più recenti, l'Università Agraria ha continuato a promuovere progetti per la valorizzazione del territorio. Una delle iniziatives più ambiziose è stata, nel 1998, l'avvio di un progetto di conversione ad alto fusto per il bosco in località Macchia Grande, finanziato con fondi regionali (Obiettivo 5/b). Dopo un lungo iter, l'appalto fu aggiudicato nel 1999, rappresentando, nelle parole dell'allora Presidente, "il primo gradino di un prosperoso avvenire e di un risveglio della frazione stessa".
             </p>
@@ -442,19 +442,19 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
         <div class="bg-white/80 backdrop-blur-sm rounded-3xl shadow-soft p-8 md:p-12 border border-gray-100">
           <div class="flex items-start space-x-6 mb-8">
             <div class="flex-shrink-0">
-              <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-pink-600 rounded-2xl flex items-center justify-center shadow-lg">
+              <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-red-500 to-pink-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg">
                 <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                 </svg>
               </div>
             </div>
             <div class="flex-1">
-              <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">L'Incastellamento</h2>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span class="px-3 py-1 bg-red-100 text-red-700 text-sm rounded-full">IX-X secolo</span>
-                <span class="px-3 py-1 bg-orange-100 text-orange-700 text-sm rounded-full">Carlo I d'Angiò</span>
-                <span class="px-3 py-1 bg-purple-100 text-purple-700 text-sm rounded-full">1278</span>
-                <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full">36 Ville</span>
+              <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">L'Incastellamento</h2>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="px-3 py-1 text-xs md:text-sm font-medium bg-red-100 text-red-700 text-sm rounded-full">IX-X secolo</span>
+                <span class="px-3 py-1 text-xs md:text-sm font-medium bg-orange-100 text-orange-700 text-sm rounded-full">Carlo I d'Angiò</span>
+                <span class="px-3 py-1 text-xs md:text-sm font-medium bg-purple-100 text-purple-700 text-sm rounded-full">1278</span>
+                <span class="px-3 py-1 text-xs md:text-sm font-medium bg-blue-100 text-blue-700 text-sm rounded-full">36 Ville</span>
               </div>
             </div>
           </div>
@@ -472,7 +472,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                 </div>
                 <div class="flex-1 bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-4 border border-amber-100">
                   <h5 class="font-bold text-gray-900 mb-2">Epoca Altomedievale</h5>
-                  <p class="text-sm text-gray-700">Formazione dei primi insediamenti e incastellamenti</p>
+                  <p class="text-sm text-gray-600">Formazione dei primi insediamenti e incastellamenti</p>
                 </div>
               </div>
               <div class="flex items-start space-x-4">
@@ -481,7 +481,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                 </div>
                 <div class="flex-1 bg-gradient-to-br from-red-50 to-pink-50 rounded-xl p-4 border border-red-100">
                   <h5 class="font-bold text-gray-900 mb-2">Riorganizzazione Angioina</h5>
-                  <p class="text-sm text-gray-700">Carlo I d'Angiò fonda l'Università di Leonessa unificando 36 ville</p>
+                  <p class="text-sm text-gray-600">Carlo I d'Angiò fonda l'Università di Leonessa unificando 36 ville</p>
                 </div>
               </div>
               <div class="flex items-start space-x-4">
@@ -490,14 +490,14 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                 </div>
                 <div class="flex-1 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-4 border border-purple-100">
                   <h5 class="font-bold text-gray-900 mb-2">Eredità Storica</h5>
-                  <p class="text-sm text-gray-700">Le 36 ville costituiscono ancora oggi le frazioni di Leonessa</p>
+                  <p class="text-sm text-gray-600">Le 36 ville costituiscono ancora oggi le frazioni di Leonessa</p>
                 </div>
               </div>
             </div>
           </div>
           
-          <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6 text-justify">
-            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-4">Leonessa città confederata</h3>
+          <div class="prose prose-base sm:prose-lg max-w-none text-gray-600 leading-relaxed space-y-6 text-justify">
+            <h3 class="text-xl md:text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Leonessa città confederata</h3>
             
             <p>
               Il popolamento della conca leonessana fu sempre contraddistinto da una serie di villaggi sparsi le cosiddette "Ville" che si svilupparono su tutto l'altopiano e sulle montagne, raggiungendo il ragguardevole numero di 36 insediamenti, i quali costituiscono ancora oggi le frazioni del capoluogo.

@@ -14,7 +14,7 @@ const { title, description, image, href, date, category } = Astro.props;
 ---
 
   <!-- Enhanced card with modern design and uniform height -->
-  <article class="group relative bg-white rounded-2xl transition-all duration-500 overflow-hidden border border-gray-200 hover:border-primary-200 hover:-translate-y-2 h-full flex flex-col">
+  <article class="group relative bg-white rounded-xl sm:rounded-2xl transition-all duration-500 overflow-hidden border border-gray-200 hover:border-primary-200 hover:-translate-y-2 h-full flex flex-col">
     <!-- Image container with overlay -->
     <div class="relative overflow-hidden rounded-t-2xl flex-shrink-0">
       <img 
@@ -28,7 +28,7 @@ const { title, description, image, href, date, category } = Astro.props;
       
       <!-- Category badge -->
       {category && (
-        <div class="absolute top-4 left-4 text-white px-3 py-1 rounded-full text-sm font-medium shadow-soft" style="background-color: #0ea5e9;">
+        <div class="absolute top-4 left-4 text-white px-3 py-1 text-xs md:text-sm font-medium rounded-full text-sm font-medium shadow-soft" style="background-color: #0ea5e9;">
           {category}
         </div>
       )}
@@ -43,7 +43,7 @@ const { title, description, image, href, date, category } = Astro.props;
     
     <!-- Description with improved typography -->
     {description && (
-      <p class="text-gray-600 leading-relaxed line-clamp-4 group-hover:text-gray-700 transition-colors duration-300 flex-grow">
+      <p class="text-gray-600 leading-relaxed line-clamp-4 group-hover:text-gray-600 transition-colors duration-300 flex-grow">
         {description}
       </p>
     )}

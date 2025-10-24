@@ -96,7 +96,7 @@ const dipintiItems = [
       <div class="relative z-10 container mx-auto px-4 text-center">
         <div class="animate-fade-in">
           <div class="flex items-center justify-center mb-8">
-            <div class="hidden md:flex w-20 h-20 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-2xl items-center justify-center shadow-xl mr-6">
+            <div class="hidden md:flex w-20 h-20 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-xl sm:rounded-2xl items-center justify-center shadow-xl mr-6">
               <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
               </svg>
@@ -108,7 +108,7 @@ const dipintiItems = [
             </h1>
           </div>
           <div class="w-32 h-1.5 bg-gradient-to-r from-purple-500 via-purple-600 to-indigo-500 rounded-full mx-auto mb-8"></div>
-          <p class="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto leading-relaxed font-medium">
+          <p class="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium">
             Il patrimonio culturale immateriale di Piedelpoggio
           </p>
         </div>
@@ -118,7 +118,7 @@ const dipintiItems = [
     <!-- Poesie Popolari -->
     <section id="poesie" class="mt-16 py-8 px-4 sm:px-6 lg:px-8">
       <div class="max-w-6xl mx-auto">
-        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden collapsible-content">
+        <div class="bg-white rounded-xl sm:rounded-2xl shadow-lg border border-gray-100 overflow-hidden collapsible-content">
           <!-- Header cliccabile per Poesie -->
           <div class="bg-white p-6 cursor-pointer hover:bg-gray-50 transition-all duration-300 collapsible-header" onclick="toggleSection('poesie')">
             <div class="flex items-center justify-between">
@@ -128,7 +128,7 @@ const dipintiItems = [
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
                   </svg>
                 </div>
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Poesie e Opere</h2>
+                <h2 class="text-2xl md:text-2xl sm:text-3xl font-bold text-gray-900">Poesie e Opere</h2>
               </div>
               <div class="arrow-icon transition-transform duration-300" style="transform: rotate(0deg);">
                 <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -145,7 +145,7 @@ const dipintiItems = [
             <!-- La Pastoral Siringa -->
             <div class="max-w-6xl mx-auto mb-16">
               <div class="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-xl p-8">
-                <h3 class="text-3xl font-bold text-gray-900 mb-6 text-center">La Pastoral Siringa</h3>
+                <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 text-center">La Pastoral Siringa</h3>
                 <p class="text-lg text-gray-600 mb-6 text-center italic">di Angelo Felice Maccheroni (1803-1888)</p>
                 
                 <div class="grid lg:grid-cols-2 gap-8 items-start">
@@ -180,7 +180,7 @@ const dipintiItems = [
                   <div class="space-y-6">
                     <div>
                       <h4 class="text-xl font-bold text-gray-900 mb-4">Chi era Angelo Felice Maccheroni</h4>
-                      <div class="space-y-4 text-gray-700 leading-relaxed">
+                      <div class="space-y-4 text-gray-600 leading-relaxed text-justify">
                         <p>
                           Angelo Felice Maccheroni era un pastore e poeta del centro Italia, originario di Piedelpoggio (RI). 
                           Le sue date sono spesso riportate come nato nel 1803, morto nel 1888.
@@ -201,7 +201,7 @@ const dipintiItems = [
                     
                     <div>
                       <h4 class="text-xl font-bold text-gray-900 mb-4">Opere principali</h4>
-                      <div class="space-y-3 text-gray-700">
+                      <div class="space-y-3 text-gray-600">
                         <div class="bg-white/60 rounded-lg p-4">
                           <p class="font-semibold">La Pastoral Siringa (1848)</p>
                           <p class="text-sm">Operetta in ottave contenente 218 pagine, con le avventure dei pastori</p>
@@ -219,7 +219,7 @@ const dipintiItems = [
                     
                     <div>
                       <h4 class="text-xl font-bold text-gray-900 mb-4">Importanza culturale</h4>
-                      <div class="space-y-3 text-gray-700 leading-relaxed">
+                      <div class="space-y-3 text-gray-600 leading-relaxed text-justify">
                         <p>
                           Angelo Felice Maccheroni è un esempio di poeta pastore, figura che unisce la dimensione pastorale 
                           e rurale con l'espressione poetica. Il suo lavoro mostra come la vita contadina e la transumanza 
@@ -241,7 +241,7 @@ const dipintiItems = [
             <!-- Mo' Revengo -->
             <div class="max-w-2xl mx-auto">
               <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-8 mb-16">
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">Mo' Revengo</h3>
+              <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Mo' Revengo</h3>
               <p class="text-sm text-gray-600 mb-6 italic">di Alberto Rauco</p>
               
               <div class="space-y-4 text-gray-800 leading-relaxed text-justify">
@@ -303,7 +303,7 @@ const dipintiItems = [
               </div>
               
               <div class="mt-6 p-4 bg-white/60 rounded-lg text-justify">
-                <p class="text-sm text-gray-700">
+                <p class="text-sm text-gray-600">
                   <strong>Nota:</strong> Poesia autentica di Alberto Rauco scritta in dialetto locale, 
                   che racconta una storia drammatica legata al periodo della Seconda Guerra Mondiale.
                 </p>
@@ -313,8 +313,8 @@ const dipintiItems = [
 
             <!-- Sezione Antonio Pietrolucci -->
             <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-6 mt-12">
-              <h3 class="text-2xl font-bold text-gray-900 mb-2">Poesie di Antonio Pietrolucci</h3>
-              <p class="text-gray-700">
+              <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Poesie di Antonio Pietrolucci</h3>
+              <p class="text-gray-600">
                 Antonio Pietrolucci è stato un poeta locale che ha dedicato la sua vita 
                 a raccontare attraverso i versi la bellezza e le tradizioni di Piedelpoggio e del territorio circostante.
               </p>
@@ -325,7 +325,7 @@ const dipintiItems = [
               <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6">
                 <h4 class="text-xl font-bold text-gray-900 mb-3">Ritorno a Piedelpoggio</h4>
                 
-                <div class="space-y-3 text-gray-800 leading-relaxed text-sm">
+                <div class="space-y-3 text-gray-800 leading-relaxed text-sm text-justify">
                   <div class="italic">
                     <p>Il fascino del verde e quelle cime</p>
                     <p>Il tempo andato in mente fan tornare,</p>
@@ -423,7 +423,7 @@ const dipintiItems = [
               <div class="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6">
                 <h4 class="text-xl font-bold text-gray-900 mb-3">La Fonte Vecchia</h4>
                 
-                <div class="space-y-3 text-gray-800 leading-relaxed text-sm">
+                <div class="space-y-3 text-gray-800 leading-relaxed text-sm text-justify">
                   <div class="italic">
                     <p>Passante, che ten vai per la tua via,</p>
                     <p>Cittadin di villa Piedelpoggio,</p>
@@ -466,7 +466,7 @@ const dipintiItems = [
               <div class="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-xl p-6">
                 <h4 class="text-xl font-bold text-gray-900 mb-3">I Prati della Fonte</h4>
                 
-                <div class="space-y-3 text-gray-800 leading-relaxed text-sm">
+                <div class="space-y-3 text-gray-800 leading-relaxed text-sm text-justify">
                   <div class="italic">
                     <p>Quando è maggio, sui prati della fonte</p>
                     <p>Peri e meli son tutti ricamati.</p>
@@ -510,7 +510,7 @@ const dipintiItems = [
                 <h4 class="text-xl font-bold text-gray-900 mb-3">Leonessa</h4>
                 <p class="text-sm text-gray-600 mb-4 italic">(Il mio paese)</p>
                 
-                <div class="space-y-3 text-gray-800 leading-relaxed text-sm">
+                <div class="space-y-3 text-gray-800 leading-relaxed text-sm text-justify">
                   <div class="italic">
                     <p>Ecco Leonessa, cittadin primiera</p>
                     <p>Di queste antiche parti montanare,</p>
@@ -555,7 +555,7 @@ const dipintiItems = [
                 <h4 class="text-xl font-bold text-gray-900 mb-3">Il Fornetto</h4>
                 <p class="text-sm text-gray-600 mb-4 italic">(Dolci Ricordi)</p>
                 
-                <div class="space-y-3 text-gray-800 leading-relaxed text-sm">
+                <div class="space-y-3 text-gray-800 leading-relaxed text-sm text-justify">
                   <div class="italic">
                     <p>Con nostalgia ripenso a quel fornetto</p>
                     <p>Che delle Pantanelle è il vicinato,</p>
@@ -621,7 +621,7 @@ const dipintiItems = [
               <div class="bg-gradient-to-br from-red-50 to-orange-50 rounded-xl p-6">
                 <h4 class="text-xl font-bold text-gray-900 mb-3">Una Notte di Cinecittà</h4>
                 
-                <div class="space-y-3 text-gray-800 leading-relaxed text-sm">
+                <div class="space-y-3 text-gray-800 leading-relaxed text-sm text-justify">
                   <div class="italic">
                     <p>Concetta è un anno, e un altro quasi intero,</p>
                     <p>Ch'io ti incontrai sul ponte del Tascino.</p>
@@ -665,7 +665,7 @@ const dipintiItems = [
               <div class="bg-gradient-to-br from-teal-50 to-green-50 rounded-xl p-6">
                 <h4 class="text-xl font-bold text-gray-900 mb-3">Serenata A Piedelpoggio</h4>
                 
-                <div class="space-y-3 text-gray-800 leading-relaxed text-sm">
+                <div class="space-y-3 text-gray-800 leading-relaxed text-sm text-justify">
                   <div class="italic">
                     <p>In questa notte tutta ricamata</p>
                     <p>da più di mille lampade d'argento</p>
@@ -715,7 +715,7 @@ const dipintiItems = [
               <div class="bg-gradient-to-br from-gray-50 to-slate-50 rounded-xl p-6">
                 <h4 class="text-xl font-bold text-gray-900 mb-3">Torna Maggio</h4>
                 
-                <div class="space-y-3 text-gray-800 leading-relaxed text-sm">
+                <div class="space-y-3 text-gray-800 leading-relaxed text-sm text-justify">
                   <div class="italic">
                     <p>Dalla finestra mia lontano miro</p>
                     <p>i colli,i campi,tutti ricamati,</p>
@@ -754,7 +754,7 @@ const dipintiItems = [
                 <h4 class="text-xl font-bold text-gray-900 mb-3">Il Sette Aprile 1944</h4>
                 <p class="text-xs text-gray-600 mb-3 italic">(Perchè i giovani sappiano e gli anziani non dimentichino)</p>
                 
-                <div class="space-y-3 text-gray-800 leading-relaxed text-sm">
+                <div class="space-y-3 text-gray-800 leading-relaxed text-sm text-justify">
                   <div class="italic">
                     <p>Vola misiva mia da 'sta prigione,</p>
                     <p>T'affido i miei pensier colmi di pene,</p>
@@ -836,7 +836,7 @@ const dipintiItems = [
               <div class="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-xl p-6 mb-6">
                 <h4 class="text-xl font-bold text-gray-900 mb-3">La Stalla</h4>
                 
-                <div class="space-y-3 text-gray-800 leading-relaxed text-sm">
+                <div class="space-y-3 text-gray-800 leading-relaxed text-sm text-justify">
                   <div class="italic">
                     <p>Fu stalla 'sto locale e fù cascina</p>
                     <p>Della nonna Lucia dei carettini,</p>
@@ -938,7 +938,7 @@ const dipintiItems = [
     <!-- Tradizioni -->
     <section id="tradizioni" class="py-8 px-4 sm:px-6 lg:px-8">
       <div class="max-w-6xl mx-auto">
-        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden collapsible-content">
+        <div class="bg-white rounded-xl sm:rounded-2xl shadow-lg border border-gray-100 overflow-hidden collapsible-content">
           <!-- Header cliccabile per Tradizioni -->
           <div class="bg-white p-6 cursor-pointer hover:bg-gray-50 transition-all duration-300 collapsible-header" onclick="toggleSection('tradizioni')">
             <div class="flex items-center justify-between">
@@ -948,7 +948,7 @@ const dipintiItems = [
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
                   </svg>
                 </div>
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Tradizioni Antiche</h2>
+                <h2 class="text-2xl md:text-2xl sm:text-3xl font-bold text-gray-900">Tradizioni Antiche</h2>
               </div>
               <div class="arrow-icon transition-transform duration-300" style="transform: rotate(0deg);">
                 <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -964,7 +964,7 @@ const dipintiItems = [
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <!-- Tradizione 1 -->
             <div class="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-xl p-8">
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">Le Aste Pubbliche</h3>
+              <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Le Aste Pubbliche</h3>
               <p class="text-sm text-gray-600 mb-6 italic">La "Candela Vergine"</p>
               
               <div class="space-y-4 text-gray-800 leading-relaxed text-justify">
@@ -1000,7 +1000,7 @@ const dipintiItems = [
               </div>
               
               <div class="mt-6 p-4 bg-white/60 rounded-lg">
-                <p class="text-sm text-gray-700">
+                <p class="text-sm text-gray-600">
                   <strong>Nota storica:</strong> Nell'asta con banditore, vi era un addetto alla convalida 
                   e all'aggiudicazione dell'appalto, l'aggiudicazione veniva successivamente pubblicata 
                   sulla gazzetta ufficiale dello stato.
@@ -1010,7 +1010,7 @@ const dipintiItems = [
 
             <!-- Tradizione 2 -->
             <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-8">
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">Vece di Sotto e Vece di Sopra</h3>
+              <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Vece di Sotto e Vece di Sopra</h3>
               <p class="text-sm text-gray-600 mb-6 italic">La Rotazione delle Colture</p>
               
               <div class="space-y-4 text-gray-800 leading-relaxed text-justify">
@@ -1027,7 +1027,7 @@ const dipintiItems = [
                 </p>
                 
                 <div class="mt-6 p-4 bg-white/60 rounded-lg text-justify">
-                  <p class="text-sm text-gray-700">
+                  <p class="text-sm text-gray-600">
                     <strong>Sistema di rotazione:</strong> L'alternanza tra "vece di sotto" (zone pianeggianti) 
                     e "vece di sopra" (zone montane) garantiva la sostenibilità dell'agricoltura locale 
                     e la conservazione della fertilità del suolo.
@@ -1038,7 +1038,7 @@ const dipintiItems = [
 
             <!-- Tradizione 3 -->
             <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 lg:col-span-2 mb-6">
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">La Fida Pascolo</h3>
+              <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">La Fida Pascolo</h3>
               <p class="text-sm text-gray-600 mb-6 italic">Antica Consuetudine per il Pascolo del Bestiame</p>
               
               <div class="space-y-4 text-gray-800 leading-relaxed text-justify">
@@ -1081,7 +1081,7 @@ const dipintiItems = [
     <!-- Testimonianze -->
     <section id="testimonianze" class="py-8 px-4 sm:px-6 lg:px-8">
       <div class="max-w-6xl mx-auto">
-        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden collapsible-content">
+        <div class="bg-white rounded-xl sm:rounded-2xl shadow-lg border border-gray-100 overflow-hidden collapsible-content">
           <!-- Header cliccabile per Testimonianze -->
           <div class="bg-white p-6 cursor-pointer hover:bg-gray-50 transition-all duration-300 collapsible-header" onclick="toggleSection('testimonianze')">
             <div class="flex items-center justify-between">
@@ -1091,7 +1091,7 @@ const dipintiItems = [
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/>
                   </svg>
                 </div>
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Testimonianze</h2>
+                <h2 class="text-2xl md:text-2xl sm:text-3xl font-bold text-gray-900">Testimonianze</h2>
               </div>
               <div class="arrow-icon transition-transform duration-300" style="transform: rotate(0deg);">
                 <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1107,8 +1107,8 @@ const dipintiItems = [
           <div class="space-y-6">
             <!-- Testimonianza 1 -->
             <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8">
-              <div class="flex items-start space-x-4">
-                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <div class="space-y-4 sm:space-y-0 sm:flex sm:items-start sm:space-x-4">
+                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                   </svg>
@@ -1116,13 +1116,13 @@ const dipintiItems = [
                 <div class="flex-1">
                   <div class="flex items-center space-x-4 mb-4">
                     <h3 class="text-xl font-bold text-gray-900">Don Gioacchino Bella</h3>
-                    <span class="text-sm text-gray-600 bg-white/60 px-3 py-1 rounded-full">Parroco di Piedelpoggio</span>
+                    <span class="text-sm text-gray-600 bg-white/60 px-3 py-1 text-xs md:text-sm font-medium rounded-full">Parroco di Piedelpoggio</span>
                   </div>
                   <div class="mb-4">
                     <h4 class="text-lg font-semibold text-gray-800 mb-2">Testimonianza sui fatti del 31 marzo e 4-5 aprile 1944</h4>
                     <p class="text-sm text-gray-600 italic mb-4">Quando l'altopiano di Leonessa fu occupato dalle "SS" tedesche</p>
                   </div>
-                  <div class="text-gray-700 text-sm leading-relaxed space-y-3 text-justify">
+                  <div class="text-gray-600 text-sm leading-relaxed space-y-3 text-justify">
                     <p><strong>Era il 31 marzo 1944;</strong> in quell'epoca si festeggiava Maria SS. Addolorata (era il venerdì di passione). La nostra chiesa era piena di fedeli, fra cui molti sfollati romani. Terminata la Messa solenne, tutti tornarono alle proprie abitazioni ed io, circa venti minuti più tardi, uscii di casa.</p>
                     
                     <p>In paese notai un completo deserto e fui informato che gli uomini validi erano tutti fuggiti in montagna, in quanto un piccolo esercente del luogo, soprannominato Pasqualone, mentre lavorava nei campi, aveva notato verso San Clemente una colonna motorizzata di militari tedeschi, ed era corso a dare l'allarme.</p>
@@ -1144,7 +1144,7 @@ const dipintiItems = [
                      <p><strong>I venti fermati</strong> furono poi chiusi nel carcere di San Francesco, a Leonessa, e il giorno seguente vennero trasferiti a Rieti e rinchiusi in un ospizio per gli anziani requisito dalle autorità di occupazione, in quanto le carceri erano piene.</p>
                      
                      <!-- Tabella dei deportati -->
-                     <div class="bg-blue-50 border border-blue-200 rounded-lg p-6 my-6">
+                     <div class="bg-blue-50 rounded-lg my-6">
                        <h5 class="text-lg font-bold text-blue-900 mb-4 text-center">Elenco dei cittadini di Piedelpoggio che nell'aprile 1944 furono deportati dai tedeschi nel campo di concentramento di Cinecittà - ROMA</h5>
                        <div class="overflow-x-auto">
                          <table class="w-full text-sm border-collapse">
@@ -1303,7 +1303,7 @@ const dipintiItems = [
                      <p><strong>Dal modo in cui si svolsero gli avvenimenti</strong> e considerato che i prigionieri tornarono sani e salvi alle loro case, dopo la liberazione di Roma da parte degli Alleati, la popolazione del paese ha voluto (con l'approvazione delle autorità ecclesiastiche) istituire una festa in onore di Maria SS Addolorata da celebrarsi ogni anno nel mese di agosto; in tale circostanza la popolazione stessa ha voluto porre una lapide a perenne ricordo dell'avvenimento con l'effige di Maria SS Addolorata nel luogo in cui i dieci uomini della frazione di Piedelpoggio avrebbero dovuto essere fucilati dalle "SS" il 5 aprile 1944.</p>
                   </div>
                   <div class="bg-white/60 rounded-lg p-4 mt-4">
-                    <p class="text-sm text-gray-700">
+                    <p class="text-sm text-gray-600">
                       <strong>Testimone:</strong> Don Gioacchino Bella, Parroco della Chiesa di S.Maria del Cerreto - Piedelpoggio, 8 dicembre 1992
                     </p>
                   </div>
@@ -1313,8 +1313,8 @@ const dipintiItems = [
 
             <!-- Testimonianza 2 -->
             <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-8 mb-6">
-              <div class="flex items-start space-x-4">
-                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <div class="space-y-4 sm:space-y-0 sm:flex sm:items-start sm:space-x-4">
+                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                   </svg>
@@ -1322,13 +1322,13 @@ const dipintiItems = [
                 <div class="flex-1">
                   <div class="flex items-center space-x-4 mb-4">
                     <h3 class="text-xl font-bold text-gray-900">Brigata Garibaldina "Antonio Gramsci"</h3>
-                    <span class="text-sm text-gray-600 bg-white/60 px-3 py-1 rounded-full">16 marzo 1944</span>
+                    <span class="text-sm text-gray-600 bg-white/60 px-3 py-1 text-xs md:text-sm font-medium rounded-full">16 marzo 1944</span>
                   </div>
-                  <p class="text-gray-700 italic mb-4 text-base leading-relaxed text-justify">
+                  <p class="text-gray-600 italic mb-4 text-base leading-relaxed text-justify">
                     "Con la liberazione di Leonessa, Poggio Bustone, Albaneto e le rispettive frazioni, la brigata garibaldina Antonio Gramsci, ha liberato circa 1000 kmq. di territorio migliaia e migliaia di lavoratori sono stati liberati dalla schiavitù nazifascista. Questo comando, mentre invita i cittadini a collaborare con i partigiani per le necessità delle popolazioni locali, rende noto che oggi 16.3.1944, il territorio di Leonessa e di S.Pancrazio (Narni), con i limiti di Rivodutri, Poggio Bustone, Albaneto, Castiglione di Arrone è considerato staccato da Rieti, Terni e Perugia, città dominate dai nazifascisti, ed unito al territorio di Cascia, Norcia, Monteleone. Per conseguenza la brigata garibaldina 'Gramsci', unica autorità esistente in detto territorio, che rappresenta la nuova Italia democratica, assume la responsabilità di fronte ai cittadini, militarmente, politicamente, e amministrativamente. I cittadini per le loro necessità sono invitati a rivolgersi ai rispettivi comuni e al comando della brigata, sito all'albergo ITALIA di Cascia."
                   </p>
                   <div class="bg-white/60 rounded-lg p-4">
-                    <p class="text-sm text-gray-700">
+                    <p class="text-sm text-gray-600">
                       <strong>Fonte:</strong> Dall'Enciclopedia dell'antifascismo e della resistenza (edizione la pietra) a cura dell'A.N.P.I. Terni
                     </p>
                   </div>
@@ -1344,7 +1344,7 @@ const dipintiItems = [
     <!-- Canzoni Popolari -->
     <section id="canzoni" class="py-8 px-4 sm:px-6 lg:px-8">
       <div class="max-w-6xl mx-auto">
-        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden collapsible-content">
+        <div class="bg-white rounded-xl sm:rounded-2xl shadow-lg border border-gray-100 overflow-hidden collapsible-content">
           <!-- Header cliccabile per Canzoni -->
           <div class="bg-white p-6 cursor-pointer hover:bg-gray-50 transition-all duration-300 collapsible-header ace-y-6"" onclick="toggleSection('canzoni')">
             <div class="flex items-center justify-between">
@@ -1354,7 +1354,7 @@ const dipintiItems = [
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
                   </svg>
                 </div>
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Canzoni</h2>
+                <h2 class="text-2xl md:text-2xl sm:text-3xl font-bold text-gray-900">Canzoni</h2>
               </div>
               <div class="arrow-icon transition-transform duration-300" style="transform: rotate(0deg);">
                 <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1370,8 +1370,8 @@ const dipintiItems = [
           <div class="space-y-6">
             <!-- Canzone 1: NU SIMU VINUTI -->
             <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-8">
-              <div class="flex items-start space-x-4">
-                <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <div class="space-y-4 sm:space-y-0 sm:flex sm:items-start sm:space-x-4">
+                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
                   </svg>
@@ -1400,7 +1400,7 @@ const dipintiItems = [
                     </p>
                   </div>
                   <div class="bg-white/60 rounded-lg p-4">
-                    <p class="text-sm text-gray-700">
+                    <p class="text-sm text-gray-600">
                       <strong>Origine:</strong> Canzone tradizionale della pasquarella, 
                       cantata durante le festività natalizie
                     </p>
@@ -1411,8 +1411,8 @@ const dipintiItems = [
 
             <!-- Canzone 2: CE N'IMO CANTENNO -->
             <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-xl p-8">
-              <div class="flex items-start space-x-4">
-                <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <div class="space-y-4 sm:space-y-0 sm:flex sm:items-start sm:space-x-4">
+                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
                   </svg>
@@ -1441,7 +1441,7 @@ const dipintiItems = [
                     </p>
                   </div>
                   <div class="bg-white/60 rounded-lg p-4">
-                    <p class="text-sm text-gray-700">
+                    <p class="text-sm text-gray-600">
                       <strong>Origine:</strong> Canzone tradizionale della pasquarella
                     </p>
                   </div>
@@ -1451,8 +1451,8 @@ const dipintiItems = [
 
             <!-- Canzone 3: LA PASQUETTA -->
             <div class="bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-8">
-              <div class="flex items-start space-x-4">
-                <div class="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <div class="space-y-4 sm:space-y-0 sm:flex sm:items-start sm:space-x-4">
+                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg class="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
                   </svg>
@@ -1488,7 +1488,7 @@ const dipintiItems = [
                     </p>
                   </div>
                   <div class="bg-white/60 rounded-lg p-4">
-                    <p class="text-sm text-gray-700">
+                    <p class="text-sm text-gray-600">
                       <strong>Origine:</strong> Canzone tradizionale della pasquarella, 
                       legata alle celebrazioni del periodo natalizio e pasquale
                     </p>
@@ -1499,8 +1499,8 @@ const dipintiItems = [
 
             <!-- Canzone 4: NEL PRESEPE -->
             <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8">
-              <div class="flex items-start space-x-4">
-                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <div class="space-y-4 sm:space-y-0 sm:flex sm:items-start sm:space-x-4">
+                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
                   </svg>
@@ -1523,7 +1523,7 @@ const dipintiItems = [
                     </p>
                   </div>
                   <div class="bg-white/60 rounded-lg p-4">
-                    <p class="text-sm text-gray-700">
+                    <p class="text-sm text-gray-600">
                       <strong>Origine:</strong> Canzone tradizionale della pasquarella, 
                       cantata durante le celebrazioni natalizie
                     </p>
@@ -1534,8 +1534,8 @@ const dipintiItems = [
 
             <!-- Canzone 5: OGGI E' QUELLA GIORNATA -->
             <div class="bg-gradient-to-r from-red-50 to-pink-50 rounded-xl p-8">
-              <div class="flex items-start space-x-4">
-                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <div class="space-y-4 sm:space-y-0 sm:flex sm:items-start sm:space-x-4">
+                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
                   </svg>
@@ -1560,7 +1560,7 @@ const dipintiItems = [
                     </p>
                   </div>
                   <div class="bg-white/60 rounded-lg p-4">
-                    <p class="text-sm text-gray-700">
+                    <p class="text-sm text-gray-600">
                       <strong>Origine:</strong> Canzone tradizionale della pasquarella, 
                       racconta la storia della natività
                     </p>
@@ -1571,8 +1571,8 @@ const dipintiItems = [
 
             <!-- Canzone 6: ECCO PASQUA EPIFANIA -->
             <div class="bg-gradient-to-r from-yellow-50 to-amber-50 rounded-xl p-8 mb-6">
-              <div class="flex items-start space-x-4">
-                <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <div class="space-y-4 sm:space-y-0 sm:flex sm:items-start sm:space-x-4">
+                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
                   </svg>
@@ -1606,7 +1606,7 @@ const dipintiItems = [
                     </p>
                   </div>
                   <div class="bg-white/60 rounded-lg p-4">
-                    <p class="text-sm text-gray-700">
+                    <p class="text-sm text-gray-600">
                       <strong>Origine:</strong> Canzone dell'Epifania, 
                       celebra l'arrivo dei Re Magi
                     </p>
@@ -1617,8 +1617,8 @@ const dipintiItems = [
 
             <!-- Canzone 7: PUNTEGGIATE AMICA STELLA -->
             <div class="bg-gradient-to-r from-teal-50 to-cyan-50 rounded-xl p-8">
-              <div class="flex items-start space-x-4">
-                <div class="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <div class="space-y-4 sm:space-y-0 sm:flex sm:items-start sm:space-x-4">
+                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
                   </svg>
@@ -1647,7 +1647,7 @@ const dipintiItems = [
                     </p>
                   </div>
                   <div class="bg-white/60 rounded-lg p-4">
-                    <p class="text-sm text-gray-700">
+                    <p class="text-sm text-gray-600">
                       <strong>Origine:</strong> Canzone tradizionale della pasquarella, 
                       invoca la stella cometa
                     </p>
@@ -1658,8 +1658,8 @@ const dipintiItems = [
 
             <!-- Canzone 8: COMPATITECI SIGNORI -->
             <div class="bg-gradient-to-r from-rose-50 to-pink-50 rounded-xl p-8 mb-6">
-              <div class="flex items-start space-x-4">
-                <div class="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center flex-shrink-0">
+              <div class="space-y-4 sm:space-y-0 sm:flex sm:items-start sm:space-x-4">
+                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-rose-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg class="w-8 h-8 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
                   </svg>
@@ -1682,7 +1682,7 @@ const dipintiItems = [
                     </p>
                   </div>
                   <div class="bg-white/60 rounded-lg p-4">
-                    <p class="text-sm text-gray-700">
+                    <p class="text-sm text-gray-600">
                       <strong>Origine:</strong> Canzone tradizionale della pasquarella, 
                       racconta il viaggio di Giuseppe e Maria
                     </p>
@@ -1698,7 +1698,7 @@ const dipintiItems = [
     <!-- Sezione Arte - Dipinti di Fiorella Mincinesi -->
     <section id="arte" class="pt-8 pb-16 px-4 sm:px-6 lg:px-8">
       <div class="max-w-6xl mx-auto">
-        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden collapsible-content">
+        <div class="bg-white rounded-xl sm:rounded-2xl shadow-lg border border-gray-100 overflow-hidden collapsible-content">
           <!-- Header cliccabile per Arte -->
           <div class="bg-white p-6 cursor-pointer hover:bg-gray-50 transition-all duration-300 collapsible-header ace-y-6"" onclick="toggleSection('arte')">
             <div class="flex items-center justify-between">
@@ -1712,7 +1712,7 @@ const dipintiItems = [
                     <path d="M14 14l1 -1c.928 -.893 2.072 -.893 3 0l2.5 2.5" />
                   </svg>
                 </div>
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Arte</h2>
+                <h2 class="text-2xl md:text-2xl sm:text-3xl font-bold text-gray-900">Arte</h2>
               </div>
               <div class="arrow-icon transition-transform duration-300" style="transform: rotate(0deg);">
                 <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1727,14 +1727,14 @@ const dipintiItems = [
 
           <div class="mb-6">
             <div class="bg-gradient-to-r from-pink-50 to-rose-50 rounded-xl p-8 mb-6">
-              <h3 class="text-2xl font-bold text-gray-900 mb-4">I Dipinti di Fiorella Mincinesi</h3>
-              <p class="text-gray-700 leading-relaxed mb-4">
+              <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">I Dipinti di Fiorella Mincinesi</h3>
+              <p class="text-gray-600 leading-relaxed mb-4">
                 Una collezione di opere pittoriche che catturano l'essenza e la bellezza di Piedelpoggio 
                 attraverso gli occhi sensibili dell'artista locale Fiorella Mincinesi. Ogni dipinto racconta 
                 una storia, un momento, un'emozione legata al nostro territorio montano.
               </p>
               <div class="bg-white/60 rounded-lg p-4">
-                <p class="text-sm text-gray-700">
+                <p class="text-sm text-gray-600">
                   <strong>Artista:</strong> Fiorella Mincinesi
                 </p>
               </div>

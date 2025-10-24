@@ -143,11 +143,11 @@ body {
 
 /* Enhanced Component Styles */
 .btn-primary {
-  @apply bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-8 py-4 rounded-2xl font-semibold transition-all duration-300 hover:shadow-glow hover:scale-105 active:scale-95;
+  @apply bg-gradient-to-r from-primary-600 to-secondary-600 text-white px-8 py-4 rounded-xl sm:rounded-2xl font-semibold transition-all duration-300 hover:shadow-glow hover:scale-105 active:scale-95;
 }
 
 .btn-secondary {
-  @apply bg-white/90 backdrop-blur-sm text-gray-700 px-8 py-4 rounded-2xl font-semibold border border-gray-200/50 transition-all duration-300 hover:bg-white hover:shadow-medium hover:scale-105 active:scale-95;
+  @apply bg-white/90 backdrop-blur-sm text-gray-600 px-8 py-4 rounded-xl sm:rounded-2xl font-semibold border border-gray-200/50 transition-all duration-300 hover:bg-white hover:shadow-medium hover:scale-105 active:scale-95;
 }
 
 .card {
@@ -317,7 +317,7 @@ body {
 }
 
 .modal-content-mobile {
-  @apply w-full max-w-lg bg-white rounded-t-2xl sm:rounded-2xl shadow-xl transform transition-all;
+  @apply w-full max-w-lg bg-white rounded-t-2xl sm:rounded-xl sm:rounded-2xl shadow-xl transform transition-all;
 }
 
 /* Mobile Scroll Improvements */
@@ -388,53 +388,6 @@ body {
   
   .modal-content-mobile {
     @apply max-h-[90vh] overflow-y-auto;
-  }
-}
-
-/* Prevent zoom on mobile devices */
-@media (max-width: 768px) {
-  html {
-    touch-action: manipulation;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    -webkit-user-scalable: no;
-    -webkit-touch-callout: none;
-    zoom: 1;
-    -ms-zoom: 1;
-  }
-  
-  body {
-    touch-action: manipulation;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-user-scalable: no;
-    zoom: 1;
-    -ms-zoom: 1;
-  }
-  
-  /* Prevent double-tap zoom */
-  * {
-    touch-action: manipulation;
-    -webkit-user-scalable: no;
-  }
-  
-  /* Prevent zoom on specific elements */
-  img, video, canvas, svg {
-    touch-action: manipulation;
-    -webkit-user-scalable: no;
-  }
-  
-  /* Allow text selection for inputs and content areas */
-  input, textarea, [contenteditable] {
-    -webkit-user-select: text;
-    -khtml-user-select: text;
-    -moz-user-select: text;
-    -ms-user-select: text;
-    user-select: text;
   }
 }
 

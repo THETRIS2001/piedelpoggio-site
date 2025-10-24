@@ -66,7 +66,7 @@ const PDFViewer: React.FC<PDFViewerProps> = ({ documents }) => {
         {documents.map((doc, index) => (
           <div
             key={index}
-            className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
+            className="bg-white rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
           >
             {/* Header del documento */}
             <div className={`bg-gradient-to-r ${getCategoryColor(doc.category)} p-4 text-white`}>

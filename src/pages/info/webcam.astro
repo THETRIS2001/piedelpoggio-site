@@ -152,7 +152,7 @@ const limitrofeCams = webcamData.filter(cam => cam.section === 'limitrofe').sort
         <div class="animate-fade-in">
           <!-- Icona e Titolo centrati -->
           <div class="flex items-center justify-center mb-8">
-            <div class="hidden md:flex w-20 h-20 bg-gradient-to-br from-orange-600 to-red-600 rounded-2xl items-center justify-center shadow-xl mr-6">
+            <div class="hidden md:flex w-20 h-20 bg-gradient-to-br from-orange-600 to-red-600 rounded-xl sm:rounded-2xl items-center justify-center shadow-xl mr-6">
               <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
               </svg>
@@ -166,7 +166,7 @@ const limitrofeCams = webcamData.filter(cam => cam.section === 'limitrofe').sort
           <div class="w-32 h-1.5 bg-gradient-to-r from-orange-500 via-orange-600 to-red-500 rounded-full mx-auto mb-8"></div>
           
           <!-- Descrizione centrata sotto -->
-          <p class="text-xl md:text-2xl text-gray-700 font-medium max-w-2xl mx-auto leading-relaxed">
+          <p class="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium">
             Scopri il territorio di Piedelpoggio in tempo reale attraverso le nostre webcam
           </p>
         </div>
@@ -174,7 +174,7 @@ const limitrofeCams = webcamData.filter(cam => cam.section === 'limitrofe').sort
     </section>
 
     <!-- Webcam Section -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8">
+    <section class="pt-4 pb-16 px-4 sm:px-6 lg:px-8">
       <div class="max-w-6xl mx-auto space-y-12">
         
         <!-- Webcam di Piedelpoggio - Box con ombra -->
@@ -186,12 +186,12 @@ const limitrofeCams = webcamData.filter(cam => cam.section === 'limitrofe').sort
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                 </svg>
               </div>
-              <h2 class="text-3xl font-bold text-gray-900">Webcam di Piedelpoggio</h2>
+              <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Webcam di Piedelpoggio</h2>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {piedelpoggioCams.map((webcam) => (
-                <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+                <div class="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
                   <div class="aspect-video bg-black rounded-t-2xl overflow-hidden">
                     <iframe 
                       src={webcam.url}
@@ -225,12 +225,12 @@ const limitrofeCams = webcamData.filter(cam => cam.section === 'limitrofe').sort
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
                 </svg>
               </div>
-              <h2 class="text-3xl font-bold text-gray-900">Webcam Zone Limitrofe</h2>
+              <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Webcam Zone Limitrofe</h2>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {limitrofeCams.map((webcam) => (
-                <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
+                <div class="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
                   <div class="aspect-video bg-black rounded-t-2xl overflow-hidden">
                     <iframe 
                       src={webcam.url}
@@ -247,7 +247,7 @@ const limitrofeCams = webcamData.filter(cam => cam.section === 'limitrofe').sort
                     </p>
                     <div class="flex items-center justify-between">
                       <span class="text-sm text-gray-500">Coordinate: {webcam.coordinates}</span>
-                      <div class="flex items-center space-x-1 bg-primary-50 px-3 py-1 rounded-full">
+                      <div class="flex items-center space-x-1 bg-primary-50 px-3 py-1 text-xs md:text-sm font-medium rounded-full">
                         <svg class="w-4 h-4 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
@@ -274,7 +274,7 @@ const limitrofeCams = webcamData.filter(cam => cam.section === 'limitrofe').sort
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                 </svg>
               </div>
-              <h3 class="text-2xl font-bold text-gray-900">Mappa delle Webcam</h3>
+              <h3 class="text-2xl sm:text-3xl font-bold text-gray-900">Mappa delle Webcam</h3>
             </div>
             <p class="text-gray-600 mt-2">Clicca sui marker per aprire la webcam corrispondente</p>
           </div>
@@ -358,7 +358,7 @@ const limitrofeCams = webcamData.filter(cam => cam.section === 'limitrofe').sort
             <p class="text-gray-600 text-sm mb-2">${webcam.description}</p>
             <button 
               onclick="openWebcam('${webcam.url}')"
-              class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm font-medium transition-colors"
+              class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 text-xs md:text-sm font-medium rounded text-sm font-medium transition-colors"
             >
               Apri Webcam
             </button>
@@ -392,10 +392,10 @@ const limitrofeCams = webcamData.filter(cam => cam.section === 'limitrofe').sort
           container.innerHTML = `
             <div class="flex items-center justify-center h-full">
               <div class="text-center p-8">
-                <svg class="w-16 h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-12 h-12 sm:w-16 sm:h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"/>
                 </svg>
-                <h3 class="text-lg font-semibold text-gray-700 mb-2">Errore nel caricamento</h3>
+                <h3 class="text-lg font-semibold text-gray-600 mb-2">Errore nel caricamento</h3>
                 <p class="text-gray-500">Impossibile caricare Google Maps</p>
               </div>
             </div>
@@ -443,10 +443,10 @@ const limitrofeCams = webcamData.filter(cam => cam.section === 'limitrofe').sort
             container.innerHTML = `
               <div class="flex items-center justify-center h-full">
                 <div class="text-center p-8">
-                  <svg class="w-16 h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-12 h-12 sm:w-16 sm:h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.29-1.009-5.824-2.562M15 6.306a7.962 7.962 0 00-6 0m6 0V5a2 2 0 00-2-2H9a2 2 0 00-2 2v1.306m6 0V7a2 2 0 012 2v4M9 6.306V7a2 2 0 00-2-2H5a2 2 0 00-2 2v4.294a7.962 7.962 0 002.176 5.468"/>
                   </svg>
-                  <h3 class="text-lg font-semibold text-gray-700 mb-2">Street View non disponibile</h3>
+                  <h3 class="text-lg font-semibold text-gray-600 mb-2">Street View non disponibile</h3>
                   <p class="text-gray-500">Street View non è disponibile in questa posizione</p>
                 </div>
               </div>
@@ -457,10 +457,10 @@ const limitrofeCams = webcamData.filter(cam => cam.section === 'limitrofe').sort
         container.innerHTML = `
           <div class="flex items-center justify-center h-full">
             <div class="text-center p-8">
-              <svg class="w-16 h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-12 h-12 sm:w-16 sm:h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"/>
               </svg>
-              <h3 class="text-lg font-semibold text-gray-700 mb-2">Errore</h3>
+              <h3 class="text-lg font-semibold text-gray-600 mb-2">Errore</h3>
               <p class="text-gray-500">Errore nell'inizializzazione di Street View</p>
             </div>
           </div>

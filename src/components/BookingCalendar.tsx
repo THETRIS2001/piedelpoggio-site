@@ -76,14 +76,14 @@ const CalendarHeader: React.FC<{ month: number; year: number; onPrev: () => void
     <div className="flex items-center justify-between mb-4">
       <div className="flex items-center gap-2">
         <button aria-label="Mese precedente" className="p-2 rounded-lg hover:bg-gray-100" onClick={onPrev}>
-          <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"/></svg>
+          <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7"/></svg>
         </button>
         <h2 className="text-xl md:text-2xl font-semibold text-gray-900">{months[month]} {year}</h2>
         <button aria-label="Mese successivo" className="p-2 rounded-lg hover:bg-gray-100" onClick={onNext}>
-          <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
+          <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/></svg>
         </button>
       </div>
-      <button onClick={onToday} className="px-3 py-1.5 rounded-lg text-sm font-medium bg-gray-100 text-gray-800 hover:bg-gray-200">Oggi</button>
+      <button onClick={onToday} className="px-3 py-1 text-xs md:text-sm font-medium.5 rounded-lg text-sm font-medium bg-gray-100 text-gray-800 hover:bg-gray-200">Oggi</button>
     </div>
   );
 };
@@ -349,7 +349,7 @@ const BookingCalendar: React.FC = () => {
         {daysMatrix.map((week, wi) => (
           <React.Fragment key={wi}>
             {week.map((day, di) => {
-              if (!day) return <div key={`${wi}-${di}`} className="h-24 rounded-xl border border-dashed border-gray-200 bg-gray-50" />;
+              if (!day) return <div key={`${wi}-${di}`} className="aspect-square sm:aspect-auto sm:h-24 rounded-xl border border-dashed border-gray-200 bg-gray-50" />;
               const key = toDateKey(day);
               const isSelected = key === selectedDate;
               const count = (bookingsByDate.get(key) || []).length;
@@ -369,16 +369,16 @@ const BookingCalendar: React.FC = () => {
                   aria-selected={isSelected}
                   onClick={() => !isPastDay && setSelectedDate(key)}
                   disabled={isPastDay}
-                  className={`h-24 w-full rounded-xl border transition-all duration-200 text-left p-2 focus:outline-none ${
+                  className={`aspect-square w-full sm:aspect-auto sm:h-24 rounded-xl border               transition-all duration-200 text-left p-2 focus:outline-none ${
                     isPastDay 
                       ? 'border-gray-300 bg-gray-100 cursor-not-allowed opacity-60' 
                       : count > 0
                         ? isSelected
                           ? 'border-red-300 bg-red-100 focus:ring-2 focus:ring-red-500'
-                          : 'border-red-200 bg-red-50 hover:bg-red-100 focus:ring-2 focus:ring-red-500'
+                          : 'border-red-200 bg-red-50 hover:bg-red-100 focus:ring-2               focus:ring-red-500'
                         : isSelected 
-                          ? 'border-primary-300 bg-primary-50 focus:ring-2 focus:ring-primary-500' 
-                          : 'border-gray-200 bg-white hover:bg-gray-50 focus:ring-2 focus:ring-primary-500'
+                          ? 'border-primary-300 bg-primary-50 focus:ring-2              focus:ring-primary-500' 
+                          : 'border-gray-200 bg-white hover:bg-gray-50 focus:ring-2               focus:ring-primary-500'
                   } ${isToday && !isPastDay ? 'shadow-inner' : ''}`}
                 >
                   <div className="flex flex-col h-full">
@@ -387,7 +387,7 @@ const BookingCalendar: React.FC = () => {
                         {day.getDate()}
                       </span>
                       {count > 0 && (
-                        <span className={`text-[10px] px-1.5 py-0.5 rounded-full border font-medium ${
+                        <span className={`hidden sm:inline text-[10px] px-1.5 py-0.5 rounded-full border font-medium ${
                           isPastDay 
                             ? 'bg-gray-200 text-gray-500 border-gray-300' 
                             : 'bg-red-200 text-red-800 border-red-300'
@@ -396,7 +396,7 @@ const BookingCalendar: React.FC = () => {
                         </span>
                       )}
                     </div>
-                    <div className="flex-1 space-y-0.5">
+                    <div className="hidden sm:block flex-1 space-y-0.5">
                       {(bookingsByDate.get(key) || []).slice(0,1).map((b, idx) => (
                         <div key={idx} className={`text-[10px] px-1.5 py-0.5 rounded ${
                           isPastDay 
@@ -418,7 +418,8 @@ const BookingCalendar: React.FC = () => {
                     </div>
                   </div>
                 </button>
-               );
+              );
+
              })}
            </React.Fragment>
         ))}
@@ -438,7 +439,7 @@ const BookingCalendar: React.FC = () => {
                 <div>
                   <label htmlFor="start" className="text-xs text-gray-600">Ora inizio</label>
                   <select id="start" value={startTime} onChange={(e) => setStartTime(e.target.value)} className="mt-1 w-full px-3 py-2 bg-white rounded-lg border border-gray-200 text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-500">
-                    <option value="">Seleziona ora inizio</option>
+                    <option value="">seleziona</option>
                     {slots.map(s => {
                       // Non mostrare 00:00 come orario di inizio (solo come fine)
                       if (s === '00:00') return null;
@@ -449,7 +450,7 @@ const BookingCalendar: React.FC = () => {
                 <div>
                   <label htmlFor="end" className="text-xs text-gray-600">Ora fine</label>
                   <select id="end" value={endTime} onChange={(e) => setEndTime(e.target.value)} className="mt-1 w-full px-3 py-2 bg-white rounded-lg border border-gray-200 text-gray-800 focus:outline-none focus:ring-2 focus:ring-primary-500">
-                    <option value="">Seleziona ora fine</option>
+                    <option value="">seleziona</option>
                     {slots.map((s, i) => {
                       // mostriamo solo slot dopo start
                       if (!startTime || minutesFromTime(s) <= minutesFromTime(startTime)) return null;
@@ -471,7 +472,7 @@ const BookingCalendar: React.FC = () => {
                   </button>
                 ) : (
                   <div className="w-full px-4 py-2 bg-gray-200 text-gray-600 rounded-lg text-center">
-                    {!startTime || !endTime ? 'Seleziona orario di inizio e fine' : 'Slot non disponibile'}
+                    {!startTime || !endTime ? 'seleziona orario di inizio e fine' : 'Slot non disponibile'}
                   </div>
                 )}
               </div>
@@ -542,7 +543,7 @@ const BookingCalendar: React.FC = () => {
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Prenota il campo</h3>
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Nome *</label>
+                <label className="block text-sm font-medium text-gray-600 mb-1">Nome *</label>
                 <input
                   type="text"
                   value={formData.customerName}
@@ -552,7 +553,7 @@ const BookingCalendar: React.FC = () => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Telefono *</label>
+                <label className="block text-sm font-medium text-gray-600 mb-1">Telefono *</label>
                 <input
                   type="tel"
                   value={formData.customerPhone}
@@ -562,7 +563,7 @@ const BookingCalendar: React.FC = () => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Descrizione</label>
+                <label className="block text-sm font-medium text-gray-600 mb-1">Descrizione</label>
                 <input
                   type="text"
                   value={formData.title}
@@ -582,7 +583,7 @@ const BookingCalendar: React.FC = () => {
             <div className="flex gap-3 mt-6">
               <button
                 onClick={() => setShowBookingForm(false)}
-                className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                className="flex-1 px-4 py-2 border border-gray-300 text-gray-600 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500"
               >
                 Annulla
               </button>
@@ -613,7 +614,7 @@ const BookingCalendar: React.FC = () => {
                 Data: {showCancelDialog.booking.date}<br />
                 Orario: {removeSecondsFromTime(showCancelDialog.booking.start)} - {removeSecondsFromTime(showCancelDialog.booking.end)}
               </p>
-              <p className="text-sm text-gray-700 mb-2">
+              <p className="text-sm text-gray-600 mb-2">
                 Per confermare la cancellazione, inserisci il numero di telefono utilizzato per la prenotazione:
               </p>
               <input
@@ -644,7 +645,7 @@ const BookingCalendar: React.FC = () => {
                   setCancelPhone('');
                   setCancelError('');
                 }}
-                className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                className="flex-1 px-4 py-2 border border-gray-300 text-gray-600 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500"
               >
                 Annulla
               </button>

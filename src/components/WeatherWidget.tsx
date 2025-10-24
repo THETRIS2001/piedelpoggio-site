@@ -469,7 +469,7 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '' }) => {
     return (
       <div className={`w-full ${className}`}>
         <div className="animate-pulse flex items-center gap-6">
-          <div className="w-16 h-16 bg-blue-200 rounded-full"></div>
+          <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-200 rounded-full"></div>
           <div className="flex-1">
             <div className="h-6 bg-blue-200 rounded w-32 mb-2"></div>
             <div className="h-4 bg-blue-200 rounded w-24"></div>
@@ -515,7 +515,7 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '' }) => {
       <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6  rounded-xl p-3 sm:p-2 border border-gray-200">
         {/* Icona meteo principale - MOLTO PIÀ GRANDE */}
         <div className="flex-shrink-0">
-          <div className="w-16 h-16 sm:w-20 sm:h-20 transform hover:scale-110 transition-transform duration-300 drop-shadow-lg">
+          <div className="w-12 h-12 sm:w-16 sm:h-16 sm:w-20 sm:h-20 transform hover:scale-110 transition-transform duration-300 drop-shadow-lg">
             <img 
               src={currentIcon} 
               alt={currentDescription}
@@ -645,7 +645,7 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '' }) => {
           href="https://www.3bmeteo.com/meteo/leonessa" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 px-3 py-1.5 bg-blue-500/10 hover:bg-blue-500/20 text-blue-600 hover:text-blue-700 text-xs font-medium rounded-lg border border-blue-200/50 hover:border-blue-300/50 transition-all duration-200"
+          className="inline-flex items-center gap-1 px-3 py-1 text-xs md:text-sm font-medium.5 bg-blue-500/10 hover:bg-blue-500/20 text-blue-600 hover:text-blue-700 text-xs font-medium rounded-lg border border-blue-200/50 hover:border-blue-300/50 transition-all duration-200"
         >
           <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
@@ -656,7 +656,7 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '' }) => {
           href="https://www.ilmeteo.it/meteo/leonessa" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 px-3 py-1.5 bg-green-500/10 hover:bg-green-500/20 text-green-600 hover:text-green-700 text-xs font-medium rounded-lg border border-green-200/50 hover:border-green-300/50 transition-all duration-200"
+          className="inline-flex items-center gap-1 px-3 py-1 text-xs md:text-sm font-medium.5 bg-green-500/10 hover:bg-green-500/20 text-green-600 hover:text-green-700 text-xs font-medium rounded-lg border border-green-200/50 hover:border-green-300/50 transition-all duration-200"
         >
           <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
@@ -667,7 +667,7 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '' }) => {
           href="https://www.meteoam.it/it/meteo-citta/leonessa" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 px-3 py-1.5 bg-purple-500/10 hover:bg-purple-500/20 text-purple-600 hover:text-purple-700 text-xs font-medium rounded-lg border border-purple-200/50 hover:border-purple-300/50 transition-all duration-200"
+          className="inline-flex items-center gap-1 px-3 py-1 text-xs md:text-sm font-medium.5 bg-purple-500/10 hover:bg-purple-500/20 text-purple-600 hover:text-purple-700 text-xs font-medium rounded-lg border border-purple-200/50 hover:border-purple-300/50 transition-all duration-200"
         >
           <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
@@ -678,7 +678,7 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '' }) => {
           href="https://www.accuweather.com/it/it/piedelpoggio/1547795/daily-weather-forecast/1547795" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 px-3 py-1.5 bg-orange-500/10 hover:bg-orange-500/20 text-orange-600 hover:text-orange-700 text-xs font-medium rounded-lg border border-orange-200/50 hover:border-orange-300/50 transition-all duration-200"
+          className="inline-flex items-center gap-1 px-3 py-1 text-xs md:text-sm font-medium.5 bg-orange-500/10 hover:bg-orange-500/20 text-orange-600 hover:text-orange-700 text-xs font-medium rounded-lg border border-orange-200/50 hover:border-orange-300/50 transition-all duration-200"
         >
           <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
@@ -689,7 +689,7 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '' }) => {
           href="https://www.google.com/search?q=meteo+piedelpoggio" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 px-3 py-1.5 bg-red-500/10 hover:bg-red-500/20 text-red-600 hover:text-red-700 text-xs font-medium rounded-lg border border-red-200/50 hover:border-red-300/50 transition-all duration-200"
+          className="inline-flex items-center gap-1 px-3 py-1 text-xs md:text-sm font-medium.5 bg-red-500/10 hover:bg-red-500/20 text-red-600 hover:text-red-700 text-xs font-medium rounded-lg border border-red-200/50 hover:border-red-300/50 transition-all duration-200"
         >
           <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
@@ -700,7 +700,7 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '' }) => {
           href="https://www.meteoblue.com/it/tempo/previsioni/multimodel/piedelpoggio_italia_3170854" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 px-3 py-1.5 bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-600 hover:text-indigo-700 text-xs font-medium rounded-lg border border-indigo-200/50 hover:border-indigo-300/50 transition-all duration-200"
+          className="inline-flex items-center gap-1 px-3 py-1 text-xs md:text-sm font-medium.5 bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-600 hover:text-indigo-700 text-xs font-medium rounded-lg border border-indigo-200/50 hover:border-indigo-300/50 transition-all duration-200"
         >
           <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
