@@ -778,7 +778,8 @@ const WeatherWidget: React.FC<WeatherWidgetProps> = ({ className = '' }) => {
             className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-green-500/10 to-emerald-500/10 hover:from-green-500/20 hover:to-emerald-500/20 text-green-600 hover:text-green-700 text-sm font-medium rounded-lg border border-green-200/50 hover:border-green-300/50 transition-all duration-200 group"
           >
             <svg className="w-4 h-4 group-hover:scale-110 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12l5-5 5 5M5 12l5 5 5-5"/>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 20l4-8 3 4 2-4 3 6 2-3 4 5H3z"/>
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12l2-4 3 2 2-3 1 2"/>
             </svg>
             Sentieri e Territorio
             <svg className="w-3 h-3 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">

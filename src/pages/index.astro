@@ -477,9 +477,68 @@ const masonryItems = selectedPhotos.map((photo, index) => ({
     // Supporto per swipe su dispositivi touch
     let startX = 0;
     let endX = 0;
+    let isDragging = false;
+    let startTransform = 0;
     
+    // Mouse events per desktop
+    carousel.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      startX = e.clientX;
+      const transform = carousel.style.transform;
+      startTransform = transform ? parseFloat(transform.match(/-?\d+\.?\d*/)) || 0 : 0;
+      carousel.style.cursor = 'grabbing';
+      e.preventDefault();
+    });
+    
+    document.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      
+      const diff = e.clientX - startX;
+      const itemWidth = getItemWidth();
+      const maxTranslate = -(totalNews - (window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1)) * itemWidth;
+      
+      let newTransform = startTransform + (diff / carousel.offsetWidth) * 100;
+      newTransform = Math.max(maxTranslate, Math.min(0, newTransform));
+      
+      carousel.style.transform = `translateX(${newTransform}%)`;
+    });
+    
+    document.addEventListener('mouseup', (e) => {
+      if (!isDragging) return;
+      isDragging = false;
+      carousel.style.cursor = 'grab';
+      
+      const diff = e.clientX - startX;
+      const currentItemsVisible = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+      const currentMaxIndex = Math.max(0, totalNews - currentItemsVisible);
+      
+      if (Math.abs(diff) > 50) {
+        if (diff < 0 && currentIndex < currentMaxIndex) {
+          currentIndex++;
+        } else if (diff > 0 && currentIndex > 0) {
+          currentIndex--;
+        }
+      }
+      updateCarousel();
+    });
+    
+    // Touch events migliorati
     carousel.addEventListener('touchstart', (e) => {
       startX = e.touches[0].clientX;
+      const transform = carousel.style.transform;
+      startTransform = transform ? parseFloat(transform.match(/-?\d+\.?\d*/)) || 0 : 0;
+    });
+    
+    carousel.addEventListener('touchmove', (e) => {
+      const diff = e.touches[0].clientX - startX;
+      const itemWidth = getItemWidth();
+      const maxTranslate = -(totalNews - (window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1)) * itemWidth;
+      
+      let newTransform = startTransform + (diff / carousel.offsetWidth) * 100;
+      newTransform = Math.max(maxTranslate, Math.min(0, newTransform));
+      
+      carousel.style.transform = `translateX(${newTransform}%)`;
+      e.preventDefault();
     });
     
     carousel.addEventListener('touchend', (e) => {
@@ -488,17 +547,14 @@ const masonryItems = selectedPhotos.map((photo, index) => ({
       const currentItemsVisible = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
       const currentMaxIndex = Math.max(0, totalNews - currentItemsVisible);
       
-      if (Math.abs(diff) > 50) { // Soglia minima per lo swipe
+      if (Math.abs(diff) > 50) {
         if (diff > 0 && currentIndex < currentMaxIndex) {
-          // Swipe verso sinistra - vai avanti
           currentIndex++;
-          updateCarousel();
         } else if (diff < 0 && currentIndex > 0) {
-          // Swipe verso destra - vai indietro
           currentIndex--;
-          updateCarousel();
         }
       }
+      updateCarousel();
     });
     
     // Funzione per equalizzare le altezze delle card
@@ -644,9 +700,68 @@ const masonryItems = selectedPhotos.map((photo, index) => ({
     // Supporto per swipe su dispositivi touch eventi
     let eventsStartX = 0;
     let eventsEndX = 0;
+    let eventsIsDragging = false;
+    let eventsStartTransform = 0;
     
+    // Mouse events per desktop - eventi
+    eventsCarousel.addEventListener('mousedown', (e) => {
+      eventsIsDragging = true;
+      eventsStartX = e.clientX;
+      const transform = eventsCarousel.style.transform;
+      eventsStartTransform = transform ? parseFloat(transform.match(/-?\d+\.?\d*/)) || 0 : 0;
+      eventsCarousel.style.cursor = 'grabbing';
+      e.preventDefault();
+    });
+    
+    document.addEventListener('mousemove', (e) => {
+      if (!eventsIsDragging) return;
+      
+      const diff = e.clientX - eventsStartX;
+      const itemWidth = getEventsItemWidth();
+      const maxTranslate = -(totalEvents - (window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1)) * itemWidth;
+      
+      let newTransform = eventsStartTransform + (diff / eventsCarousel.offsetWidth) * 100;
+      newTransform = Math.max(maxTranslate, Math.min(0, newTransform));
+      
+      eventsCarousel.style.transform = `translateX(${newTransform}%)`;
+    });
+    
+    document.addEventListener('mouseup', (e) => {
+      if (!eventsIsDragging) return;
+      eventsIsDragging = false;
+      eventsCarousel.style.cursor = 'grab';
+      
+      const diff = e.clientX - eventsStartX;
+      const currentItemsVisible = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+      const currentMaxIndex = Math.max(0, totalEvents - currentItemsVisible);
+      
+      if (Math.abs(diff) > 50) {
+        if (diff < 0 && eventsCurrentIndex < currentMaxIndex) {
+          eventsCurrentIndex++;
+        } else if (diff > 0 && eventsCurrentIndex > 0) {
+          eventsCurrentIndex--;
+        }
+      }
+      updateEventsCarousel();
+    });
+    
+    // Touch events migliorati - eventi
     eventsCarousel.addEventListener('touchstart', (e) => {
       eventsStartX = e.touches[0].clientX;
+      const transform = eventsCarousel.style.transform;
+      eventsStartTransform = transform ? parseFloat(transform.match(/-?\d+\.?\d*/)) || 0 : 0;
+    });
+    
+    eventsCarousel.addEventListener('touchmove', (e) => {
+      const diff = e.touches[0].clientX - eventsStartX;
+      const itemWidth = getEventsItemWidth();
+      const maxTranslate = -(totalEvents - (window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1)) * itemWidth;
+      
+      let newTransform = eventsStartTransform + (diff / eventsCarousel.offsetWidth) * 100;
+      newTransform = Math.max(maxTranslate, Math.min(0, newTransform));
+      
+      eventsCarousel.style.transform = `translateX(${newTransform}%)`;
+      e.preventDefault();
     });
     
     eventsCarousel.addEventListener('touchend', (e) => {
@@ -655,17 +770,14 @@ const masonryItems = selectedPhotos.map((photo, index) => ({
       const currentItemsVisible = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
       const currentMaxIndex = Math.max(0, totalEvents - currentItemsVisible);
       
-      if (Math.abs(diff) > 50) { // Soglia minima per lo swipe
+      if (Math.abs(diff) > 50) {
         if (diff > 0 && eventsCurrentIndex < currentMaxIndex) {
-          // Swipe verso sinistra - vai avanti
           eventsCurrentIndex++;
-          updateEventsCarousel();
         } else if (diff < 0 && eventsCurrentIndex > 0) {
-          // Swipe verso destra - vai indietro
           eventsCurrentIndex--;
-          updateEventsCarousel();
         }
       }
+      updateEventsCarousel();
     });
     
     // Funzione per equalizzare le altezze delle card eventi
