@@ -124,7 +124,7 @@ const StreetView: React.FC<StreetViewProps> = ({
   if (error) {
     return (
       <div className={`${className} bg-gray-100 rounded-xl sm:rounded-2xl flex items-center justify-center`}>
-        <div className="text-center p-8">
+        <div className="text-center p-6 md:p-12">
           <svg className="w-12 h-12 sm:w-16 sm:h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.29-1.009-5.824-2.562M15 6.306a7.962 7.962 0 00-6 0m6 0V5a2 2 0 00-2-2H9a2 2 0 00-2 2v1.306m6 0V7a2 2 0 012 2v4M9 6.306V7a2 2 0 00-2-2H5a2 2 0 00-2 2v4.294a7.962 7.962 0 002.176 5.468"/>
           </svg>

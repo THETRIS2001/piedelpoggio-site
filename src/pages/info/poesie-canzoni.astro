@@ -108,7 +108,7 @@ const dipintiItems = [
             </h1>
           </div>
           <div class="w-32 h-1.5 bg-gradient-to-r from-purple-500 via-purple-600 to-indigo-500 rounded-full mx-auto mb-8"></div>
-          <p class="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium">
+          <p class="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium mb-6 md:mb-16">
             Il patrimonio culturale immateriale di Piedelpoggio
           </p>
         </div>
@@ -116,19 +116,19 @@ const dipintiItems = [
     </section>
 
     <!-- Poesie Popolari -->
-    <section id="poesie" class="mt-16 py-8 px-4 sm:px-6 lg:px-8">
+    <section id="poesie" class="mt-2 md:mt-16 py-4 px-4 sm:px-8 lg:px-8">
       <div class="max-w-6xl mx-auto">
         <div class="bg-white rounded-xl sm:rounded-2xl shadow-lg border border-gray-100 overflow-hidden collapsible-content">
           <!-- Header cliccabile per Poesie -->
           <div class="bg-white p-6 cursor-pointer hover:bg-gray-50 transition-all duration-300 collapsible-header" onclick="toggleSection('poesie')">
             <div class="flex items-center justify-between">
               <div class="flex items-center">
-                <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
-                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                  <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
                   </svg>
                 </div>
-                <h2 class="text-2xl md:text-2xl sm:text-3xl font-bold text-gray-900">Poesie e Opere</h2>
+                <h2 class="text-1xl md:text-1xl sm:text-3xl font-bold text-gray-900">Poesie e Opere</h2>
               </div>
               <div class="arrow-icon transition-transform duration-300" style="transform: rotate(0deg);">
                 <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -141,12 +141,12 @@ const dipintiItems = [
           <!-- Contenuto collassabile per Poesie -->
           <div class="p-6 mb-6 collapsible-body" id="poesie-content" style="display: none;">
 
-          <div class="space-y-6">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <!-- La Pastoral Siringa -->
-            <div class="max-w-6xl mx-auto mb-16">
-              <div class="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-xl p-8">
-                <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6 text-center">La Pastoral Siringa</h3>
-                <p class="text-lg text-gray-600 mb-6 text-center italic">di Angelo Felice Maccheroni (1803-1888)</p>
+            <div class="max-w-6xl mx-auto">
+              <div class="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-xl p-6 md:p-12">
+                <h3 class="text-1xl sm:text-3xl font-bold text-gray-900 mb-4 md:mb-8 text-center">La Pastoral Siringa</h3>
+                <p class="text-sm md:text-lg text-gray-600 mb-6 text-center italic">di Angelo Felice Maccheroni (1803-1888)</p>
                 
                 <div class="grid lg:grid-cols-2 gap-8 items-start">
                   <!-- PDF Preview a sinistra -->
@@ -177,10 +177,10 @@ const dipintiItems = [
                   </div>
                   
                   <!-- Biografia a destra -->
-                  <div class="space-y-6">
+                  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     <div>
                       <h4 class="text-xl font-bold text-gray-900 mb-4">Chi era Angelo Felice Maccheroni</h4>
-                      <div class="space-y-4 text-gray-600 leading-relaxed text-justify">
+                      <div class="space-y-4 text-gray-600 leading-relaxed text-justify text-sm md:text-lg">
                         <p>
                           Angelo Felice Maccheroni era un pastore e poeta del centro Italia, originario di Piedelpoggio (RI). 
                           Le sue date sono spesso riportate come nato nel 1803, morto nel 1888.
@@ -219,7 +219,7 @@ const dipintiItems = [
                     
                     <div>
                       <h4 class="text-xl font-bold text-gray-900 mb-4">Importanza culturale</h4>
-                      <div class="space-y-3 text-gray-600 leading-relaxed text-justify">
+                      <div class="space-y-3 text-gray-600 leading-relaxed text-justify text-sm md:text-lg">
                         <p>
                           Angelo Felice Maccheroni è un esempio di poeta pastore, figura che unisce la dimensione pastorale 
                           e rurale con l'espressione poetica. Il suo lavoro mostra come la vita contadina e la transumanza 
@@ -238,13 +238,18 @@ const dipintiItems = [
               </div>
             </div>
 
+            <!-- Linea separatrice -->
+            <div class="max-w-4xl mx-auto my-12">
+              <div class="border-t border-gray-300"></div>
+            </div>
+
             <!-- Mo' Revengo -->
             <div class="max-w-2xl mx-auto">
-              <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-8 mb-16">
-              <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Mo' Revengo</h3>
+              <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 md:p-12">
+              <h3 class="text-1xl sm:text-3xl font-bold text-gray-900 mb-4">Mo' Revengo</h3>
               <p class="text-sm text-gray-600 mb-6 italic">di Alberto Rauco</p>
               
-              <div class="space-y-4 text-gray-800 leading-relaxed text-justify">
+              <div class="space-y-4 text-gray-600 leading-relaxed text-justify text-sm md:text-lg">
                 <div class="italic">
                   <p>Sbocciavanu li gij a Vallulina</p>
                   <p>paura pe' le casi 'lla mattina</p>
@@ -311,9 +316,14 @@ const dipintiItems = [
               </div>
             </div>
 
+            <!-- Linea separatrice -->
+            <div class="max-w-4xl mx-auto my-12">
+              <div class="border-t border-gray-300"></div>
+            </div>
+
             <!-- Sezione Antonio Pietrolucci -->
             <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-6 mt-12">
-              <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Poesie di Antonio Pietrolucci</h3>
+              <h3 class="text-1xl sm:text-3xl font-bold text-gray-900 mb-2">Poesie di Antonio Pietrolucci</h3>
               <p class="text-gray-600">
                 Antonio Pietrolucci è stato un poeta locale che ha dedicato la sua vita 
                 a raccontare attraverso i versi la bellezza e le tradizioni di Piedelpoggio e del territorio circostante.
@@ -936,19 +946,19 @@ const dipintiItems = [
     </section>
 
     <!-- Tradizioni -->
-    <section id="tradizioni" class="py-8 px-4 sm:px-6 lg:px-8">
+    <section id="tradizioni" class="mt-2 md:mt-16 py-4 px-4 sm:px-8 lg:px-8">
       <div class="max-w-6xl mx-auto">
         <div class="bg-white rounded-xl sm:rounded-2xl shadow-lg border border-gray-100 overflow-hidden collapsible-content">
           <!-- Header cliccabile per Tradizioni -->
           <div class="bg-white p-6 cursor-pointer hover:bg-gray-50 transition-all duration-300 collapsible-header" onclick="toggleSection('tradizioni')">
             <div class="flex items-center justify-between">
               <div class="flex items-center">
-                <div class="w-12 h-12 bg-gradient-to-r from-amber-500 to-orange-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
-                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-amber-500 to-orange-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                  <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
                   </svg>
                 </div>
-                <h2 class="text-2xl md:text-2xl sm:text-3xl font-bold text-gray-900">Tradizioni Antiche</h2>
+                <h2 class="text-1xl md:text-1xl sm:text-3xl font-bold text-gray-900">Tradizioni Antiche</h2>
               </div>
               <div class="arrow-icon transition-transform duration-300" style="transform: rotate(0deg);">
                 <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -961,13 +971,13 @@ const dipintiItems = [
           <!-- Contenuto collassabile per Tradizioni -->
           <div class="p-6 pb-6 collapsible-body" id="tradizioni-content" style="display: none;">
 
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:p-12">
             <!-- Tradizione 1 -->
-            <div class="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-xl p-8">
-              <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Le Aste Pubbliche</h3>
+            <div class="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-xl p-6 md:p-12">
+              <h3 class="text-1xl sm:text-3xl font-bold text-gray-900 mb-4">Le Aste Pubbliche</h3>
               <p class="text-sm text-gray-600 mb-6 italic">La "Candela Vergine"</p>
               
-              <div class="space-y-4 text-gray-800 leading-relaxed text-justify">
+              <div class="space-y-4 text-gray-600 leading-relaxed text-justify text-sm md:text-lg">
                 <p>
                   Le aste pubbliche erano indette dal consiglio delle università e potevano essere di diverso tipo 
                   a seconda della loro finalità:
@@ -1009,11 +1019,11 @@ const dipintiItems = [
             </div>
 
             <!-- Tradizione 2 -->
-            <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-8">
-              <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Vece di Sotto e Vece di Sopra</h3>
+            <div class="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-6 md:p-12">
+              <h3 class="text-1xl sm:text-3xl font-bold text-gray-900 mb-4">Vece di Sotto e Vece di Sopra</h3>
               <p class="text-sm text-gray-600 mb-6 italic">La Rotazione delle Colture</p>
               
-              <div class="space-y-4 text-gray-800 leading-relaxed text-justify">
+              <div class="space-y-4 text-gray-600 leading-relaxed text-justify text-sm md:text-lg">
                 <p>
                   Così veniva chiamata la pratica della <strong>rotazione delle colture</strong> tra il piano 
                   e le montagne - definita appunto <em>"vece di sopra e vece di sotto"</em>, per indicare 
@@ -1038,10 +1048,10 @@ const dipintiItems = [
 
             <!-- Tradizione 3 -->
             <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 lg:col-span-2 mb-6">
-              <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">La Fida Pascolo</h3>
+              <h3 class="text-1xl sm:text-3xl font-bold text-gray-900 mb-4">La Fida Pascolo</h3>
               <p class="text-sm text-gray-600 mb-6 italic">Antica Consuetudine per il Pascolo del Bestiame</p>
               
-              <div class="space-y-4 text-gray-800 leading-relaxed text-justify">
+              <div class="space-y-4 text-gray-600 leading-relaxed text-justify text-sm md:text-lg">
                 <p>
                   Alcune frazioni mantengono ancora oggi nel proprio territorio comune l'antica consuetudine della tassa per il pascolo del bestiame, anticamente definita <strong>'fida pascolo'</strong>, finalizzandola però al recupero di fondi da riutilizzare a vantaggio della frazione stessa.
                 </p>
@@ -1079,19 +1089,19 @@ const dipintiItems = [
 
 
     <!-- Testimonianze -->
-    <section id="testimonianze" class="py-8 px-4 sm:px-6 lg:px-8">
+    <section id="testimonianze" class="mt-2 md:mt-16 py-4 px-4 sm:px-8 lg:px-8">
       <div class="max-w-6xl mx-auto">
         <div class="bg-white rounded-xl sm:rounded-2xl shadow-lg border border-gray-100 overflow-hidden collapsible-content">
           <!-- Header cliccabile per Testimonianze -->
           <div class="bg-white p-6 cursor-pointer hover:bg-gray-50 transition-all duration-300 collapsible-header" onclick="toggleSection('testimonianze')">
             <div class="flex items-center justify-between">
               <div class="flex items-center">
-                <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
-                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                  <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/>
                   </svg>
                 </div>
-                <h2 class="text-2xl md:text-2xl sm:text-3xl font-bold text-gray-900">Testimonianze</h2>
+                <h2 class="text-1xl md:text-1xl sm:text-3xl font-bold text-gray-900">Testimonianze</h2>
               </div>
               <div class="arrow-icon transition-transform duration-300" style="transform: rotate(0deg);">
                 <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1104,20 +1114,23 @@ const dipintiItems = [
           <!-- Contenuto collassabile per Testimonianze -->
           <div class="p-6 mb-6 collapsible-body" id="testimonianze-content" style="display: none;">
 
-          <div class="space-y-6">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <!-- Testimonianza 1 -->
-            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8">
-              <div class="space-y-4 sm:space-y-0 sm:flex sm:items-start sm:space-x-4">
-                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-                  </svg>
-                </div>
-                <div class="flex-1">
-                  <div class="flex items-center space-x-4 mb-4">
-                    <h3 class="text-xl font-bold text-gray-900">Don Gioacchino Bella</h3>
-                    <span class="text-sm text-gray-600 bg-white/60 px-3 py-1 text-xs md:text-sm font-medium rounded-full">Parroco di Piedelpoggio</span>
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 md:p-12">
+              <div class="space-y-4">
+                <div class="flex items-center space-x-4">
+                  <div class="w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                    </svg>
                   </div>
+                  <div class="flex-1 min-w-0">
+                    <h3 class="text-xl font-bold text-gray-900">Don Gioacchino Bella</h3>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <span class="text-sm text-gray-600 bg-white/60 px-3 py-1 text-xs md:text-sm font-medium rounded-full">Parroco</span>
+                </div>
                   <div class="mb-4">
                     <h4 class="text-lg font-semibold text-gray-800 mb-2">Testimonianza sui fatti del 31 marzo e 4-5 aprile 1944</h4>
                     <p class="text-sm text-gray-600 italic mb-4">Quando l'altopiano di Leonessa fu occupato dalle "SS" tedesche</p>
@@ -1312,18 +1325,21 @@ const dipintiItems = [
             </div>
 
             <!-- Testimonianza 2 -->
-            <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-8 mb-6">
-              <div class="space-y-4 sm:space-y-0 sm:flex sm:items-start sm:space-x-4">
-                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
-                  </svg>
-                </div>
-                <div class="flex-1">
-                  <div class="flex items-center space-x-4 mb-4">
-                    <h3 class="text-xl font-bold text-gray-900">Brigata Garibaldina "Antonio Gramsci"</h3>
-                    <span class="text-sm text-gray-600 bg-white/60 px-3 py-1 text-xs md:text-sm font-medium rounded-full">16 marzo 1944</span>
+            <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 md:p-12">
+              <div class="space-y-4">
+                <div class="flex items-center space-x-4">
+                  <div class="w-12 h-12 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                    </svg>
                   </div>
+                  <div class="flex-1 min-w-0">
+                    <h3 class="text-xl font-bold text-gray-900">Brigata Garibaldina "Antonio Gramsci"</h3>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <span class="text-sm text-gray-600 bg-white/60 px-3 py-1 text-xs md:text-sm font-medium rounded-full">16 marzo 1944</span>
+                </div>
                   <p class="text-gray-600 italic mb-4 text-base leading-relaxed text-justify">
                     "Con la liberazione di Leonessa, Poggio Bustone, Albaneto e le rispettive frazioni, la brigata garibaldina Antonio Gramsci, ha liberato circa 1000 kmq. di territorio migliaia e migliaia di lavoratori sono stati liberati dalla schiavitù nazifascista. Questo comando, mentre invita i cittadini a collaborare con i partigiani per le necessità delle popolazioni locali, rende noto che oggi 16.3.1944, il territorio di Leonessa e di S.Pancrazio (Narni), con i limiti di Rivodutri, Poggio Bustone, Albaneto, Castiglione di Arrone è considerato staccato da Rieti, Terni e Perugia, città dominate dai nazifascisti, ed unito al territorio di Cascia, Norcia, Monteleone. Per conseguenza la brigata garibaldina 'Gramsci', unica autorità esistente in detto territorio, che rappresenta la nuova Italia democratica, assume la responsabilità di fronte ai cittadini, militarmente, politicamente, e amministrativamente. I cittadini per le loro necessità sono invitati a rivolgersi ai rispettivi comuni e al comando della brigata, sito all'albergo ITALIA di Cascia."
                   </p>
@@ -1342,19 +1358,19 @@ const dipintiItems = [
     </section>
 
     <!-- Canzoni Popolari -->
-    <section id="canzoni" class="py-8 px-4 sm:px-6 lg:px-8">
+    <section id="canzoni" class="mt-2 md:mt-16 py-4 px-4 sm:px-8 lg:px-8">
       <div class="max-w-6xl mx-auto">
         <div class="bg-white rounded-xl sm:rounded-2xl shadow-lg border border-gray-100 overflow-hidden collapsible-content">
           <!-- Header cliccabile per Canzoni -->
           <div class="bg-white p-6 cursor-pointer hover:bg-gray-50 transition-all duration-300 collapsible-header ace-y-6"" onclick="toggleSection('canzoni')">
             <div class="flex items-center justify-between">
               <div class="flex items-center">
-                <div class="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
-                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                  <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
                   </svg>
                 </div>
-                <h2 class="text-2xl md:text-2xl sm:text-3xl font-bold text-gray-900">Canzoni</h2>
+                <h2 class="text-1xl md:text-1xl sm:text-3xl font-bold text-gray-900">Canzoni</h2>
               </div>
               <div class="arrow-icon transition-transform duration-300" style="transform: rotate(0deg);">
                 <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1369,7 +1385,7 @@ const dipintiItems = [
 
           <div class="space-y-6">
             <!-- Canzone 1: NU SIMU VINUTI -->
-            <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-8">
+            <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 md:p-12">
               <div class="space-y-4 sm:space-y-0 sm:flex sm:items-start sm:space-x-4">
                 <div class="w-12 h-12 sm:w-16 sm:h-16 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1379,7 +1395,7 @@ const dipintiItems = [
                 <div class="flex-1">
                   <h3 class="text-xl font-bold text-gray-900 mb-4">NU SIMU VINUTI</h3>
                   <div class="bg-white/60 rounded-lg p-6 mb-4">
-                    <p class="text-gray-800 leading-relaxed italic">
+                    <p class="text-sm md:text-lg text-gray-800 leading-relaxed italic">
                       Nu simu vinuti co bona creanza sicunnu l'usanza la Pasqua a canta';<br>
                       
                       la' dentro na' stalla nasce' lu bambinu je manca lo vinu je manca lo pa';<br>
@@ -1410,7 +1426,7 @@ const dipintiItems = [
             </div>
 
             <!-- Canzone 2: CE N'IMO CANTENNO -->
-            <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-xl p-8">
+            <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-xl p-6 md:p-12">
               <div class="space-y-4 sm:space-y-0 sm:flex sm:items-start sm:space-x-4">
                 <div class="w-12 h-12 sm:w-16 sm:h-16 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1420,7 +1436,7 @@ const dipintiItems = [
                 <div class="flex-1">
                   <h3 class="text-xl font-bold text-gray-900 mb-4">CE N'IMO CANTENNO</h3>
                   <div class="bg-white/60 rounded-lg p-6 mb-4">
-                    <p class="text-gray-800 leading-relaxed italic">
+                    <p class="text-sm md:text-lg text-gray-800 leading-relaxed italic">
                       Ce n'imo cantenno pé ville e casali<br>
                       dò stuò li boccali e bene se stà;<br>
                       
@@ -1450,7 +1466,7 @@ const dipintiItems = [
             </div>
 
             <!-- Canzone 3: LA PASQUETTA -->
-            <div class="bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-8">
+            <div class="bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-6 md:p-12">
               <div class="space-y-4 sm:space-y-0 sm:flex sm:items-start sm:space-x-4">
                 <div class="w-12 h-12 sm:w-16 sm:h-16 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg class="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1460,7 +1476,7 @@ const dipintiItems = [
                 <div class="flex-1">
                   <h3 class="text-xl font-bold text-gray-900 mb-4">LA PASQUETTA</h3>
                   <div class="bg-white/60 rounded-lg p-6 mb-4">
-                    <p class="text-gray-800 leading-relaxed italic">
+                    <p class="text-sm md:text-lg text-gray-800 leading-relaxed italic">
                       La pasquetta de quist'anno<br>
                       la canteremo alla norcina<br>
                       la padrona va in cantina<br>
@@ -1498,7 +1514,7 @@ const dipintiItems = [
             </div>
 
             <!-- Canzone 4: NEL PRESEPE -->
-            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-8">
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 md:p-12">
               <div class="space-y-4 sm:space-y-0 sm:flex sm:items-start sm:space-x-4">
                 <div class="w-12 h-12 sm:w-16 sm:h-16 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1508,7 +1524,7 @@ const dipintiItems = [
                 <div class="flex-1">
                   <h3 class="text-xl font-bold text-gray-900 mb-4">NEL PRESEPE</h3>
                   <div class="bg-white/60 rounded-lg p-6 mb-4">
-                    <p class="text-gray-800 leading-relaxed italic">
+                    <p class="text-sm md:text-lg text-gray-800 leading-relaxed italic">
                       Nel presepe è nato Cristo io lo credo ma non l'ho visto ma ve dico cose nove fra di un asino e di un bove;<br>
                       
                       I pastori fanno festa che per causa man di festa quando l'era forestiera solo Erode si dispera;<br>
@@ -1533,7 +1549,7 @@ const dipintiItems = [
             </div>
 
             <!-- Canzone 5: OGGI E' QUELLA GIORNATA -->
-            <div class="bg-gradient-to-r from-red-50 to-pink-50 rounded-xl p-8">
+            <div class="bg-gradient-to-r from-red-50 to-pink-50 rounded-xl p-6 md:p-12">
               <div class="space-y-4 sm:space-y-0 sm:flex sm:items-start sm:space-x-4">
                 <div class="w-12 h-12 sm:w-16 sm:h-16 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1543,7 +1559,7 @@ const dipintiItems = [
                 <div class="flex-1">
                   <h3 class="text-xl font-bold text-gray-900 mb-4">OGGI E' QUELLA GIORNATA</h3>
                   <div class="bg-white/60 rounded-lg p-6 mb-4">
-                    <p class="text-gray-800 leading-relaxed italic">
+                    <p class="text-sm md:text-lg text-gray-800 leading-relaxed italic">
                       Noi vi vogliamo dire della gloriosa festa della corte celesta illuminata;<br>
                       oggi è quella giornata che vinnero i tre Re che vinnero a vedé 'l nato bambino;<br>
                       
@@ -1570,7 +1586,7 @@ const dipintiItems = [
             </div>
 
             <!-- Canzone 6: ECCO PASQUA EPIFANIA -->
-            <div class="bg-gradient-to-r from-yellow-50 to-amber-50 rounded-xl p-8 mb-6">
+            <div class="bg-gradient-to-r from-yellow-50 to-amber-50 rounded-xl p-6 md:p-12 mb-6">
               <div class="space-y-4 sm:space-y-0 sm:flex sm:items-start sm:space-x-4">
                 <div class="w-12 h-12 sm:w-16 sm:h-16 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1580,7 +1596,7 @@ const dipintiItems = [
                 <div class="flex-1">
                   <h3 class="text-xl font-bold text-gray-900 mb-4">ECCO PASQUA EPIFANIA</h3>
                   <div class="bg-white/60 rounded-lg p-6 mb-4">
-                    <p class="text-gray-800 leading-relaxed italic">
+                    <p class="text-sm md:text-lg text-gray-800 leading-relaxed italic">
                       Ecco pasqua epifania<br>
                       che ritorna in suoni e canti<br>
                       per far festa a tutti quanti<br>
@@ -1616,7 +1632,7 @@ const dipintiItems = [
             </div>
 
             <!-- Canzone 7: PUNTEGGIATE AMICA STELLA -->
-            <div class="bg-gradient-to-r from-teal-50 to-cyan-50 rounded-xl p-8">
+            <div class="bg-gradient-to-r from-teal-50 to-cyan-50 rounded-xl p-6 md:p-12">
               <div class="space-y-4 sm:space-y-0 sm:flex sm:items-start sm:space-x-4">
                 <div class="w-12 h-12 sm:w-16 sm:h-16 bg-teal-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg class="w-8 h-8 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1626,7 +1642,7 @@ const dipintiItems = [
                 <div class="flex-1">
                   <h3 class="text-xl font-bold text-gray-900 mb-4">PUNTEGGIATE AMICA STELLA</h3>
                   <div class="bg-white/60 rounded-lg p-6 mb-4">
-                    <p class="text-gray-800 leading-relaxed italic">
+                    <p class="text-sm md:text-lg text-gray-800 leading-relaxed italic">
                       Punteggiate amica stella che la pace sia con tutti<br>
                       osservate quant'è bella di Gesu il dolce frut;<br>
                       
@@ -1657,7 +1673,7 @@ const dipintiItems = [
             </div>
 
             <!-- Canzone 8: COMPATITECI SIGNORI -->
-            <div class="bg-gradient-to-r from-rose-50 to-pink-50 rounded-xl p-8 mb-6">
+            <div class="bg-gradient-to-r from-rose-50 to-pink-50 rounded-xl p-6 md:p-12 mb-6">
               <div class="space-y-4 sm:space-y-0 sm:flex sm:items-start sm:space-x-4">
                 <div class="w-12 h-12 sm:w-16 sm:h-16 bg-rose-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg class="w-8 h-8 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1667,7 +1683,7 @@ const dipintiItems = [
                 <div class="flex-1">
                   <h3 class="text-xl font-bold text-gray-900 mb-4">COMPATITECI SIGNORI</h3>
                   <div class="bg-white/60 rounded-lg p-6 mb-4">
-                    <p class="text-gray-800 leading-relaxed italic">
+                    <p class="text-sm md:text-lg text-gray-800 leading-relaxed italic">
                       Compatiteci o signori se veniamo a disturbarvi cercheremo da rallegrarvi cò 'na bella novità;<br>
                       
                       Supponiamo che sapete dell'antica profezia promettenteci 'l Messia queto è vero è nato già;<br>
@@ -1703,8 +1719,8 @@ const dipintiItems = [
           <div class="bg-white p-6 cursor-pointer hover:bg-gray-50 transition-all duration-300 collapsible-header ace-y-6"" onclick="toggleSection('arte')">
             <div class="flex items-center justify-between">
               <div class="flex items-center">
-                <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-rose-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
-                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-pink-500 to-rose-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                  <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                     <path d="M15 8h.01" />
                     <path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z" />
@@ -1712,7 +1728,7 @@ const dipintiItems = [
                     <path d="M14 14l1 -1c.928 -.893 2.072 -.893 3 0l2.5 2.5" />
                   </svg>
                 </div>
-                <h2 class="text-2xl md:text-2xl sm:text-3xl font-bold text-gray-900">Arte</h2>
+                <h2 class="text-1xl md:text-1xl sm:text-3xl font-bold text-gray-900">Arte</h2>
               </div>
               <div class="arrow-icon transition-transform duration-300" style="transform: rotate(0deg);">
                 <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1726,9 +1742,9 @@ const dipintiItems = [
           <div class="p-6 pb-6 collapsible-body" id="arte-content" style="display: none;">
 
           <div class="mb-6">
-            <div class="bg-gradient-to-r from-pink-50 to-rose-50 rounded-xl p-8 mb-6">
-              <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">I Dipinti di Fiorella Mincinesi</h3>
-              <p class="text-gray-600 leading-relaxed mb-4">
+            <div class="bg-gradient-to-r from-pink-50 to-rose-50 rounded-xl p-6 md:p-12 mb-6">
+              <h3 class="text-1xl sm:text-3xl font-bold text-gray-900 mb-4">I Dipinti di Fiorella Mincinesi</h3>
+              <p class="text-gray-600 leading-relaxed text-sm md:text-lg mb-4">
                 Una collezione di opere pittoriche che catturano l'essenza e la bellezza di Piedelpoggio 
                 attraverso gli occhi sensibili dell'artista locale Fiorella Mincinesi. Ogni dipinto racconta 
                 una storia, un momento, un'emozione legata al nostro territorio montano.

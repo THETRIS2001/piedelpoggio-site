@@ -33,7 +33,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
             </h1>
           </div>
           <div class="w-32 h-1.5 bg-gradient-to-r from-sky-500 via-sky-600 to-cyan-500 rounded-full mx-auto mb-8"></div>
-          <p class="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium">
+          <p class="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium mb-6 md:mb-16">
             Guida completa per la protezione del territorio: normative, educazione e strumenti legali
           </p>
         </div>
@@ -41,7 +41,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
     </section>
 
     <!-- Content Sections -->
-    <section class="pt-4 pb-16 px-4 sm:px-6 lg:px-8">
+    <section class="pt-4 pb-6 sm:pb-16 px-4 sm:px-6 lg:px-8">
       <div class="max-w-6xl mx-auto space-y-16">
         
         <!-- Sezione 1: Diritto Ambientale -->
@@ -50,12 +50,12 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
           <button onclick="toggleSection('diritto-ambientale')" class="w-full bg-white p-6 cursor-pointer hover:bg-gray-50 transition-all duration-300 collapsible-header focus:outline-none focus:box-shadow-none" style="box-shadow: none !important;">
             <div class="flex items-center justify-between">
               <div class="flex items-center">
-                <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
-                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                  <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
                   </svg>
                 </div>
-                <h3 class="text-2xl sm:text-3xl font-bold text-gray-900">Considerazioni di Diritto Ambientale</h3>
+                <h3 class="text-1xl sm:text-3xl font-bold text-gray-900">Considerazioni di Diritto Ambientale</h3>
               </div>
               <div class="expand-icon transition-transform duration-300">
                 <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -71,7 +71,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
             <!-- Contesto Generale -->
             <div>
               <h3 class="text-xl font-bold text-gray-800 mb-4 border-b-2 border-green-500 pb-2">Contesto Generale</h3>
-              <p class="text-gray-600 leading-relaxed text-justify mb-4">
+              <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg mb-4">
                 In un generale sviluppo d'interesse verso i problemi della natura, con ritardo sono state avanzate proposte di nuova legislazione che riconsiderino l'ambiente, ormai diffusamente e profondamente alterato come un valore ovvero un bene inteso nella sua complessità: <strong>suolo, aria, acqua, verde, fauna, paesaggio e centri urbani</strong> da preservare dall'azione speculatrice e distruttrice di una parte della società e da conservare e valorizzare per il presente e per le generazioni future.
               </p>
               <p class="text-gray-600 text-sm italic pl-4 border-l-4 border-green-400">
@@ -82,7 +82,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
             <!-- Evoluzione Storica -->
             <div>
               <h3 class="text-xl font-bold text-gray-800 mb-4 border-b-2 border-blue-500 pb-2">Evoluzione Storica della Sensibilità Ecologica</h3>
-              <p class="text-gray-600 leading-relaxed text-justify mb-4">
+              <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg mb-4">
                 Nel Paese, solo dopo il <strong>1970 (istituzione delle Regioni)</strong>, si è conseguita una più diffusa maturità culturale ed una sensibilità ecologica (interrelazione tra organismi viventi ed ambiente) di massa che è stata infine recepita negli atti statutari delle varie Regioni con finalità protezionistiche e di contrasto al degrado e all'inquinamento.
               </p>
               <div class="bg-gray-50 rounded-lg p-4">
@@ -468,12 +468,12 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
           <button onclick="toggleSection('educazione-montagna')" class="w-full bg-white p-6 cursor-pointer hover:bg-gray-50 transition-all duration-300 collapsible-header focus:outline-none focus:box-shadow-none" style="box-shadow: none !important;">
             <div class="flex items-center justify-between">
               <div class="flex items-center">
-                <div class="w-12 h-12 bg-gradient-to-r from-emerald-500 to-green-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
-                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-emerald-500 to-green-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                  <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
                   </svg>
                 </div>
-                <h3 class="text-2xl sm:text-3xl font-bold text-gray-900">Corso di Educazione alla Montagna</h3>
+                <h3 class="text-1xl sm:text-3xl font-bold text-gray-900">Corso di Educazione alla Montagna</h3>
               </div>
               <div class="expand-icon transition-transform duration-300">
                 <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -490,7 +490,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
             <div class="bg-gradient-to-r from-sky-50 to-cyan-50 rounded-xl p-8 border border-sky-200">
               <div class="flex items-center mb-6">
                 <div class="w-12 h-12 bg-sky-500 rounded-lg flex items-center justify-center mr-4">
-                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-1.447-.894L15 4m0 13V4m-6 3l6-3"/>
                   </svg>
                 </div>
@@ -514,7 +514,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
               <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 mb-6">
                 <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-4 border-l-4 border-blue-400 mb-4">
                   <h4 class="font-semibold text-blue-800 mb-2">📍 Definizione</h4>
-                  <p class="text-gray-600 leading-relaxed text-justify">
+                  <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg">
                     La <strong>carta geografica</strong> è una rappresentazione <em>approssimata</em>, <em>ridotta</em> e <em>simbolica</em> 
                     della superficie terrestre, o di parte di essa, su di un piano. Questa, come si intende dalla stessa definizione, 
                     non è esente da imperfezioni.
@@ -523,7 +523,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                 
                 <div class="bg-yellow-50 rounded-lg p-4 border-l-4 border-yellow-400">
                   <h4 class="font-semibold text-yellow-800 mb-2">⚠️ Limitazioni</h4>
-                  <p class="text-gray-600 leading-relaxed text-justify">
+                  <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg">
                     Si tratta di una rappresentazione grafica che oltre ad essere <strong>ridotta</strong> e <strong>simbolica</strong> 
                     è anche <strong>approssimata</strong>. Ciò per il fatto che una superficie curva non può essere riportata 
                     su di un piano senza alcuna alterazione.
@@ -544,11 +544,11 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
               <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 mb-6">
                 <div class="bg-gradient-to-r from-cyan-50 to-teal-50 rounded-lg p-4 border-l-4 border-cyan-400 mb-6">
                   <h4 class="font-semibold text-cyan-800 mb-2">📏 Concetto di Scala</h4>
-                  <p class="text-gray-600 leading-relaxed text-justify mb-4">
+                  <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg mb-4">
                     La <strong>riduzione</strong>, cioè il passaggio dalla superficie effettiva ad un'altra corrispondente sulla carta, 
                     avviene mediante l'adozione di un rapporto unico, che genericamente viene detto <strong>scala</strong>.
                   </p>
-                  <p class="text-gray-600 leading-relaxed text-justify">
+                  <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg">
                     La scala viene riportata sulla carta sia in forma <em>numerica</em> che <em>grafica</em> e ci consente 
                     di conoscere il rapporto esistente tra le distanze misurate sulla carta e le distanze reali.
                   </p>
@@ -561,7 +561,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                     Scala Numerica
                   </h4>
                   <div class="bg-blue-50 rounded-lg p-4 border border-blue-200 mb-4">
-                    <p class="text-gray-600 leading-relaxed text-justify mb-3">
+                    <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg mb-3">
                       La <strong>scala numerica</strong> è una frazione che ha numeratore sempre uguale ad uno e denominatore 
                       uguale ad un numero che indica quante volte la distanza reale è stata ridotta sulla carta.
                     </p>
@@ -604,7 +604,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                     Scala Grafica
                   </h4>
                   <div class="bg-green-50 rounded-lg p-4 border border-green-200 mb-4">
-                    <p class="text-gray-600 leading-relaxed text-justify mb-4">
+                    <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg mb-4">
                       La <strong>scala grafica</strong> è una linea retta, o due linee parallele vicinissime fra di loro, 
                       distinte in tanti segmenti di 1 cm di lunghezza, ad ognuno dei quali viene attribuito in progressione 
                       numerica a partire da zero, un valore espresso in metri o chilometri.
@@ -691,7 +691,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
               <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200">
                 <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-lg p-4 border-l-4 border-indigo-400 mb-6">
                   <h4 class="font-semibold text-indigo-800 mb-2">📚 Classificazione per Scala e Contenuto</h4>
-                  <p class="text-gray-600 leading-relaxed">
+                  <p class="text-gray-600 leading-relaxed text-sm md:text-lg">
                     Le carte geografiche vengono classificate in base alla loro scala e al tipo di contenuto rappresentato, 
                     ognuna con specifiche caratteristiche e utilizzi.
                   </p>
@@ -841,7 +841,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                 <!-- Definizione -->
                 <div class="bg-gradient-to-r from-emerald-50 to-green-50 rounded-lg p-4 border-l-4 border-emerald-400 mb-6">
                   <h4 class="font-semibold text-emerald-800 mb-2">🗺️ Definizione</h4>
-                  <p class="text-gray-600 leading-relaxed text-justify">
+                  <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg">
                     La <strong>carta topografica</strong> è un disegno particolareggiato razionalmente selezionato e convenzionale 
                     della superficie terrestre. Su di essa sono presenti dei <em>segni convenzionali</em> che servono ad indicare 
                     le particolarità geografiche delle terre e dei mari.
@@ -854,7 +854,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                     <span class="bg-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">🎯</span>
                     Simboli Cartografici
                   </h4>
-                  <p class="text-gray-600 leading-relaxed text-justify mb-4">
+                  <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg mb-4">
                     I simboli cartografici sono vari per forma, grandezza e colore e possono esprimere diversi tipi di dati:
                   </p>
                   
@@ -908,7 +908,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                   </h4>
                   
                   <div class="bg-red-50 rounded-lg p-4 border border-red-200 mb-4">
-                    <p class="text-gray-600 leading-relaxed text-justify mb-4">
+                    <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg mb-4">
                       La carta topografica d'Italia stampata dall'<strong>I.G.M. di Firenze</strong> si compone di 
                       <strong>320 fogli</strong> in scala <strong>1:100.000</strong> contrassegnati da un numero progressivo.
                     </p>
@@ -1005,7 +1005,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                     </svg>
                     Proiezione Poliedrica
                   </h4>
-                  <p class="text-gray-600 leading-relaxed text-justify mb-4">
+                  <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg mb-4">
                     La proiezione geografica adoperata è quella <strong>poliedrica</strong>, ritenuta la più adatta 
                     a ridurre al minimo gli errori della rappresentazione in piano.
                   </p>
@@ -1037,11 +1037,11 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                 <!-- Problema e Soluzione -->
                 <div class="bg-gradient-to-r from-teal-50 to-blue-50 rounded-lg p-4 border-l-4 border-teal-400 mb-6">
                   <h4 class="font-semibold text-teal-800 mb-2">❓ Il Problema</h4>
-                  <p class="text-gray-600 leading-relaxed text-justify mb-4">
+                  <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg mb-4">
                     Come rappresentare l'altezza di un rilievo su una carta di sole due dimensioni?
                   </p>
                   <h4 class="font-semibold text-teal-800 mb-2">✅ La Soluzione</h4>
-                  <p class="text-gray-600 leading-relaxed text-justify">
+                  <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg">
                     Oggi la soluzione più adottata, specialmente nelle carte topografiche, è quella di rappresentare 
                     il rilievo mediante <strong>isoipse</strong> (dal greco "uguale altezza"), cioè <em>curve di livello</em>, 
                     che uniscono punti di uguale altezza sul livello del mare.
@@ -1179,7 +1179,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                             </span>
                             × 100
                           </div>
-                          <div class="text-lg text-gray-500 font-light">(%)</div>
+                          <div class="text-sm md:text-lg text-gray-500 font-light">(%)</div>
                         </div>
                         
                         <!-- Legenda -->
@@ -1228,12 +1228,12 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                   </h4>
                   
                   <div class="bg-cyan-50 rounded-lg p-4 border border-cyan-200 mb-4">
-                    <p class="text-gray-600 leading-relaxed text-justify mb-4">
+                    <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg mb-4">
                       Il principio è alquanto semplice: si immagina di <strong>tagliare un rilievo</strong> con una serie 
                       di piani paralleli equidistanti tra di loro. Il rilievo intersecherà i singoli piani in determinati 
                       punti il cui insieme disegnerà una curva detta appunto <em>isoipsa</em>.
                     </p>
-                    <p class="text-gray-600 leading-relaxed text-justify">
+                    <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg">
                       Si proiettano quindi tutte le isoipse su di un foglio e si ottiene così la rappresentazione del rilievo.
                     </p>
                   </div>
@@ -1272,7 +1272,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                   
                   <div class="bg-violet-50 rounded-lg p-4 border border-violet-200 mb-4">
                     <h5 class="font-semibold text-violet-800 mb-2">📐 Definizione</h5>
-                    <p class="text-gray-600 leading-relaxed text-justify mb-4">
+                    <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg mb-4">
                       La <strong>differenza di quota</strong> tra una isoipsa e l'altra si chiama <em>equidistanza</em>. 
                       Sulle carte topografiche dell'I.G.M. in scala <strong>1:25.000</strong> è di solito di <strong>25 metri</strong>.
                     </p>
@@ -1375,7 +1375,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                     <span class="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-2">🧭</span>
                     Definizione di Orientamento
                   </h4>
-                  <p class="text-gray-600 leading-relaxed text-justify">
+                  <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg">
                     <strong>Orientarci</strong> significa letteralmente <em>volgersi verso oriente</em>, individuare dei punti di riferimento. 
                     Questi punti secondo gli antichi erano i <strong>cardini del mondo</strong>. L'<strong>orizzonte</strong> (dal greco "delimitazione") 
                     è la linea circolare ed orizzontale che delimita i punti in cui la superficie terrestre sembra si incontri con il cielo.
@@ -1388,7 +1388,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                     <span class="bg-indigo-500 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">🌅</span>
                     L'Orizzonte come Riferimento
                   </h4>
-                  <p class="text-gray-600 leading-relaxed text-justify mb-4">
+                  <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg mb-4">
                     La circonferenza dell'orizzonte da sola non offre alcun elemento direzionale, ma da alcune osservazioni, 
                     come il <strong>movimento del sole</strong> nell'arco di una giornata e la <strong>posizione della stella polare</strong> 
                     durante la notte, possiamo ricavare su di essa dei punti molto indicativi.
@@ -1402,11 +1402,11 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                     Orientamento con il Sole
                   </h4>
                   <div class="bg-yellow-50 rounded-lg p-4 border border-yellow-200 mb-4">
-                    <p class="text-gray-600 leading-relaxed text-justify mb-4">
+                    <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg mb-4">
                       Il sole ci offre indicazioni per poter individuare il <strong>Sud</strong>, questo si trova sul piano dell'orizzonte 
                       nella direzione del punto in cui il sole raggiunge la massima altezza (<em>mezzogiorno astronomico</em>).
                     </p>
-                    <p class="text-gray-600 leading-relaxed text-justify">
+                    <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg">
                       Con questo possiamo successivamente trovare gli altri punti cardinali: il <strong>Nord</strong> si trova nella direzione opposta, 
                       l'<strong>Est</strong> a destra e l'<strong>Ovest</strong> a sinistra quando volgiamo lo sguardo verso il Nord.
                     </p>
@@ -1456,7 +1456,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                     Orientamento Notturno
                   </h4>
                   <div class="bg-indigo-50 rounded-lg p-4 border border-indigo-200">
-                    <p class="text-gray-600 leading-relaxed text-justify">
+                    <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg">
                       Di notte possiamo con buona approssimazione trovare il <strong>Nord</strong> attraverso la <strong>Stella Polare</strong>.
                     </p>
                   </div>
@@ -1476,7 +1476,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
               <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 mb-8">
                 <!-- Definizione Rosa dei Venti -->
                 <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-4 border-l-4 border-green-400 mb-6">
-                  <p class="text-gray-600 leading-relaxed text-justify">
+                  <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg">
                     Questi quattro punti determinano sul piano dell'orizzonte i <strong>punti cardinali</strong>, a questi vennero aggiunti 
                     dai greci dei <strong>punti intercardinali</strong> determinati dalla direzione dei venti e dei <strong>punti intermedi</strong>. 
                     L'insieme circonferenza dell'orizzonte, punti cardinali, punti intercardinali e intermedi prende il nome di <strong>rosa dei venti</strong>.
@@ -1537,7 +1537,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                     I Venti del Mediterraneo
                   </h4>
                   <div class="bg-blue-50 rounded-lg p-4 border border-blue-200 mb-4">
-                    <p class="text-gray-600 leading-relaxed text-justify mb-4">
+                    <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg mb-4">
                       I punti cardinali e intercardinali vengono chiamati anche <strong>venti</strong> perché corrispondono 
                       alla direzione dei principali venti del mediterraneo.
                     </p>
@@ -1628,7 +1628,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
               <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 mb-8">
                 <!-- Introduzione alle Coordinate Polari -->
                 <div class="bg-gradient-to-r from-orange-50 to-red-50 rounded-lg p-4 border-l-4 border-orange-400 mb-6">
-                  <p class="text-gray-600 leading-relaxed text-justify">
+                  <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg">
                     In orientamento, però, non si fa riferimento ai punti cardinali, perché sono insufficienti a determinare 
                     con esattezza tutti i punti della circonferenza dell'orizzonte; si usano le <strong>coordinate polari</strong> 
                     del punto, che sono: l'<strong>Azimut</strong> e la <strong>distanza</strong>.
@@ -1642,7 +1642,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                     L'Azimut
                   </h4>
                   <div class="bg-orange-50 rounded-lg p-4 border border-orange-200 mb-4">
-                    <p class="text-gray-600 leading-relaxed text-justify font-semibold">
+                    <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg font-semibold">
                       L'<strong>azimut</strong> è la misura in gradi dell'angolo formato dalle semirette 
                       <em>osservatore-nord</em> e <em>osservatore-punto considerato</em>.
                     </p>
@@ -1695,7 +1695,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                     La Distanza
                   </h4>
                   <div class="bg-blue-50 rounded-lg p-4 border border-blue-200">
-                    <p class="text-gray-600 leading-relaxed text-justify font-semibold">
+                    <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg font-semibold">
                       La <strong>distanza</strong> è la misura in linea d'aria, misurata in <em>metri</em> o <em>chilometri</em>, 
                       tra osservatore e punto preso in esame.
                     </p>
@@ -1751,7 +1751,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                     <span class="bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-2">🧭</span>
                     Strumento Fondamentale per l'Orientamento
                   </h4>
-                  <p class="text-gray-600 leading-relaxed text-justify">
+                  <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg">
                     Strumento molto importante per l'orientamento consiste principalmente di un <strong>ago calamitato</strong> 
                     libero di orientarsi sempre verso il <strong>Nord magnetico</strong>. L'ago è posto in un abitacolo contenente 
                     un liquido, che serve a rallentare le oscillazioni. La parte dell'ago che si dispone verso il Nord è evidenziata 
@@ -1766,11 +1766,11 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                     Bussola Perfezionata
                   </h4>
                   <div class="bg-blue-50 rounded-lg p-4 border border-blue-200 mb-4">
-                    <p class="text-gray-600 leading-relaxed text-justify mb-4">
+                    <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg mb-4">
                       Nelle <strong>bussole moderne</strong>, dette anche <em>perfezionate</em>, l'abitacolo ruota su una base, 
                       placca trasparente, che serve anche come <strong>indicatore direzionale</strong> e come <strong>misuratore di distanze</strong>.
                     </p>
-                    <p class="text-gray-600 leading-relaxed text-justify">
+                    <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg">
                       L'abitacolo anch'esso trasparente ha anche un <strong>quadrante graduato da 0° a 360°</strong>, 
                       e su di esso sono disegnate le <strong>linee meridiane</strong> e la <strong>freccia d'orientamento</strong>.
                     </p>
@@ -1845,7 +1845,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
               <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 mb-8">
                 <!-- Procedura di Orientamento -->
                 <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-4 border-l-4 border-green-400 mb-6">
-                  <p class="text-gray-600 leading-relaxed text-justify">
+                  <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg">
                     La bussola risulta <strong>orientata</strong> quando, dopo averla posta orizzontalmente ed aver fatto ruotare l'abitacolo, 
                     la <strong>freccia d'orientamento</strong> viene a coincidere con il nord indicato dall'<strong>ago magnetico</strong>. 
                     Operando in tal modo viene trovato il Nord e di conseguenza tutti gli altri punti cardinali.
@@ -1924,7 +1924,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
               <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 mb-8">
                 <!-- Definizione Direzione di Marcia -->
                 <div class="bg-gradient-to-r from-purple-50 to-indigo-50 rounded-lg p-4 border-l-4 border-purple-400 mb-6">
-                  <p class="text-gray-600 leading-relaxed text-justify">
+                  <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg">
                     La <strong>direzione di marcia</strong> viene data dall'<strong>azimut</strong>, l'angolo misurato in senso orario 
                     formato dalla direzione del nord e dalla direzione dell'oggetto verso il quale siamo diretti.
                   </p>
@@ -1937,7 +1937,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                     Come Trovare l'Azimut
                   </h4>
                   <div class="bg-purple-50 rounded-lg p-4 border border-purple-200 mb-4">
-                    <p class="text-gray-600 leading-relaxed text-justify mb-4">
+                    <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg mb-4">
                       L'operazione per trovare l'azimut è alquanto semplice:
                     </p>
                     <ol class="list-decimal list-inside space-y-2 text-gray-600">
@@ -2011,7 +2011,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                     Come Seguire la Direzione di Marcia
                   </h4>
                   <div class="bg-indigo-50 rounded-lg p-4 border border-indigo-200 mb-4">
-                    <p class="text-gray-600 leading-relaxed text-justify">
+                    <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg">
                       Dopo la determinazione della direzione di marcia dovremo mantenere la bussola orientata con l'ago calamitato 
                       sempre sovrapposto dalla freccia d'orientamento e <strong>seguire la freccia direzionale</strong> della placca trasparente.
                     </p>
@@ -2046,7 +2046,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                     <span class="bg-teal-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-2">↔️</span>
                     Definizione e Utilità
                   </h4>
-                  <p class="text-gray-600 leading-relaxed text-justify">
+                  <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg">
                     L'<strong>azimut reciproco</strong> è l'azimut della direzione opposta a quella di andata. 
                     È molto utile per il <strong>ritorno</strong> quando si vuole ripercorrere la stessa strada dell'andata.
                   </p>
@@ -2196,7 +2196,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                     <span class="bg-emerald-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs mr-2">⛰️</span>
                     Il Problema degli Ostacoli
                   </h4>
-                  <p class="text-gray-600 leading-relaxed text-justify">
+                  <p class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg">
                     Durante la marcia seguendo un azimut, può capitare di incontrare degli <strong>ostacoli</strong> 
                     (montagne, laghi, edifici, ecc.) che impediscono di proseguire in linea retta. 
                     È necessario <strong>aggirare l'ostacolo</strong> mantenendo la direzione generale.
@@ -2330,12 +2330,12 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
           <button onclick="toggleSection('modelli-legali')" class="w-full bg-white p-6 cursor-pointer hover:bg-gray-50 transition-all duration-300 collapsible-header focus:outline-none focus:box-shadow-none" style="box-shadow: none !important;">
             <div class="flex items-center justify-between">
               <div class="flex items-center">
-                <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-rose-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
-                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-pink-500 to-rose-600 rounded-xl flex items-center justify-center mr-4 shadow-lg">
+                  <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                   </svg>
                 </div>
-                <h3 class="text-2xl sm:text-3xl font-bold text-gray-900">Modelli di Diffide e Denunce</h3>
+                <h3 class="text-1xl sm:text-3xl font-bold text-gray-900">Modelli di Diffide e Denunce</h3>
               </div>
               <div class="expand-icon transition-transform duration-300">
                 <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2351,13 +2351,13 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
             <div class="bg-gradient-to-r from-amber-50 to-orange-50 rounded-xl p-6 border-l-4 border-amber-400 mb-8">
               <div class="flex items-start">
                 <div class="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0 mt-1">
-                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"/>
                   </svg>
                 </div>
                 <div class="flex-1">
                   <h3 class="text-xl font-bold text-amber-800 mb-4">Perché è Necessario Agire e Come Agire</h3>
-                  <div class="text-gray-600 leading-relaxed text-justify space-y-4">
+                  <div class="text-gray-600 leading-relaxed text-justify text-sm md:text-lg space-y-4">
                     <p>
                       Una orribile <strong>discarica</strong> (quasi sempre abusiva), il <strong>taglio immotivato di alberi</strong> 
                       in una macchia, lo <strong>scempio di rifiuti scaricati</strong> in un corso d'acqua, uno <strong>sbancamento 
@@ -2403,7 +2403,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
             <div class="bg-gradient-to-br from-slate-50 to-gray-100 rounded-xl p-8 border border-gray-200 shadow-sm">
               <div class="text-center mb-8">
                 <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                   </svg>
                 </div>
@@ -2415,7 +2415,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                 <!-- Documento 1 -->
                 <div class="group bg-white rounded-xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1" onclick="toggleDocument('doc1')">
                   <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center mr-4 shadow-md">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center mr-4 shadow-md">
                       <span class="text-white font-bold text-lg">1</span>
                     </div>
                     <div class="flex-1">
@@ -2435,7 +2435,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                 <!-- Documento 2 -->
                 <div class="group bg-white rounded-xl p-6 border border-gray-200 hover:border-green-300 hover:shadow-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1" onclick="toggleDocument('doc2')">
                   <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-4 shadow-md">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center mr-4 shadow-md">
                       <span class="text-white font-bold text-lg">2</span>
                     </div>
                     <div class="flex-1">
@@ -2455,7 +2455,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                 <!-- Documento 3 -->
                 <div class="group bg-white rounded-xl p-6 border border-gray-200 hover:border-orange-300 hover:shadow-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1" onclick="toggleDocument('doc3')">
                   <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mr-4 shadow-md">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center mr-4 shadow-md">
                       <span class="text-white font-bold text-lg">3</span>
                     </div>
                     <div class="flex-1">
@@ -2475,7 +2475,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                 <!-- Documento 4 -->
                 <div class="group bg-white rounded-xl p-6 border border-gray-200 hover:border-purple-300 hover:shadow-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1" onclick="toggleDocument('doc4')">
                   <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mr-4 shadow-md">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center mr-4 shadow-md">
                       <span class="text-white font-bold text-lg">4</span>
                     </div>
                     <div class="flex-1">
@@ -2495,7 +2495,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                 <!-- Documento 5 -->
                 <div class="group bg-white rounded-xl p-6 border border-gray-200 hover:border-indigo-300 hover:shadow-lg transition-all duration-300 cursor-pointer transform hover:-translate-y-1 md:col-span-2 lg:col-span-1" onclick="toggleDocument('doc5')">
                   <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-lg flex items-center justify-center mr-4 shadow-md">
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-lg flex items-center justify-center mr-4 shadow-md">
                       <span class="text-white font-bold text-lg">5</span>
                     </div>
                     <div class="flex-1">

@@ -33,22 +33,22 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
             </h1>
           </div>
           <div class="w-32 h-1.5 bg-gradient-to-r from-green-500 via-green-600 to-emerald-500 rounded-full mx-auto mb-8"></div>
-          <p class="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium">
+          <p class="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-medium mb-6 md:mb-16">
             Consulta il bilancio
           </p>
     </section>
 
     <!-- Bilancio Corrente -->
-    <section class="py-8 px-4 sm:px-6 lg:px-8">
+    <section class="mt-2 md:mt-16 py-4 px-4 sm:px-8 lg:px-8">
       <div class="max-w-6xl mx-auto">
-        <div class="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl p-8 md:p-12 mb-16">
+        <div class="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl p-6 md:p-12 mb-16">
           <div class="flex items-center space-x-4 mb-8">
-            <div class="w-12 h-12 bg-gradient-to-r from-green-600 to-emerald-600 rounded-xl flex items-center justify-center">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-green-600 to-emerald-600 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
               </svg>
             </div>
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-900">Bilancio 2024</h2>
+            <h2 class="text-1xl sm:text-3xl font-bold text-gray-900">Bilancio 2024</h2>
           </div>
 
           <!-- Tabella Bilancio -->
@@ -156,13 +156,8 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
 
             <!-- Mobile Cards -->
             <div class="md:hidden space-y-4">
-              <!-- Header Mobile -->
-              <div class="bg-gradient-to-r from-green-600 to-emerald-600 text-white p-4 rounded-xl">
-                <h3 class="text-lg font-bold text-center">Bilancio 2024</h3>
-              </div>
-
               <!-- Avanzo gestione al 31.12.2023 -->
-              <div class="bg-white rounded-xl shadow-lg p-4 border border-gray-200">
+              <div class="bg-white rounded-xl p-4 border border-gray-200">
                 <h4 class="font-semibold text-gray-900 mb-3 text-sm">Avanzo gestione al 31.12.2023</h4>
                 <div class="flex justify-between items-center">
                   <div class="text-center">
@@ -177,7 +172,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
               </div>
 
               <!-- Quote Associative -->
-              <div class="bg-white rounded-xl shadow-lg p-4 border border-gray-200">
+              <div class="bg-white rounded-xl p-4 border border-gray-200">
                 <h4 class="font-semibold text-gray-900 mb-3 text-sm">Quote Associative n° 124</h4>
                 <div class="flex justify-between items-center">
                   <div class="text-center">
@@ -192,7 +187,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
               </div>
 
               <!-- Ruota della Fortuna - Torneo Burraco - Gioco fagioli -->
-              <div class="bg-white rounded-xl shadow-lg p-4 border border-gray-200">
+              <div class="bg-white rounded-xl p-4 border border-gray-200">
                 <h4 class="font-semibold text-gray-900 mb-3 text-sm">Ruota della Fortuna - Torneo Burraco - Gioco fagioli</h4>
                 <div class="flex justify-between items-center">
                   <div class="text-center">
@@ -207,7 +202,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
               </div>
 
               <!-- Panini salsiccia, fettuccine -->
-              <div class="bg-white rounded-xl shadow-lg p-4 border border-gray-200">
+              <div class="bg-white rounded-xl p-4 border border-gray-200">
                 <h4 class="font-semibold text-gray-900 mb-3 text-sm">Panini salsiccia, fettuccine</h4>
                 <div class="flex justify-between items-center">
                   <div class="text-center">
@@ -222,7 +217,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
               </div>
 
               <!-- Manutenzione Campo Sportivo 2024 -->
-              <div class="bg-white rounded-xl shadow-lg p-4 border border-gray-200">
+              <div class="bg-white rounded-xl p-4 border border-gray-200">
                 <h4 class="font-semibold text-gray-900 mb-3 text-sm">Manutenzione Campo Sportivo 2024</h4>
                 <div class="flex justify-between items-center">
                   <div class="text-center">
@@ -237,7 +232,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
               </div>
 
               <!-- Manutenzione Campo Sportivo 2024 - Campo Pallavolo -->
-              <div class="bg-white rounded-xl shadow-lg p-4 border border-gray-200">
+              <div class="bg-white rounded-xl p-4 border border-gray-200">
                 <h4 class="font-semibold text-gray-900 mb-3 text-sm">Manutenzione Campo Sportivo 2024 - Campo Pallavolo</h4>
                 <div class="flex justify-between items-center">
                   <div class="text-center">
@@ -252,7 +247,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
               </div>
 
               <!-- Bollette ENEL 2023-2024 -->
-              <div class="bg-white rounded-xl shadow-lg p-4 border border-gray-200">
+              <div class="bg-white rounded-xl p-4 border border-gray-200">
                 <h4 class="font-semibold text-gray-900 mb-3 text-sm">Bollette ENEL 2023-2024</h4>
                 <div class="flex justify-between items-center">
                   <div class="text-center">
@@ -267,7 +262,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
               </div>
 
               <!-- Arredo Urbano - 35 sedie - ricostruzione carretto -->
-              <div class="bg-white rounded-xl shadow-lg p-4 border border-gray-200">
+              <div class="bg-white rounded-xl p-4 border border-gray-200">
                 <h4 class="font-semibold text-gray-900 mb-3 text-sm">Arredo Urbano - 35 sedie - ricostruzione carretto</h4>
                 <div class="flex justify-between items-center">
                   <div class="text-center">
@@ -282,7 +277,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
               </div>
 
               <!-- Assicurazione anno 2024/2025 -->
-              <div class="bg-white rounded-xl shadow-lg p-4 border border-gray-200">
+              <div class="bg-white rounded-xl p-4 border border-gray-200">
                 <h4 class="font-semibold text-gray-900 mb-3 text-sm">Assicurazione anno 2024/2025</h4>
                 <div class="flex justify-between items-center">
                   <div class="text-center">
@@ -297,7 +292,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
               </div>
 
               <!-- Spese varie - Cancelleria - Timbri - Spese postali -->
-              <div class="bg-white rounded-xl shadow-lg p-4 border border-gray-200">
+              <div class="bg-white rounded-xl p-4 border border-gray-200">
                 <h4 class="font-semibold text-gray-900 mb-3 text-sm">Spese varie - Cancelleria - Timbri - Spese postali</h4>
                 <div class="flex justify-between items-center">
                   <div class="text-center">
@@ -312,7 +307,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
               </div>
 
               <!-- Spese Bancarie -->
-              <div class="bg-white rounded-xl shadow-lg p-4 border border-gray-200">
+              <div class="bg-white rounded-xl p-4 border border-gray-200">
                 <h4 class="font-semibold text-gray-900 mb-3 text-sm">Spese Bancarie</h4>
                 <div class="flex justify-between items-center">
                   <div class="text-center">
@@ -344,16 +339,17 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
           </div>
 
           <!-- Risultato -->
-          <div class="mt-8 p-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl border-2 border-green-200">
-            <div class="flex items-center justify-between">
+          <div class="mt-8 p-4 sm:p-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl border-2 border-green-200">
+            <!-- Layout Desktop -->
+            <div class="hidden md:flex items-center justify-between">
               <div class="flex items-center space-x-4">
                 <div class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center">
-                  <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
                   </svg>
                 </div>
                 <div>
-                  <h3 class="text-2xl sm:text-3xl font-bold text-gray-900">Risultato di Gestione 2024</h3>
+                  <h3 class="text-1xl sm:text-3xl font-bold text-gray-900">Risultato di Gestione 2024</h3>
                   <p class="text-gray-600">Avanzo destinato alle attività future</p>
                 </div>
               </div>
@@ -398,12 +394,66 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
                 </div>
               </div>
             </div>
+
+            <!-- Layout Mobile -->
+            <div class="md:hidden space-y-4">
+              <!-- Header Mobile -->
+              <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
+                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold text-gray-900">Risultato di Gestione 2024</h3>
+                  <p class="text-sm text-gray-600">Avanzo destinato alle attività future</p>
+                </div>
+              </div>
+
+              <!-- Risultato Mobile -->
+              <div class="text-center py-2">
+                <span class="text-2xl font-bold text-green-700">+ € 4.514,99</span>
+              </div>
+
+              <!-- Composizione Mobile -->
+              <div class="bg-white rounded-lg p-3 shadow-sm border border-gray-200">
+                <h4 class="text-sm font-semibold text-gray-600 mb-2">Composizione:</h4>
+                <div class="space-y-2 text-sm">
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-600">C/C Postale:</span>
+                    <span class="font-medium text-gray-900">€ 3.982,21</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-gray-600">Contanti:</span>
+                    <span class="font-medium text-gray-900">€ 532,78</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pulsanti Mobile -->
+              <div class="space-y-2">
+                <a href="/documents/Bilancio 2024.jpg" download="Bilancio_2024.jpg" class="w-full inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-2.5 rounded-lg text-sm font-semibold hover:from-green-700 hover:to-green-800 transition-all duration-300">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                  </svg>
+                  <span>Scarica Bilancio</span>
+                </a>
+                
+                <button id="previewBtn2024Mobile" data-image="/documents/Bilancio 2024.jpg" data-title="Bilancio 2024" class="w-full inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-4 py-2.5 rounded-lg text-sm font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                  </svg>
+                  <span>Anteprima Bilancio</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- Bilanci Precedenti -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          <h2 class="col-span-full text-2xl sm:text-3xl font-bold text-gray-900 mb-8">Bilanci Precedenti</h2>
+          <h2 class="col-span-full text-1xl sm:text-3xl font-bold text-gray-900 mb-8">Bilanci Precedenti</h2>
           
           <!-- Bilancio 2014 -->
           <div class="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300">
@@ -439,7 +489,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
         </div>
 
         <!-- Informazioni per contatti -->
-        <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl sm:rounded-2xl p-8 md:p-12">
+        <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl sm:rounded-2xl p-6 md:p-12">
           <p class="font-semibold text-gray-900 text-center">
             Per ulteriori informazioni sui bilanci o per richiedere documentazione aggiuntiva, 
             è possibile contattare direttamente l'organizzazione. Tutti i documenti sono 
@@ -463,10 +513,20 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
   <script>
     // Aspetta che il DOM sia caricato
     document.addEventListener('DOMContentLoaded', function() {
-      // Aggiungi event listener per il pulsante anteprima 2024
+      // Aggiungi event listener per il pulsante anteprima 2024 (Desktop)
       const previewBtn2024 = document.getElementById('previewBtn2024');
       if (previewBtn2024) {
         previewBtn2024.addEventListener('click', function() {
+          const imageSrc = this.getAttribute('data-image');
+          const title = this.getAttribute('data-title');
+          openPdfModal(imageSrc, title);
+        });
+      }
+
+      // Aggiungi event listener per il pulsante anteprima 2024 (Mobile)
+      const previewBtn2024Mobile = document.getElementById('previewBtn2024Mobile');
+      if (previewBtn2024Mobile) {
+        previewBtn2024Mobile.addEventListener('click', function() {
           const imageSrc = this.getAttribute('data-image');
           const title = this.getAttribute('data-title');
           openPdfModal(imageSrc, title);
