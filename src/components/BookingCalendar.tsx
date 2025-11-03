@@ -21,6 +21,17 @@ type BookingFormData = {
 
 const WEEKDAYS = ['Lun', 'Mar', 'Mer', 'Gio', 'Ven', 'Sab', 'Dom'];
 
+// Funzione per mascherare il nome con asterischi
+function maskCustomerName(name: string): string {
+  if (!name || name.length <= 2) return name;
+  
+  const words = name.trim().split(' ');
+  return words.map(word => {
+    if (word.length <= 2) return word;
+    return word.charAt(0) + '*'.repeat(word.length - 2) + word.charAt(word.length - 1);
+  }).join(' ');
+}
+
 function toDateKey(d: Date) {
   const y = d.getFullYear();
   const m = String(d.getMonth() + 1).padStart(2, '0');
@@ -96,6 +107,7 @@ const BookingCalendar: React.FC = () => {
   const [bookings, setBookings] = useState<Booking[]>([]);
   const [startTime, setStartTime] = useState<string>('');
   const [endTime, setEndTime] = useState<string>('');
+  const [selectionMode, setSelectionMode] = useState<'start' | 'end' | 'complete'>('start'); // Traccia lo stato della selezione
   const [showBookingForm, setShowBookingForm] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
@@ -127,6 +139,51 @@ const BookingCalendar: React.FC = () => {
     const id = setInterval(loadBookings, 30000); // Aggiorna ogni 30 secondi
     return () => clearInterval(id);
   }, []);
+
+  // Gestisce il click su uno slot orario
+  const handleSlotClick = (slotTime: string) => {
+    const slotMinutes = minutesFromTime(slotTime);
+    
+    if (selectionMode === 'start' || selectionMode === 'complete') {
+      // Impedisce la selezione di mezzanotte come orario di inizio
+      if (slotTime === '00:00') {
+        return;
+      }
+      
+      // Primo click o reset: seleziona l'orario di inizio
+      setStartTime(slotTime);
+      setEndTime('');
+      setSelectionMode('end');
+    } else if (selectionMode === 'end') {
+      const startMinutes = minutesFromTime(startTime);
+      
+      if (slotMinutes > startMinutes) {
+        // Secondo click su orario successivo: seleziona l'orario di fine
+        const slotEndMinutes = slotMinutes + STEP;
+        const eh = String(Math.floor(slotEndMinutes / 60)).padStart(2, '0');
+        const em = String(slotEndMinutes % 60).padStart(2, '0');
+        setEndTime(`${eh}:${em}`);
+        setSelectionMode('complete');
+      } else {
+        // Click su orario precedente o uguale: riparte con nuovo inizio
+        // Impedisce la selezione di mezzanotte come orario di inizio
+        if (slotTime === '00:00') {
+          return;
+        }
+        
+        setStartTime(slotTime);
+        setEndTime('');
+        setSelectionMode('end');
+      }
+    }
+  };
+
+  // Reset della selezione quando cambia la data
+  useEffect(() => {
+    setStartTime('');
+    setEndTime('');
+    setSelectionMode('start');
+  }, [selectedDate]);
 
   // Mostra messaggio temporaneo
   const showMessage = (type: 'success' | 'error', text: string) => {
@@ -472,15 +529,18 @@ const BookingCalendar: React.FC = () => {
                   </button>
                 ) : (
                   <div className="w-full px-4 py-2 bg-gray-200 text-gray-600 rounded-lg text-center">
-                    {!startTime || !endTime ? 'seleziona orario di inizio e fine' : 'Slot non disponibile'}
+                    {selectionMode === 'start' ? 'Clicca un orario per iniziare' : 
+                     selectionMode === 'end' ? 'Clicca un orario successivo per finire' : 
+                     !startTime || !endTime ? 'seleziona orario di inizio e fine' : 'Slot non disponibile'}
                   </div>
                 )}
               </div>
 
-              <div className="flex items-center gap-2 text-xs">
+              <div className="flex items-center gap-2 text-xs flex-wrap">
                 <span className={`px-2 py-1 rounded-md border ${legendColors.available}`}>Disponibile</span>
                 <span className={`px-2 py-1 rounded-md border ${legendColors.busy}`}>Occupato</span>
                 <span className={`px-2 py-1 rounded-md border ${legendColors.selected}`}>Selezionato</span>
+                {selectionMode === 'end' && <span className="px-2 py-1 rounded-md border bg-gray-100 text-gray-400 border-gray-200">Non selezionabile</span>}
               </div>
             </div>
           </div>
@@ -497,10 +557,34 @@ const BookingCalendar: React.FC = () => {
               const eStr = `${eh}:${em}`;
               const busy = isSlotBusy(selectedDate, s, eStr);
               const selected = minutesFromTime(s) >= minutesFromTime(startTime) && minutesFromTime(eStr) <= minutesFromTime(endTime);
+              
+              // Determina se lo slot è disabilitato
+              const isDisabled = busy || 
+                                (selectionMode === 'end' && startTime && minutesFromTime(s) <= minutesFromTime(startTime)) ||
+                                (selectionMode === 'start' && s === '00:00') ||
+                                (selectionMode === 'complete' && s === '00:00');
+              
+              // Determina lo stile del bottone
+              let buttonStyle = '';
+              if (busy) {
+                buttonStyle = 'bg-rose-100 text-rose-700 border-rose-200 cursor-not-allowed';
+              } else if (selected) {
+                buttonStyle = 'bg-primary-100 text-primary-700 border-primary-200';
+              } else if (isDisabled) {
+                buttonStyle = 'bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed';
+              } else {
+                buttonStyle = 'bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-100 cursor-pointer';
+              }
+              
               return (
-                <div key={`${selectedDate}-${s}`} className={`px-3 py-2 rounded-lg border text-sm text-center ${busy ? 'bg-rose-100 text-rose-700 border-rose-200' : selected ? 'bg-primary-100 text-primary-700 border-primary-200' : 'bg-emerald-50 text-emerald-700 border-emerald-200'} `}>
+                <button
+                  key={`${selectedDate}-${s}`}
+                  onClick={() => !isDisabled && handleSlotClick(s)}
+                  disabled={isDisabled}
+                  className={`px-3 py-2 rounded-lg border text-sm text-center transition-colors ${buttonStyle}`}
+                >
                   {s}
-                </div>
+                </button>
               );
             })}
           </div>
@@ -516,7 +600,7 @@ const BookingCalendar: React.FC = () => {
                   <li key={i} className="px-3 py-2 bg-white rounded-lg border border-gray-200 text-sm text-gray-800 flex items-center justify-between">
                     <div>
                       <div className="font-medium">{removeSecondsFromTime(b.start)}–{removeSecondsFromTime(b.end)} {b.title ? `· ${b.title}` : ''}</div>
-                      <div className="text-xs text-gray-600">{b.customer_name}</div>
+                      <div className="text-xs text-gray-600">{maskCustomerName(b.customer_name)}</div>
                     </div>
                     <div className="flex items-center gap-2">
                       <span className="text-xs px-2 py-0.5 rounded-md bg-rose-100 text-rose-700 border border-rose-200">occupato</span>
@@ -548,7 +632,7 @@ const BookingCalendar: React.FC = () => {
                   type="text"
                   value={formData.customerName}
                   onChange={(e) => setFormData({ ...formData, customerName: e.target.value })}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                  className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                   placeholder="Il tuo nome"
                 />
               </div>
@@ -558,7 +642,7 @@ const BookingCalendar: React.FC = () => {
                   type="tel"
                   value={formData.customerPhone}
                   onChange={(e) => setFormData({ ...formData, customerPhone: e.target.value })}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                  className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                   placeholder="Il tuo numero di telefono"
                 />
               </div>
@@ -568,7 +652,7 @@ const BookingCalendar: React.FC = () => {
                   type="text"
                   value={formData.title}
                   onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                  className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                   placeholder="Es: Cena brace (opzionale)"
                 />
               </div>
@@ -583,7 +667,7 @@ const BookingCalendar: React.FC = () => {
             <div className="flex gap-3 mt-6">
               <button
                 onClick={() => setShowBookingForm(false)}
-                className="flex-1 px-4 py-2 border border-gray-300 text-gray-600 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                className="flex-1 px-4 py-2 border border-gray-200 text-gray-600 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500"
               >
                 Annulla
               </button>
@@ -608,7 +692,7 @@ const BookingCalendar: React.FC = () => {
             </h3>
             <div className="mb-4">
               <p className="text-sm text-gray-600 mb-2">
-                Stai per cancellare la prenotazione di <strong>{showCancelDialog.booking.customer_name}</strong>
+                Stai per cancellare la prenotazione di <strong>{maskCustomerName(showCancelDialog.booking.customer_name)}</strong>
               </p>
               <p className="text-sm text-gray-600 mb-4">
                 Data: {showCancelDialog.booking.date}<br />
@@ -645,7 +729,7 @@ const BookingCalendar: React.FC = () => {
                   setCancelPhone('');
                   setCancelError('');
                 }}
-                className="flex-1 px-4 py-2 border border-gray-300 text-gray-600 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                className="flex-1 px-4 py-2 border border-gray-200 text-gray-600 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-500"
               >
                 Annulla
               </button>
