@@ -114,18 +114,6 @@ const webcamData = [
     isPiedelpoggio: false,
     section: 'limitrofe',
     distanceFromPiedelpoggio: calculateDistance(PIEDELPOGGIO_LAT, PIEDELPOGGIO_LNG, 42.403, 12.863)
-  },
-  {
-    id: 'turismometeo-webcam',
-    title: 'Monte di Cambio (2081 m) visto da Albaneto',
-    description: 'Vista panoramica del Monte di Cambio dalla località Albaneto, con monitoraggio meteorologico della rete Turismometeo.',
-    coordinates: '42.542, 13.043',
-    lat: 42.54196379618668,
-    lng: 13.043409997614393,
-    url: 'https://www.turismometeo.it/webcam/monte-di-cambio-2081-m-visto-da-albaneto-di-leonessa-ri',
-    isPiedelpoggio: false,
-    section: 'limitrofe',
-    distanceFromPiedelpoggio: calculateDistance(PIEDELPOGGIO_LAT, PIEDELPOGGIO_LNG, 42.54196379618668, 13.043409997614393)
   }
 ];
 
@@ -179,7 +167,7 @@ const limitrofeCams = webcamData.filter(cam => cam.section === 'limitrofe').sort
         
         <!-- Webcam di Piedelpoggio - Box con ombra -->
         <div class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-200/50 overflow-hidden hover:shadow-2xl transition-all duration-300">
-          <div class="p-8 md:p-12">
+          <div class="p-6 md:p-12">
             <div class="flex items-center space-x-4 mb-4 md:mb-8">
               <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-orange-600 to-red-600 rounded-xl flex items-center justify-center">
                 <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -195,7 +183,7 @@ const limitrofeCams = webcamData.filter(cam => cam.section === 'limitrofe').sort
                   <div class="aspect-video bg-black rounded-t-2xl overflow-hidden">
                     <iframe 
                       src={webcam.url}
-                      class="w-full h-full"
+                      class={`w-full h-full`}
                       frameborder="0"
                       allowfullscreen
                       title={`Webcam ${webcam.title}`}
@@ -218,7 +206,7 @@ const limitrofeCams = webcamData.filter(cam => cam.section === 'limitrofe').sort
 
         <!-- Webcam Zone Limitrofe - Box con ombra -->
         <div class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-200/50 overflow-hidden hover:shadow-2xl transition-all duration-300">
-          <div class="p-8 md:p-12">
+          <div class="p-6 md:p-12">
             <div class="flex items-center space-x-4 mb-4 md:mb-8">
               <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-orange-600 to-red-600 rounded-xl flex items-center justify-center">
                 <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -234,7 +222,7 @@ const limitrofeCams = webcamData.filter(cam => cam.section === 'limitrofe').sort
                   <div class="aspect-video bg-black rounded-t-2xl overflow-hidden">
                     <iframe 
                       src={webcam.url}
-                      class={`w-full h-full ${webcam.title === 'Monte di Cambio (2081 m) visto da Albaneto' ? 'monte-cambio-iframe' : ''}`}
+                      class={`w-full h-full`}
                       frameborder="0"
                       allowfullscreen
                       title={`Webcam ${webcam.title}`}
@@ -266,7 +254,7 @@ const limitrofeCams = webcamData.filter(cam => cam.section === 'limitrofe').sort
 
         <!-- Mappa Interattiva - Box con ombra -->
         <div class="bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl border border-gray-200/50 overflow-hidden hover:shadow-2xl transition-all duration-300">
-          <div class="p-8 md:p-12">
+          <div class="p-6 md:p-12">
             <div class="flex items-center space-x-4 mb-4 md:mb-8">
               <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-green-600 to-emerald-600 rounded-xl flex items-center justify-center">
                 <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -468,49 +456,5 @@ const limitrofeCams = webcamData.filter(cam => cam.section === 'limitrofe').sort
 
     // Rendi la funzione globale
     window.openWebcam = openWebcam;
-
-    // CSS per nascondere l'header della webcam Monte di Cambio
-    document.addEventListener('DOMContentLoaded', function() {
-      const style = document.createElement('style');
-      style.textContent = `
-        .monte-cambio-iframe {
-          margin-top: -84% !important;
-          height: 300% !important;
-          overflow: hidden !important;
-        }
-        .monte-cambio-iframe::-webkit-scrollbar {
-          display: none !important;
-        }
-        .monte-cambio-iframe {
-          -ms-overflow-style: none !important;
-          scrollbar-width: none !important;
-        }
-        .aspect-video:has(.monte-cambio-iframe) {
-          overflow: hidden !important;
-        }
-      `;
-      document.head.appendChild(style);
-
-      // Disabilita solo lo scroll nell'iframe mantenendo i click
-      setTimeout(() => {
-        const iframe = document.querySelector('.monte-cambio-iframe');
-        if (iframe) {
-          iframe.style.overflow = 'hidden';
-          iframe.scrolling = 'no';
-          iframe.setAttribute('scrolling', 'no');
-          
-          iframe.addEventListener('load', function() {
-            try {
-              this.contentWindow.document.body.style.overflow = 'hidden';
-              // Disabilita solo le funzioni di scroll, non i click
-              this.contentWindow.scrollTo = function() {};
-              this.contentWindow.scroll = function() {};
-            } catch (e) {
-              // Restrizioni CORS
-            }
-          });
-        }
-      }, 100);
-    });
   </script>
 </DefaultLayout>

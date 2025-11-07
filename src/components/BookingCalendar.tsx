@@ -159,10 +159,7 @@ const BookingCalendar: React.FC = () => {
       
       if (slotMinutes > startMinutes) {
         // Secondo click su orario successivo: seleziona l'orario di fine
-        const slotEndMinutes = slotMinutes + STEP;
-        const eh = String(Math.floor(slotEndMinutes / 60)).padStart(2, '0');
-        const em = String(slotEndMinutes % 60).padStart(2, '0');
-        setEndTime(`${eh}:${em}`);
+        setEndTime(slotTime);
         setSelectionMode('complete');
       } else {
         // Click su orario precedente o uguale: riparte con nuovo inizio
@@ -223,11 +220,11 @@ const BookingCalendar: React.FC = () => {
   const occupiedForDate = useMemo(() => bookingsByDate.get(selectedDate) || [], [bookingsByDate, selectedDate]);
 
   const isSlotBusy = (dateKey: string, slotStart: string, slotEnd: string) => {
-    const s = minutesFromTime(slotStart);
-    const e = minutesFromTime(slotEnd);
-    const list = bookingsByDate.get(dateKey) || [];
-    return list.some(b => rangesOverlap(s, e, minutesFromTime(b.start), minutesFromTime(b.end)));
-  };
+     const s = minutesFromTime(slotStart);
+     const e = minutesFromTime(slotEnd);
+     const list = bookingsByDate.get(dateKey) || [];
+     return list.some(b => rangesOverlap(s, e, minutesFromTime(b.start), minutesFromTime(b.end)));
+   };
 
   const canBookSlot = () => {
     // Check if both times are selected

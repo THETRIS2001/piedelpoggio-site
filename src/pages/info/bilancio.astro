@@ -339,7 +339,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
           </div>
 
           <!-- Risultato -->
-          <div class="mt-8 p-4 sm:p-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl border-2 border-green-200">
+          <div class="mt-8 p-4 sm:p-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl border border-gray-200">
             <!-- Layout Desktop -->
             <div class="hidden md:flex items-center justify-between">
               <div class="flex items-center space-x-4">
@@ -412,7 +412,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
 
               <!-- Risultato Mobile -->
               <div class="text-center py-2">
-                <span class="text-2xl font-bold text-green-700">+ € 4.514,99</span>
+                <span class="text-1xl sm:text-3xl font-bold text-green-700">+ € 4.514,99</span>
               </div>
 
               <!-- Composizione Mobile -->
@@ -450,47 +450,59 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
             </div>
           </div>
         </div>
-
         <!-- Bilanci Precedenti -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          <h2 class="col-span-full text-1xl sm:text-3xl font-bold text-gray-900 mb-8">Bilanci Precedenti</h2>
-          
-          <!-- Bilancio 2014 -->
-          <div class="bg-white/80 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300">
-            <div class="flex items-center space-x-4 mb-6">
-              <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-orange-600 to-orange-700 rounded-lg flex items-center justify-center">
-                <span class="text-white font-bold text-lg">2014</span>
+        <div class="max-w-6xl mx-auto mb-8 md:mb-16">
+          <!-- Box principale -->
+          <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl p-6 md:p-12">
+            
+            <!-- Titolo -->
+            <h2 class="text-1xl sm:text-3xl font-bold text-gray-900 mb-8 text-center">Bilanci         Precedenti</h2>
+        
+            <!-- Contenitore dei singoli bilanci -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              
+              <!-- Bilancio 2014 -->
+              <div class="bg-white/60 rounded-xl shadow-md p-4 hover:shadow-lg transition-all         duration-300">
+                <div class="flex items-center space-x-4 mb-6">
+                  <div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-orange-600 to-orange-700        rounded-lg flex items-center justify-center">
+                    <span class="text-base sm:text-lg font-bold text-white">2014</span>
+                  </div>
+                  <h3 class="text-xl font-bold text-gray-900">Bilancio 2014</h3>
+                </div>
+                
+                <div class="space-y-4">
+                  <div class="flex justify-between">
+                    <span class="text-gray-600">Entrate:</span>
+                    <span class="font-semibold text-green-600">€ 16.220,70</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span class="text-gray-600">Uscite:</span>
+                    <span class="font-semibold text-red-600">€ 8.904,41</span>
+                  </div>
+                  <div class="border-t pt-2 flex justify-between">
+                    <span class="font-bold text-gray-900">Risultato:</span>
+                    <span class="font-bold text-green-600">+ € 7.316,29</span>
+                  </div>
+                </div>
+        
+                <div class="mt-6 space-y-2">
+                  <a href="/documents/Bilancio 2014.jpg" download="Bilancio_2014.jpg" class="w-full         bg-orange-100 hover:bg-orange-200 text-orange-700 py-2 px-4 rounded-lg        transition-colors duration-300 block text-center">
+                    Scarica
+                  </a>
+                  <button id="previewBtn2014" data-image="/documents/Bilancio 2014.jpg"         data-title="Bilancio 2014" class="w-full bg-orange-50 hover:bg-orange-100         text-orange-600 py-2 px-4 rounded-lg transition-colors duration-300 border        border-orange-200">
+                    Anteprima
+                  </button>
+                </div>
               </div>
-              <h3 class="text-xl font-bold text-gray-900">Bilancio 2014</h3>
-            </div>
-            <div class="space-y-4">
-              <div class="flex justify-between">
-                <span class="text-gray-600">Entrate:</span>
-                <span class="font-semibold text-green-600">€ 16.220,70</span>
-              </div>
-              <div class="flex justify-between">
-                <span class="text-gray-600">Uscite:</span>
-                <span class="font-semibold text-red-600">€ 8.904,41</span>
-              </div>
-              <div class="border-t pt-2 flex justify-between">
-                <span class="font-bold text-gray-900">Risultato:</span>
-                <span class="font-bold text-green-600">+ € 7.316,29</span>
-              </div>
-            </div>
-            <div class="mt-6 space-y-2">
-              <a href="/documents/Bilancio 2014.jpg" download="Bilancio_2014.jpg" class="w-full bg-orange-100 hover:bg-orange-200 text-orange-700 py-2 px-4 rounded-lg transition-colors duration-300 block text-center">
-                Scarica
-              </a>
-              <button id="previewBtn2014" data-image="/documents/Bilancio 2014.jpg" data-title="Bilancio 2014" class="w-full bg-orange-50 hover:bg-orange-100 text-orange-600 py-2 px-4 rounded-lg transition-colors duration-300 border border-orange-200">
-                Anteprima
-              </button>
+              <!-- /Bilancio 2014 -->
+        
             </div>
           </div>
         </div>
 
         <!-- Informazioni per contatti -->
         <div class="bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl sm:rounded-2xl p-6 md:p-12">
-          <p class="font-semibold text-gray-900 text-center">
+          <p class="font-semibold text-gray-900 text-center text-sm md:text-base">
             Per ulteriori informazioni sui bilanci o per richiedere documentazione aggiuntiva, 
             è possibile contattare direttamente l'organizzazione. Tutti i documenti sono 
             disponibili per la consultazione pubblica.
